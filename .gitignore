@@ -1,0 +1,7 @@
+data/raw/
+data/uz-unigrams.tsv
+data/uz-bigrams.tsv
+data/merges.tsv
+node_modules/
+.DS_Store
+__pycache__/
