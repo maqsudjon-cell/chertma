@@ -1,7 +1,7 @@
 # Chertma — Engine Specification
 
-**Version:** 0.1 (draft)
-**Status:** ⏸ CHECKPOINT 1. Nothing past this document has been written yet.
+**Version:** 0.2 — checkpoint-1 rulings applied (2026-09-14)
+**Status:** normative for step 2 onward.
 
 This document is normative. Code, tests and the Python pipeline follow it; if
 they disagree with it, they are wrong or this document gets amended first.
@@ -9,9 +9,11 @@ they disagree with it, they are wrong or this document gets amended first.
 Markers used below:
 
 - **[BRIEF]** — taken as-is from `CLAUDE.md`.
-- **[PROPOSED]** — goes beyond `CLAUDE.md` or deviates from it. Needs a yes/no.
-- **[Qn]** — linked to `docs/OPEN-QUESTIONS.md`. Decided provisionally, blocking
-  only where noted.
+- **[RULED]** — goes beyond `CLAUDE.md` or deviates from it; decided by the human
+  at checkpoint 1.
+- **[Qn]** — the question in `docs/OPEN-QUESTIONS.md` where the ruling is recorded.
+
+Where this document and `CLAUDE.md` disagree, this document wins.
 
 ---
 
@@ -24,8 +26,9 @@ Markers used below:
 | **cyrillic** | Uzbek Cyrillic: 35 letters incl. `ў қ ғ ҳ` |
 | **canonical form** | new Latin, lowercase where the lexicon is concerned, NFC |
 | **token** | a maximal word span produced by §3; everything else is a *gap* |
-| **skeleton** | the result of `skeleton(token)` (§4) |
-| **candidate** | a lexicon or user-model word whose skeleton equals the input's |
+| **skeleton** | the set of keys `skeleton(token, script, opts)` (§4) |
+| **key** | the single skeleton element of a canonical word, `key(w)` |
+| **candidate** | a lexicon or user-model word whose key is in the input's skeleton |
 | **correction** | replacing a token with a candidate that is not the token itself |
 
 ---
@@ -65,9 +68,9 @@ tutuq.
 | U+2019 | `’` | [BRIEF] |
 | U+02BB | `ʻ` | [BRIEF] |
 | U+02BC | `ʼ` | [BRIEF] |
-| U+02BD | `ʽ` | [PROPOSED] seen in Word autocorrect output |
-| U+02BF | `ʿ` | [PROPOSED] used for `ʻ` by several Uzbek sites |
-| U+2032 | `′` | [PROPOSED] prime, macOS/iOS smart punctuation leftovers |
+| U+02BD | `ʽ` | [RULED] seen in Word autocorrect output |
+| U+02BF | `ʿ` | [RULED] used for `ʻ` by several Uzbek sites |
+| U+2032 | `′` | [RULED] prime, macOS/iOS smart punctuation leftovers |
 
 ### 2.4 Inbound normalization — `normalize(text)`
 
@@ -75,7 +78,7 @@ Applied to all engine input before anything else. Pure function, no locale.
 
 1. Unicode **NFC**. This folds decomposed `s◌̧ c◌̧ o◌̈ g◌̆` into the precomposed
    letters of §2.1. [BRIEF]
-2. **Confusable fold** [PROPOSED, Q7]:
+2. **Confusable fold** [RULED, Q7]:
 
    | From | To | Why |
    |---|---|---|
@@ -123,8 +126,12 @@ tail  := A        -- only if the preceding letter is o O g G
   `salom`.
 - A hyphen always ends a token: `oʻsha-oʻsha` → `oʻsha` `-` `oʻsha`;
   `2026-yil` → `2026` `-` `yil`.
+- A trailing apostrophe-like after `o`/`g` is **not** taken as `tail` when the
+  token is immediately preceded by an apostrophe-like: the pair is a quotation
+  (`'kino'` → token `kino`, not `kino'` → `kinö`). Cost: a quoted word that
+  really ends in `oʻ`/`gʻ` loses its mark.
 
-### 3.3 Protected spans — never modified [PROPOSED, Q8]
+### 3.3 Protected spans — never modified [RULED, Q8]
 
 The following spans are treated as gaps even though they contain letters:
 
@@ -144,25 +151,36 @@ Without this, `chertma.maqsudjon.com` would be "corrected" into a broken link.
 Every token has a case pattern: `lower`, `title` (first letter upper, rest
 lower), or `upper`. Tokens of one letter that is uppercase are `title`. Mixed
 case is protected (§3.3). Output tokens take the case pattern of the input
-token (§7.3). **Case is never changed** by `autocorrect()`. [PROPOSED, Q9]
+token (§7.3). **Case is never changed** by `autocorrect()`. [RULED, Q9]
 
 ---
 
 ## 4. Skeleton — the equivalence function
 
-`skeleton(token)` maps a token to a string over a small alphabet, discarding
+`skeleton(token, script, opts)` maps a token to a **set of keys**, discarding
 every distinction a keyboard could plausibly have destroyed. It is the only
 thing that decides whether a correction is allowed.
+
+- `script` is the token's detected input script, `'latin'` or `'cyrillic'`
+  (§4.8). Script-mixed tokens are protected and never reach it.
+- `opts` = `{ fuzzyQK, fuzzyXH, cyrillicKeyboardRecovery }`.
+- For Latin input with both fuzzy flags off — the default — the set has exactly
+  one element, and that element is the brief's string skeleton.
+- A canonical word has exactly one key: `key(w)` = the single element of
+  `skeleton(w, 'latin', {})`. The lexicon is indexed by `key`.
 
 ### 4.1 Pipeline (normative order)
 
 ```
-skeleton(token) =
-  1. normalize(token)                          §2.4
-  2. lowercase                                 locale-independent
-  3. transliterate Cyrillic letters → new      §6.1  (Latin letters untouched)
-  4. delete every apostrophe-like (set A)      the ∅ class
-  5. scan left→right, digraphs first:
+skeleton(token, script, opts) =
+  1. normalize(token)                                     §2.4
+  2. lowercase                                            locale-independent
+  3. script 'cyrillic': transliterate to new Latin        §6.1
+       with cyrillicKeyboardRecovery, each у к х has two
+       readings (§4.8), so this step yields a set of strings
+     script 'latin': one string, untouched
+  4. per string, delete every apostrophe-like (set A)     the ∅ class
+  5. per string, scan left→right, digraphs first:
         sh → S    ch → C    gh → G
      then single letters:
         s ş w      → S
@@ -170,12 +188,13 @@ skeleton(token) =
         o ö ó ő    → O
         g ğ ǵ      → G
         any other  → itself
-  6. if fuzzyQK:  q k → K                      §4.7, off by default
-     if fuzzyXH:  x h → H                      §4.7, off by default
+  6. fuzzyQK: every q or k symbol has both readings q, k  §4.7, off by default
+     fuzzyXH: every x or h symbol has both readings x, h  §4.7, off by default
+  7. return the set of distinct results
 ```
 
-The class symbols `S C O G K H` are uppercase ASCII; every other symbol is
-lowercase, so they cannot collide. For every lexicon word the skeleton is pure
+The class symbols `S C O G` are uppercase ASCII; every other symbol is
+lowercase, so they cannot collide. Every key of every lexicon word is pure
 ASCII.
 
 ### 4.2 Why this order — two deliberate changes from a flat lookup table
@@ -234,70 +253,140 @@ implementations).
 
 ### 4.5 Properties the implementation must have (all tested)
 
-1. **Pure and deterministic.** No options other than the two fuzzy flags
-   affect it.
-2. **Keys, not text.** A skeleton is never rendered, stored in the lexicon
-   file, or fed back into `skeleton()`. The JS and Python implementations must
-   agree on every entry of the shared fixture file.
-3. **Prefix monotonic.** For any string `b` and character `x`,
-   `skeleton(b + x)` starts with `skeleton(b)` **or** equals it. This holds
-   because each digraph folds to the class of its own first letter
-   (`s→S, sh→S`; `c→C, ch→C`; `g→G, gh→G`), apostrophes vanish, and every
-   position-dependent Cyrillic rule looks only backwards. `suggest()` depends
-   on this: the candidate set can only narrow as the user types.
-4. **Script-blind.** For every lexicon word `w`:
-   `skeleton(w) === skeleton(convert(w,'new','old')) === skeleton(convert(w,'new','cyrillic'))`.
+1. **Pure and deterministic.** The result depends only on the token, `script`
+   and the three options.
+2. **Keys, not text.** A key is never rendered, stored in the lexicon file, or
+   fed back into `skeleton()`. The JS and Python implementations must agree on
+   every entry of the shared fixture file.
+3. **Prefix monotonic.** For any string `b` and character `x`, every key of
+   `skeleton(b + x)` starts with some key of `skeleton(b)`. This holds because
+   each digraph folds to the class of its own first letter (`s→S, sh→S`;
+   `c→C, ch→C`; `g→G, gh→G`), apostrophes vanish, readings are chosen per
+   letter, and the only forward-looking Cyrillic rules (`ъ`, `ь` before a
+   vowel) either vanish or insert a letter. `suggest()` depends on this: the
+   candidate set can only narrow as the user types.
+4. **Script-blind.** For every lexicon word `w`, under every option combination:
+   `key(w) ∈ skeleton(convert(w,'new','old'), 'latin')` and
+   `key(w) ∈ skeleton(convert(w,'new','cyrillic'), 'cyrillic')`.
 
 ### 4.6 Consequences to be aware of
 
-- **Literal `s+h`, `c+h`, `g+h` in canonical words** share a skeleton with
-  `ş`/`s`, `ç`/`c`, `ğ`/`g`. `Ishoq` (s+h) and a hypothetical `isoq` collide.
-  Such words are rare in new Latin (the digraph ambiguity is what the reform
-  removed). The pipeline counts them at checkpoint 2. [Q4]
-- **`ng`** is not a class: `n` stays `n`, `g` joins `G`. So `yongoq → yonğoq`
-  (walnut, old `yongʻoq`) *is* a correction, and it is correct. See [Q3] for
-  what "never split `ng` across a correction boundary" is taken to mean.
-- **Russian-layout Cyrillic** (`у` for `ў`, `к` for `қ`, `х` for `ҳ`) is **not**
-  covered: `тугри` has skeleton `tuGri`, not `tOGri`, so it passes through
-  unchanged. `г` for `ғ` and `о` for `ў` *are* covered. [Q6]
+- **Literal `s+h`, `c+h`, `g+h`** in canonical words share a key with
+  `ş`/`s`, `ç`/`c`, `ğ`/`g`: `Ishoq` and `isoq` collide. Accepted [Q4]. Such
+  words are covered by §5.1: a valid token is never rewritten, and a
+  protected-word list keeps names like `Ishoq` valid in every build.
+- **`ng` is never a unit** [Q3]. `n` stays `n`; `g` joins `G`. `n`+`ğ` is
+  produced wherever a lexicon word has it (`yongoq → yonğoq`). No
+  special-casing: only one of the spellings is a word, and the lexicon knows
+  which.
 - **Latin/Cyrillic homoglyphs inside one token** (`тoғ` with a Latin `o`) are
-  not repaired in v1; such a token is script-mixed and passes through. [Q7]
+  not repaired in v1; the token is script-mixed and passes through [Q7].
 
 ### 4.7 Fuzzy flags [BRIEF]
 
-`{ fuzzyQK: false, fuzzyXH: false }`. When on, step 6 adds `K` and `H`
-classes. The lexicon index is sorted by the non-fuzzy skeleton, so a fuzzy
-lookup expands the query into every `q/k`, `x/h` variant (capped at
-`FUZZY_MAX_VARIANTS` in `constants.js`, default 16) and unions the results.
-`h` consumed by a digraph in step 5 is not subject to `fuzzyXH`. Both flags are
-tested on and off; both ship off.
+`{ fuzzyQK: false, fuzzyXH: false }`. When on, each `q`/`k` (and each `x`/`h`
+symbol left after step 5) has both readings. Both flags are tested on and off;
+both ship off. For Latin input they stay off: `qor/kor` and `xol/hol` are real
+minimal pairs, and nothing in Latin text says which letter the writer meant.
+
+### 4.8 Cyrillic keyboard recovery [Q6]
+
+Uzbek is widely typed on a Russian layout, which has no `ў қ ғ ҳ`; writers
+substitute `у к г х`. A Cyrillic text with none of `ў қ ғ ҳ` is itself
+evidence of that layout. Latin text carries no equivalent evidence.
+
+**Detection.** `detectScript(token)` is `'cyrillic'` if every letter is
+Cyrillic, `'latin'` if every letter is Latin, `'mixed'` otherwise (§3.3).
+
+**Rule.** Option `cyrillicKeyboardRecovery`, **default `true`**. For Cyrillic
+input, step 3 reads:
+
+| Cyrillic | Readings | Note |
+|---|---|---|
+| `у` | `u`, `ö` | |
+| `к` | `k`, `q` | |
+| `х` | `x`, `h` | an `h` reading can form a digraph in step 5: `исхок` → `ishoq` → `iSOq` |
+| `г` | `g` | already in class `G` with `ğ` |
+| `о` | `o` | already in class `O` with `ö` |
+
+Latin input keeps the narrow classes.
+
+| Input | Keys | Word found |
+|---|---|---|
+| `тугри` | `tuGri`, `tOGri` | `töğri` |
+| `кушик` | 8 keys, `kuSik` … `qOSiq` | `qöşiq` (`qOSiq`) |
+
+**Lookup.** Readings double with every `у к х`. Implementations enumerate them
+by descending the key-sorted index one symbol at a time, discarding a branch as
+soon as its prefix matches no word. A branch that does match is never
+discarded: there is no cap, so recall is never silently truncated.
 
 ---
 
 ## 5. The invariant
 
 > A correction is permitted **if and only if**
-> `skeleton(input) === skeleton(candidate)`.
-> Otherwise the input token is returned **unchanged, byte-identical.** [BRIEF]
+> `key(candidate) ∈ skeleton(input, detectScript(input), opts)`.
+> Otherwise the input token is returned **unchanged, byte-identical.**
+
+For Latin input with the fuzzy flags off — the default — the skeleton has one
+element and this is exactly the brief's
+`skeleton(input) === skeleton(candidate)`. The only default widening is the
+one ruled for Cyrillic input (§4.8).
 
 Enforced in three places, not one:
 
-1. **By construction** — candidates are only ever fetched by skeleton key.
+1. **By construction** — candidates are only ever fetched by key.
 2. **By a runtime guard** — immediately before a token is emitted,
-   `autocorrect()` recomputes `skeleton(output)` against `skeleton(input)`; on
-   mismatch it emits the input bytes. This is cheap and survives future
-   refactors of the ranking code.
+   `autocorrect()` checks `key(output) ∈ skeleton(input)`; on failure it emits
+   the input bytes. This is cheap and survives future refactors of the ranking
+   code.
 3. **By tests** — `tests/invariant.test.js` (10 000 informal strings, byte
    identity) and a property test over the golden file.
 
 "Unchanged" means the exact input code units, including decomposed accents,
-non-canonical apostrophes and original case. A token that needs no letter
-change is never re-encoded (e.g. `ma'no` stays `ma'no` if the chosen candidate
-renders to the same letters in the output script — see §7.3 step 5).
+non-canonical apostrophes and original case. A token whose chosen word renders
+to the same letters is never re-encoded (e.g. `ma'no` stays `ma'no`, §7.3
+step 6).
 
 **We correct orthography. We never touch morphology, dialect, or voice.**
 
+### 5.1 Valid tokens are never rewritten [Q4]
+
+A token is *valid* if one of its readings is a word: a lexicon word, a protected
+word, or a word learned on the device.
+
+| Script | Readings, in order |
+|---|---|
+| Latin | 1. **literal** — NFC, lowercase, every apostrophe-like → `ʼ` (`Ishoq → ishoq`, `ma'no → maʼno`) · 2. **old** — §6.3 (`shok → şok`, `to'g'ri → töğri`) |
+| Cyrillic | the §6.1 transliteration, narrow (no recovery readings) |
+
+The first reading that is a word is chosen and **no candidates are
+considered**. Choosing the old reading is script conversion, not correction.
+Only a token with no valid reading goes to candidate lookup and ranking (§8).
+
+| Input | Result | Why |
+|---|---|---|
+| `sok` | `sok` | literal reading is a word |
+| `Ishoq` | `Ishoq` | literal reading is a word (protected) |
+| `shok` | `şok` | old reading is a word |
+| `to'g'ri` | `töğri` | old reading is a word |
+| `togri` | `töğri` | no valid reading → candidates |
+| `кул` | `kul` | Cyrillic reading is a word, although `қўл` is far more frequent |
+
+**Protected words.** `data/protected-words.txt`, one canonical word per line,
+human-reviewed. Every entry is forced into both lexicon builds with the
+`PROTECTED` word flag (§9.3), so it is always valid. The seed list is words
+with a literal `s+h`, `c+h` or `g+h` (`Ishoq`, `Ishoqov`, …), generated from
+the corpus and not used until reviewed.
+
+**Consequence [Q19].** When the bare spelling of an ambiguity pair is itself a
+word (`sok`/`şok`, `oz`/`öz`), `autocorrect()` always keeps the bare word.
+Sentence context decides only in `suggest()` and for tokens with no valid
+reading.
+
 ---
+
 ## 6. Script conversion — `convert(text, from, to)`
 
 Pure conversion. No correction, no lexicon lookup on the `→ new`/`→ old`
@@ -402,10 +491,11 @@ const c = new Chertma({
   script: 'new',             // 'new' | 'old' | 'cyrillic'
   fuzzyQK: false,
   fuzzyXH: false,
+  cyrillicKeyboardRecovery: true,   // [RULED, Q6] §4.8
   maxSuggestions: 3,
-  loader: undefined,         // [PROPOSED] async (url) => ArrayBuffer   §7.1
-  userModel: undefined,      // [PROPOSED] object from a previous export() §7.5
-  clock: undefined,          // [PROPOSED] () => ms since epoch; default Date.now
+  loader: undefined,         // [RULED] async (url) => ArrayBuffer   §7.1
+  userModel: undefined,      // [RULED] object from a previous export() §7.5
+  clock: undefined,          // [RULED] () => ms since epoch; default Date.now
 });
 ```
 
@@ -413,7 +503,7 @@ const c = new Chertma({
 
 `source` is an `ArrayBuffer`, a `Uint8Array`, or a URL string.
 
-**Conflict in the brief, resolved [PROPOSED, Q10]:** the brief shows
+**Conflict in the brief, resolved [RULED, Q10]:** the brief shows
 `load('/data/lexicon-lite.bin')` *and* requires that
 `grep -ri "fetch\|XMLHttpRequest\|sendBeacon" engine/` returns nothing. The
 engine cannot fetch a URL without a network API. Resolution: when `source` is a
@@ -429,35 +519,35 @@ Calling it again replaces the lexicon.
 
 - `buffer`: the partial token being typed, any script. `prevWord`: the previous
   committed word or `null`.
-- Candidates: lexicon and user words whose skeleton **starts with**
-  `skeleton(buffer)` (prefix monotonicity, §4.5). Distance is computed over the
-  typed positions only (§8.2).
+- Candidates: lexicon and user words whose key **starts with** a key of
+  `skeleton(buffer)` (prefix monotonicity, §4.5). Evidence (§8.2) is computed
+  over the typed positions only.
 - Empty `buffer` with a `prevWord`: next-word prediction from bigrams.
 - Returns at most `maxSuggestions`, best first, `word` rendered in `script`
   with the buffer's case pattern.
-- `source`, by precedence: `'exact'` — the candidate is a complete word and
-  its letters equal the buffer's letters with zero distance; `'user'` — the
+- `source`, by precedence: `'exact'` — the candidate is a valid reading of
+  the buffer (§5.1); `'user'` — the
   user bonus term is non-zero; `'bigram'` — the bigram term is non-zero;
   `'lexicon'` — otherwise.
 
 ### 7.3 `c.autocorrect(text)` → `string`
 
 1. Tokenize (§3). Gaps and protected spans are copied through.
-2. For each token: fetch candidates by exact skeleton. None → emit input
-   bytes.
-3. Rank (§8). `prevWord` is the previous token's output, reset after
+2. Detect each token's script (§4.8). `mixed` → emit the input bytes.
+3. **Valid token** (§5.1) → the chosen word is its first valid reading.
+4. Otherwise fetch candidates: every word whose key is in
+   `skeleton(token, script, opts)`. None → emit the input bytes.
+5. Rank (§8). `prevWord` is the previous token's chosen word, reset after
    `. ! ? …` and newlines.
-4. **Margin rule [PROPOSED, Q11]:** let `z` be the candidate at distance 0
-   from the input (the word the user literally typed, if it is one). If `z`
-   exists and the best candidate `b ≠ z`, replace only if
-   `score(b) − score(z) ≥ AUTOCORRECT_MARGIN`. A valid word is not overwritten
-   by a merely *more frequent* word.
-5. Render the winner in `script` with the input's case pattern. If the rendered
-   string has the same letters as the input (e.g. `shok` in `old` script), emit
-   the input bytes.
-6. Runtime invariant guard (§5).
+6. Render the chosen word in `script` with the input's case pattern. If the
+   rendered string has the same letters as the input — all apostrophe-likes
+   compared as equal — emit the input bytes.
+7. Runtime invariant guard (§5).
 
 The engine does **not** learn from `autocorrect()`. Learning is explicit.
+
+Step 3 supersedes the margin rule approved under Q11: a word the user typed is
+never replaced, however frequent the alternative.
 
 ### 7.4 `c.convert(text, from, to)` → `string`
 
@@ -475,7 +565,7 @@ unchanged.
 - Capped at `USER_MAX_WORDS`; the lowest decayed count is evicted.
 - `export()` → `{ format: 'chertma-user', version: 1, words: [[word, count, lastSeenMs], …] }`,
   JSON-serializable. Restored through the `userModel` constructor option,
-  which keeps the frozen method list unchanged. [PROPOSED]
+  which keeps the frozen method list unchanged. [RULED]
 - Never transmitted. There is no network code in `engine/` (§7.1).
 
 ### 7.6 `c.stats()` → `{ lexiconSize, memoryBytes, loadMs }`
@@ -486,68 +576,108 @@ the last `load()` excluding the host loader. Real heap is measured separately
 in `tests/perf.test.js` with `process.memoryUsage()`.
 
 ---
+
 ## 8. Ranking
 
-### 8.1 Score [BRIEF]
+Ranking orders the candidates of a token with no valid reading (§5.1), and the
+suggestions of `suggest()`.
+
+### 8.1 Score
 
 ```
 score(cand | input, prevWord) =
         ln(unigram(cand))
       + λ · ln(bigram(prevWord, cand) + 1)
       + μ · user_bonus(cand)
-      − ν · distance(input, cand)
+      + ν · evidence(input, cand)
 ```
 
-`λ=2.0, μ=3.0, ν=0.5` to start. Every tunable lives in `engine/constants.js`
-and nowhere else:
+The brief's `− ν · edit_distance` is replaced by `+ ν · evidence` [Q12].
+λ=2.0 and μ=3.0 as in the brief; ν starts at the brief's 0.5 and is tuned
+against `tests/golden.json`. Every tunable lives in `engine/constants.js` and
+nowhere else:
 
 | Constant | Start | Meaning |
 |---|---|---|
-| `LAMBDA_BIGRAM` | 2.0 | [BRIEF] λ |
-| `MU_USER` | 3.0 | [BRIEF] μ |
-| `NU_DISTANCE` | 0.5 | [BRIEF] ν |
-| `REGISTER_MIX` | 0.5 | weight of the informal table in `unigram()` — [PROPOSED] |
-| `AUTOCORRECT_MARGIN` | 1.0 | §7.3 step 4 — [PROPOSED] |
+| `LAMBDA_BIGRAM` | 2.0 | λ |
+| `MU_USER` | 3.0 | μ |
+| `NU_EVIDENCE` | 0.5 | ν |
+| `REGISTER_MIX` | 0.5 | weight of the informal table in `unigram()` |
+| `USER_ONLY_LN_UNIGRAM` | 0 | `ln unigram` of a word known only from `learn()` |
 | `USER_HALF_LIFE_MS` | 30 days | §7.5 |
 | `USER_MAX_WORDS` | 5000 | §7.5 |
-| `FUZZY_MAX_VARIANTS` | 16 | §4.7 |
 
 `unigram(w) = exp((1−REGISTER_MIX)·ln c_all(w) + REGISTER_MIX·ln c_inf(w))`,
 falling back to `c_all` when the word never occurs in the informal slice. Counts
-come from the quantized tables in §9. User-only words use
-`unigram = USER_ONLY_UNIGRAM` (a constant, 1 by default, i.e. `ln = 0`).
+come from the quantized tables in §9.
 
-### 8.2 Distance — skeleton-aligned, not Levenshtein [PROPOSED, Q12]
+### 8.2 Evidence [Q12]
 
-Plain Levenshtein on raw strings punishes exactly the most explicit input:
-`shoshib → şoşib` is 4 edits while `sosib → şoşib` is 2, although `sh`
-*tells* us the letter is `ş`. Because input and candidate have equal skeletons,
-they align symbol-by-symbol. Distance is the number of aligned positions where
-the input's spelling does not denote the candidate's letter:
+Input and candidate share a key, so they align symbol by symbol.
+`evidence(input, cand)` is the sum over aligned positions of:
 
-| Candidate letter | Input spellings at distance 0 | Everything else |
+- **+1** — the input used a marked spelling that denotes the candidate's
+  letter (`sh` for `ş`).
+- **0** — the input used a bare spelling that the writer's keyboard could not
+  have marked (`s` on a Latin keyboard; `о`, `у`, `г`, `к`, `х` on a Russian
+  one).
+- **−1** — the input contradicts the candidate: a marked spelling of a
+  different letter (`sh` against `s`), or a bare spelling on a keyboard that
+  *could* have marked the letter (Cyrillic `с` against `ş`: every Cyrillic
+  layout has `ш`).
+
+Latin input:
+
+| Candidate | +1 | 0 | −1 |
+|---|---|---|---|
+| `ş` | `ş` `sh` `w` | `s` | — |
+| `s` | — | `s` | `ş` `sh` `w` |
+| literal `s+h` | `s`A`h` | `sh` | `s` `ş` `w` |
+| `ç` | `ç` `ch` | `c` | — |
+| `c` | — | `c` | `ç` `ch` |
+| `ö` | `ö` `o`A `ó` `ő` | `o` | — |
+| `o` | — | `o` | `ö` `o`A `ó` `ő` |
+| `ğ` | `ğ` `g`A `gh` `ǵ` | `g` | — |
+| `g` | — | `g` | `ğ` `g`A `gh` `ǵ` |
+| `q` `k` `x` `h` (fuzzy flags on) | the same letter | — | the other letter |
+
+Cyrillic input:
+
+| Candidate | +1 | 0 | −1 |
+|---|---|---|---|
+| `ş` | `ш` | — | `с` |
+| `s` | `с` | — | `ш` |
+| literal `s+h` | `сҳ` | `сх` | `с` `ш` |
+| `ç` | `ч` | — | — |
+| `ö` | `ў` | `о` `у` | — |
+| `o` | — | `о` | `ў` |
+| `u` | — | `у` | — |
+| `ğ` | `ғ` | `г` | — |
+| `g` | — | `г` | `ғ` |
+| `q` | `қ` | `к` | — |
+| `k` | — | `к` | — |
+| `h` | `ҳ` | `х` | — |
+| `x` | — | `х` | — |
+
+Tutuq, both scripts. An apostrophe-like after `o`/`g` counts toward the letter
+when the candidate has `ö`/`ğ` there, and toward the tutuq otherwise:
+
+| Candidate | Input has an apostrophe-like / `ъ` there | Input has none |
 |---|---|---|
-| ş | `ş` `sh` `w` (and Cyrillic `ш`) | 1 |
-| s | `s` (Cyrillic `с`, `ц`→s) | 1 |
-| literal s+h | `sh`, `s`A`h` | 1 |
-| ç | `ç` `ch` (`ч`) | 1 |
-| c | `c` | 1 |
-| ö | `ö` `o`+A `ó` `ő` (`ў`) | 1 |
-| o | `o` (`о`) | 1 |
-| ğ | `ğ` `g`+A `gh` `ǵ` (`ғ`) | 1 |
-| g | `g` (`г`) | 1 |
-| tutuq ʼ after a letter | any A not consumed as an `o`/`g` mark (`ъ`) | +1 if the input has none; +1 if the input has one the candidate lacks |
-| any other symbol | always 0 (skeletons are equal) | — |
+| has `ʼ` | +1 | 0 |
+| has no `ʼ` | −1 | 0 |
 
-Examples: `sok → sok` 0, `sok → şok` 1, `shok → şok` 0, `shok → sok` 1,
-`togri → töğri` 2, `to'g'ri → töğri` 0, `mano → maʼno` 1.
+Every other aligned position contributes 0. Examples (tokens with no valid
+reading): `wunaqa → şunaqa` +1; `tog'ri → töğri` +1; `тугри → töğri` 0;
+`isoq → ishoq` −1.
 
 ### 8.3 Genuine ambiguities
 
-Resolved by the bigram term. With no context, `unigram` and distance decide,
-and the margin rule keeps a typed valid word. The fixture list (with
-corrections to the brief's list) is in Appendix A and is **not final** until
-the human signs off [Q13].
+Resolved by the bigram term — among the candidates of a token with no valid
+reading, and in `suggest()` ordering. Because of §5.1, `autocorrect()` never
+replaces a bare spelling that is itself a word [Q19]. The fixture list is in
+`docs/AMBIGUITY-REVIEW.md`; no row enters tests or the benchmark until the
+human has marked it.
 
 ---
 
@@ -603,7 +733,7 @@ Absolute offsets. Unused entries are `(0, 0)`. Sections follow at 0xA0.
 | 1 | `STR_LEN` | `u8 × N` — byte length of each word (max 255); offsets are rebuilt at load into a `Uint32Array(N+1)` |
 | 2 | `UNI_Q` | `u8 × N` — quantized count, all sources |
 | 3 | `INF_Q` | `u8 × N` — quantized count, informal (Telegram) slice only |
-| 4 | `WFLAGS` | `u8 × N` — bit0 `CAPITALIZED`: ≥ 90 % of corpus occurrences start uppercase (proper nouns; used by `suggest()` only) |
+| 4 | `WFLAGS` | `u8 × N` — bit0 `CAPITALIZED`: ≥ 90 % of corpus occurrences start uppercase (proper nouns; used by `suggest()` only) · bit1 `PROTECTED`: listed in `data/protected-words.txt` (§5.1) |
 | 5 | `BG_OFF` | `u32 × (N+1)` — bigrams with first word *i* are `[BG_OFF[i], BG_OFF[i+1])` |
 | 6 | `BG_ID` | `u16` or `u32` × B — second-word ids, ascending within each group |
 | 7 | `BG_Q` | `u8 × B` — quantized bigram counts |
@@ -631,29 +761,46 @@ only if those are not enough.
 - **full**: the largest vocabulary and bigram set that fits 8 MB gzipped. The
   concrete N and B are measured and reported at checkpoint 2, not assumed.
 
-### 9.6 Lexicon admission — keeping misspellings out [PROPOSED, Q17]
+### 9.6 Lexicon admission [Q17]
 
-The informal crawl is full of `togri`, `ozbek`, `sosib`. If such a form entered
-the lexicon, `togri` would become its own zero-distance candidate and the
-margin rule would protect it — the engine would stop correcting the exact
-errors it exists for.
+**`uz-books-v2` is the authority on what is a word.** `uz-crawl` contributes
+frequency weight and the informal passthrough set (§9.7). A crawl form enters
+the lexicon on its own only if it carries a mark.
 
-Rule, applied per skeleton group by `tools/pack_lexicon.py`:
+Why: crawl text is full of `togri`, `ozbek`, `sosib`. Under §5.1 such a form in
+the lexicon would be a valid token and would block the very correction the
+engine exists for.
 
-1. Call form `f` a **stripped variant** of form `g` in the same group if `f`
-   is obtained from `g` by any of `ş→s`, `ç→c`, `ö→o`, `ğ→g`, deleting `ʼ`.
-2. A stripped variant is admitted only if it is attested in the **book
-   corpus** with a count ≥ `BOOK_MIN_RATIO` (build constant, start 0.01) of
-   `g`'s book count. Book text is transliterated from Cyrillic, where `ш/с`,
-   `ў/о`, `ғ/г`, `ч` and `ъ` are never confused, so it is the arbiter of which
-   spellings exist.
-3. A rejected variant's counts (all, informal, bigrams) are merged into `g`.
-4. Forms with no marked sibling (`kelaslar`) are admitted on crawl evidence
-   alone — they can never block a correction, because nothing else shares
-   their skeleton.
+A canonical form is *marked* if it contains at least one of `ş ç ö ğ ʼ`.
+Counts are over canonical lowercase forms; `MIN_COUNT` = 2 (hapax dropped).
 
-Every merge is written to `data/merges.tsv` (gitignored) and summarized at
-checkpoint 2.
+1. A **marked** form is admitted if `books + crawl ≥ MIN_COUNT` — from either
+   source.
+2. An **unmarked** form is admitted only if `books ≥ MIN_COUNT`.
+3. In addition, an unmarked form `f` that is a *stripped variant* of an
+   admitted marked form `g` with the same key — `f` is `g` with `ş→s|w`,
+   `ç→c`, `ö→o`, `ğ→g` and `ʼ` deleted — is admitted only if
+   `books(f) ≥ BOOK_MIN_RATIO · books(g)` for the most frequent such `g`.
+   `BOOK_MIN_RATIO` = 0.01, a build constant in `tools/`. Book text is OCR of
+   edited prose; a stripped spelling that survives there at under 1 % of the
+   marked one is OCR noise, not a word.
+4. Forms shorter than 2 letters are dropped, except `u o e a` [Q18].
+5. Protected words (§5.1) are always admitted.
+6. A rejected form that is a stripped variant of an admitted form with the same
+   key has its counts (all, informal, bigrams) merged into the most frequent
+   such form. Other rejected forms are dropped.
+
+Every rejection and merge is written to `data/merges.tsv` (gitignored) and
+summarized at checkpoint 2.
+
+### 9.7 Informal passthrough set
+
+Surface forms (exact code units) from the `telegram_blogs` split with count ≥ 2
+that are not admitted and whose skeleton, with default options, contains no key
+of the lexicon build under test. `tests/invariant.test.js` samples 10 000 of
+them. Informal forms that are not admitted **but do match** a word form the
+risk list: each is a place where `autocorrect()` would change something a
+person actually wrote. A sample goes to the human at checkpoint 2.
 
 ---
 
@@ -699,47 +846,9 @@ any backend, a paid tier. Not stubbed.
 
 ---
 
-## Appendix A — ambiguity fixtures (draft, needs sign-off) [Q13]
+## Appendix A — ambiguity fixtures
 
-The brief's list, with corrections where the brief appears to be wrong:
-
-| Input | Candidates | Note |
-|---|---|---|
-| `sok` | sok *(juice)* · şok *(shock)* | as brief |
-| `ser` | ser *(abundant)* · şer *(lion)* · **şeʼr** *(poem)* | brief lists "verse" under `şer`; the poem is `şeʼr` (шеър). Same skeleton, three candidates |
-| `och` | oç *(hungry; open!)* · öç *(revenge)* | as brief |
-| `gor` | gör *(grave, гўр)* · **ğor** *(cave, ғор)* | brief lists cave as `gor`; cave is `ğor` |
-| `kop` | köp *(many)* · kop *(?)* | `kop` is not a standard word to my knowledge — confirm or drop |
-| `boli` | boli · böli | neither form is clearly a standalone word — confirm or drop |
-
-Proposed additions — high-frequency minimal pairs, every one to be confirmed:
-
-| Input | Candidates |
-|---|---|
-| `oq` | oq *(white)* · öq *(bullet)* |
-| `ot` | ot *(horse, name)* · öt *(fire, grass, pass!)* |
-| `oz` | oz *(few)* · öz *(self)* |
-| `ol` | ol *(take!)* · öl *(die!)* |
-| `oy` | oy *(moon, month)* · öy *(thought)* |
-| `tor` | tor *(narrow)* · tör *(net)* |
-| `toq` | toq *(odd)* · töq *(full, dark)* |
-| `toy` | toy *(foal)* · töy *(wedding)* |
-| `boy` | boy *(rich)* · böy *(height)* |
-| `soy` | soy *(stream)* · söy *(slaughter!)* |
-| `chol` | çol *(old man)* · çöl *(desert)* |
-| `chop` | çop *(gallop; print)* · çöp *(stick, rubbish)* |
-| `chok` | çok *(seam)* · çök *(sink!)* |
-| `qol` | qol *(stay!)* · qöl *(hand)* |
-| `bos` | bos *(press!)* · boş *(head)* · böş *(empty)* |
-| `tos` | tos *(pelvis)* · toş *(stone)* · töş *(chest)* |
-| `qosh` | qoş *(eyebrow)* · qöş *(add!)* |
-| `shox` | şox *(branch)* · şöx *(playful)* |
-| `bog` | boğ *(garden)* · böğ *(strangle!)* |
-| `son` | son *(number)* · şon *(glory)* |
-| `sim` | sim *(wire)* · şim *(trousers)* |
-| `is` | is *(soot, smell)* · iş *(work)* |
-| `tus` | tus *(colour, look)* · tuş *(dream; noon)* |
-| `qus` | qus *(vomit!)* · quş *(bird)* |
-
-All pairs will be checked against corpus counts at checkpoint 2; a pair where
-one side has negligible frequency is not a real ambiguity and is dropped.
+Moved to `docs/AMBIGUITY-REVIEW.md`. Rulings so far [Q13]: `ser` keeps three
+candidates (`ser` / `şer` / `şeʼr`); `gor`, `kop` and `boli`/`böli` are
+dropped; the fixture is rebuilt from the 24 proposed pairs, **none of which is
+approved** until the human marks each row keep / fix / drop.

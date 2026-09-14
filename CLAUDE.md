@@ -4,6 +4,7 @@
 **Owner:** Maqsudjon Polatov
 **Read this entire file before writing a single line of code.**
 **Stop at every `⏸ CHECKPOINT` and wait for the human.**
+**Rulings made at checkpoints are recorded in `docs/OPEN-QUESTIONS.md` and `docs/SPEC.md`; where they conflict with this brief, they win.**
 
 ---
 
