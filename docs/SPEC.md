@@ -777,10 +777,12 @@ Counts are over canonical lowercase forms; `MIN_COUNT` = 2 (hapax dropped).
 1. A **marked** form is admitted if `books + crawl ≥ MIN_COUNT` — from either
    source.
 2. An **unmarked** form is admitted only if `books ≥ MIN_COUNT`.
-3. In addition, an unmarked form `f` that is a *stripped variant* of an
-   admitted marked form `g` with the same key — `f` is `g` with `ş→s|w`,
-   `ç→c`, `ö→o`, `ğ→g` and `ʼ` deleted — is admitted only if
-   `books(f) ≥ BOOK_MIN_RATIO · books(g)` for the most frequent such `g`.
+3. In addition, a form `f` (marked or not) that is a *stripped variant* of a
+   form `g` admitted by rules 1–2 with the same key — `f` is `g` with **any
+   non-empty subset** of its marks removed (`ş→s|w`, `ç→c`, `ö→o`, `ğ→g`, `ʼ`
+   deleted) — is admitted only if `books(f) ≥ BOOK_MIN_RATIO · books(g)` for
+   the most frequent such `g`. (`boyiça` against `böyiça`, `toğri` against
+   `töğri`.)
    `BOOK_MIN_RATIO` = 0.01, a build constant in `tools/`. Book text is OCR of
    edited prose; a stripped spelling that survives there at under 1 % of the
    marked one is OCR noise, not a word.

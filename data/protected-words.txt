@@ -1,0 +1,6 @@
+# Protected words — docs/SPEC.md §5.1.
+# One canonical new-Latin word per line, lowercase. Everything after # is ignored.
+# Every entry is forced into both lexicon builds and is never rewritten.
+# Candidates (words with a literal s+h, c+h or g+h) are generated into
+# data/protected-words.candidates.tsv by tools/pack_lexicon.py. Nothing is
+# copied here until the human has reviewed it.

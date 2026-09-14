@@ -5,3 +5,5 @@ data/merges.tsv
 node_modules/
 .DS_Store
 __pycache__/
+tools/.venv/
+data/protected-words.candidates.tsv

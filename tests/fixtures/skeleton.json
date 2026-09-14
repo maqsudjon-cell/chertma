@@ -1,0 +1,63 @@
+{
+  "_doc": "Shared by tools/uzscript.py and engine/ (docs/SPEC.md §4, §6). Every entry is taken from a worked example in SPEC.",
+  "skeleton": [
+    {"in": "şoşib", "keys": ["SOSib"]},
+    {"in": "shoshib", "keys": ["SOSib"]},
+    {"in": "sosib", "keys": ["SOSib"]},
+    {"in": "şoşib", "keys": ["SOSib"], "note": "decomposed ş"},
+    {"in": "șoșib", "keys": ["SOSib"], "note": "Romanian comma-below ș"},
+    {"in": "togri", "keys": ["tOGri"]},
+    {"in": "to'g'ri", "keys": ["tOGri"]},
+    {"in": "TOʻGʻRI", "keys": ["tOGri"]},
+    {"in": "töğri", "keys": ["tOGri"]},
+    {"in": "wunaqa", "keys": ["Sunaqa"]},
+    {"in": "ozbekcha", "keys": ["OzbekCa"]},
+    {"in": "özbekça", "keys": ["OzbekCa"]},
+    {"in": "yong'oq", "keys": ["yOnGOq"]},
+    {"in": "maʼno", "keys": ["manO"]},
+    {"in": "mano", "keys": ["manO"]},
+    {"in": "sirk", "keys": ["Sirk"]},
+    {"in": "kelaslar", "keys": ["kelaSlar"]},
+    {"in": "Is'hoq", "keys": ["iSOq"]},
+    {"in": "Ishoq", "keys": ["iSOq"]},
+    {"in": "Işoq", "keys": ["iSOq"]},
+    {"in": "shoshima", "keys": ["SOSima"]},
+    {"in": "тўғри", "keys": ["tOGri"]},
+    {"in": "цирк", "opts": {"cyrillicKeyboardRecovery": false}, "keys": ["Sirk"]},
+    {"in": "цирк", "keys": ["Sirk", "Sirq"]},
+    {"in": "милиция", "keys": ["militSiya"]},
+    {"in": "шеър", "keys": ["Ser"]},
+    {"in": "объект", "opts": {"cyrillicKeyboardRecovery": false}, "keys": ["Obyekt"]},
+    {"in": "бульон", "opts": {"cyrillicKeyboardRecovery": false}, "keys": ["bulyOn"]},
+    {"in": "бульон", "keys": ["bOlyOn", "bulyOn"]},
+    {"in": "тўғри", "opts": {"cyrillicKeyboardRecovery": false}, "keys": ["tOGri"]},
+    {"in": "тугри", "opts": {"cyrillicKeyboardRecovery": false}, "keys": ["tuGri"]},
+    {"in": "тугри", "keys": ["tOGri", "tuGri"]},
+    {"in": "кушик", "keys": ["kOSik", "kOSiq", "kuSik", "kuSiq", "qOSik", "qOSiq", "quSik", "quSiq"]},
+    {"in": "исхоқ", "keys": ["iSOq", "iSxOq"]},
+    {"in": "qor", "keys": ["qOr"]},
+    {"in": "qor", "opts": {"fuzzyQK": true}, "keys": ["kOr", "qOr"]},
+    {"in": "xol", "opts": {"fuzzyXH": true}, "keys": ["hOl", "xOl"]}
+  ],
+  "cyr_to_new": [
+    ["тўғри", "töğri"], ["цирк", "sirk"], ["милиция", "militsiya"], ["концерт", "konsert"],
+    ["маъно", "maʼno"], ["шеър", "şeʼr"], ["объект", "obyekt"], ["съезд", "syezd"],
+    ["бульон", "bulyon"], ["компьютер", "kompyuter"], ["ер", "yer"], ["кел", "kel"],
+    ["поэзия", "poeziya"], ["ёзув", "yozuv"], ["қўшиқ", "qöşiq"], ["исҳоқ", "ishoq"]
+  ],
+  "old_to_new": [
+    ["to'g'ri", "töğri"], ["toʻgʻri", "töğri"], ["to‘g‘ri", "töğri"], ["shoshib", "şoşib"],
+    ["is'hoq", "ishoq"], ["ma'no", "maʼno"], ["mo''jiza", "möʼjiza"], ["bog'", "boğ"],
+    ["choʻl", "çöl"], ["yong'oq", "yonğoq"]
+  ],
+  "tokens": [
+    {"in": "'kino'", "tokens": ["kino"]},
+    {"in": "bog' va tog'", "tokens": ["bog'", "va", "tog'"]},
+    {"in": "oʻsha-oʻsha", "tokens": ["oʻsha", "oʻsha"]},
+    {"in": "2026-yil", "tokens": ["yil"]},
+    {"in": "5ta olma", "tokens": [null, "olma"]},
+    {"in": "mo''jiza", "tokens": ["mo''jiza"]},
+    {"in": "X\u2081 va a\u00b2 soni", "tokens": [null, "va", null, "soni"]},
+    {"in": "saytga kiring: https://chertma.maqsudjon.com yoki @maqsudjon", "tokens": ["saytga", "kiring", "yoki"]}
+  ]
+}
