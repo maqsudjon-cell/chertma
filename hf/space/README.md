@@ -28,7 +28,7 @@ kelaslar qisela balu             →  kelaslar qisela balu   (dialect is not tou
 ```
 
 - **Main site:** [chertma.maqsudjon.com](https://chertma.maqsudjon.com)
-- **Lexicon behind it:** [uz-lexicon-skeleton](https://huggingface.co/datasets/HF_USERNAME/uz-lexicon-skeleton) — Uzbek word frequencies with a skeleton index
+- **Lexicon behind it:** [uz-lexicon-skeleton](https://huggingface.co/datasets/Maqsudjonpolatov/uz-lexicon-skeleton) — Uzbek word frequencies with a skeleton index
 - **Source code:** [github.com/maqsudjon-cell/chertma](https://github.com/maqsudjon-cell/chertma)
 
 It corrects spelling only: it restores the marks a keyboard lost and never rewrites
@@ -50,7 +50,7 @@ Oddiy klaviaturada, apostrofsiz yozing — Chertma toʻgʻri oʻzbekchani yangi 
 (`ş ç ö ğ`), eski lotinda yoki kirillda qaytaradi.
 
 - **Asosiy sayt:** [chertma.maqsudjon.com](https://chertma.maqsudjon.com)
-- **Lugʻat:** [uz-lexicon-skeleton](https://huggingface.co/datasets/HF_USERNAME/uz-lexicon-skeleton) — oʻzbek soʻzlari chastotasi va skelet indeksi
+- **Lugʻat:** [uz-lexicon-skeleton](https://huggingface.co/datasets/Maqsudjonpolatov/uz-lexicon-skeleton) — oʻzbek soʻzlari chastotasi va skelet indeksi
 - **Manba kodi:** [github.com/maqsudjon-cell/chertma](https://github.com/maqsudjon-cell/chertma)
 
 Chertma faqat imloni toʻgʻrilaydi: klaviatura yoʻqotgan belgilarni tiklaydi. Sheva,

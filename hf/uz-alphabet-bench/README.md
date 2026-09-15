@@ -93,7 +93,7 @@ or implausible were fixed or removed. Review: PLACEHOLDER (who, when).
 `run_eval.py` in this repository scores a system and prints accuracy per category:
 
 ```bash
-python run_eval.py --dataset HF_USERNAME/uz-alphabet-bench --split test --backend api --endpoint https://…/v1/chat/completions --model NAME
+python run_eval.py --dataset Maqsudjonpolatov/uz-alphabet-bench --split test --backend api --endpoint https://…/v1/chat/completions --model NAME
 python run_eval.py --items test.jsonl --backend hf --model ORG/MODEL
 python run_eval.py --items test.jsonl --backend chertma --chertma-repo path/to/chertma
 ```
@@ -128,7 +128,7 @@ CC BY 4.0. The word frequencies behind the items come from `tahrirchi/uz-books-v
   author = {PLACEHOLDER},
   title  = {uz-alphabet-bench: an evaluation set for the 2026 Uzbek Latin alphabet},
   year   = {2026},
-  url    = {https://huggingface.co/datasets/HF_USERNAME/uz-alphabet-bench}
+  url    = {https://huggingface.co/datasets/Maqsudjonpolatov/uz-alphabet-bench}
 }
 ```
 

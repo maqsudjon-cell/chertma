@@ -12,7 +12,7 @@ Items come from a local JSONL file (--items) or from the Hub (--dataset, --split
 needs `pip install datasets`). Only the standard library is needed otherwise.
 
   python run_eval.py --items test.jsonl --backend chertma --chertma-repo ../chertma
-  python run_eval.py --dataset HF_USERNAME/uz-alphabet-bench --split test --backend api --endpoint https://…/v1/chat/completions --model NAME
+  python run_eval.py --dataset Maqsudjonpolatov/uz-alphabet-bench --split test --backend api --endpoint https://…/v1/chat/completions --model NAME
   python run_eval.py --items test.jsonl --backend hf --model ORG/MODEL
   python run_eval.py --self-test --chertma-repo ../chertma   # checks this script; uses no benchmark items
 

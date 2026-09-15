@@ -18,24 +18,13 @@ website way is fine for small ones.
 
 1. Open https://huggingface.co/join
 2. Enter your email and a password, then pick a **username**. It becomes part of every
-   address, e.g. `huggingface.co/datasets/USERNAME/uz-lexicon-skeleton`. Short and
-   permanent: `maqsudjon`, `mpolatov`, …
+   address, e.g. `huggingface.co/datasets/Maqsudjonpolatov/uz-lexicon-skeleton`. It is permanent.
 3. Confirm the email Hugging Face sends you.
 
-### 0.2 Put your username into the files
+### 0.2 Username
 
-The cards and the Space link to each other through a placeholder, `HF_USERNAME`. Replace
-it with your real username (write it where it says `your-username`):
-
-```bash
-cd ~/Downloads/chertma && grep -rl --include='*.md' --include='*.html' --include='*.py' HF_USERNAME hf | xargs sed -i '' 's/HF_USERNAME/your-username/g'
-```
-
-Check nothing is left (this should print nothing):
-
-```bash
-cd ~/Downloads/chertma && grep -rn --include='*.md' --include='*.html' --include='*.py' HF_USERNAME hf
-```
+Your Hugging Face username is **Maqsudjonpolatov**. It is already filled in everywhere in `hf/`: the cards,
+the Space footer, and the commands below. If you ever change it, search `hf/` for `Maqsudjonpolatov/`.
 
 ### 0.3 Create an access token (only for the terminal way)
 
@@ -88,7 +77,7 @@ If the TSVs are ever missing, rebuild them (about 8 minutes; needs `data/uz-unig
 ### 1.2 Upload — terminal way (recommended: the bigram file is 463 MB)
 
 ```bash
-hf upload your-username/uz-lexicon-skeleton ~/Downloads/chertma/hf/uz-lexicon-skeleton . --repo-type dataset --commit-message "Uzbek frequency lexicon with skeleton index"
+hf upload Maqsudjonpolatov/uz-lexicon-skeleton ~/Downloads/chertma/hf/uz-lexicon-skeleton . --repo-type dataset --commit-message "Uzbek frequency lexicon with skeleton index"
 ```
 
 It shows progress for each file. On a slow connection the 463 MB file takes a while; if it
@@ -146,8 +135,7 @@ A copy of the site as a static Space: 24 files, 2,780,352 bytes.
 | `engine/constants.js` | 1,451 |
 
 If the folder is ever missing or `web/` changes, rebuild it:
-`python3 tools/build_site.py && python3 tools/build_hf_space.py` — then do step 0.2 again,
-because the rebuild restores the `HF_USERNAME` placeholder in `index.html`.
+`python3 tools/build_site.py && python3 tools/build_hf_space.py`.
 
 ### 2.1 Create the Space
 
@@ -161,7 +149,7 @@ because the rebuild restores the `HF_USERNAME` placeholder in `index.html`.
 ### 2.2 Upload — terminal way
 
 ```bash
-hf upload your-username/chertma ~/Downloads/chertma/hf/space . --repo-type space --commit-message "Chertma demo"
+hf upload Maqsudjonpolatov/chertma ~/Downloads/chertma/hf/space . --repo-type space --commit-message "Chertma demo"
 ```
 
 This replaces the Space's placeholder `README.md` and `index.html` with ours.
@@ -182,7 +170,7 @@ This replaces the Space's placeholder `README.md` and `index.html` with ours.
 3. The footer links to `chertma.maqsudjon.com` and to your `uz-lexicon-skeleton` dataset.
 4. The Space runs inside a frame on huggingface.co, so the "works offline" indicator may not
    turn green there. That is expected; it works on the Space's own address
-   (`https://your-username-chertma.static.hf.space`).
+   (`https://maqsudjonpolatov-chertma.static.hf.space`).
 
 ---
 

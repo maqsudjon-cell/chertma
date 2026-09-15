@@ -57,7 +57,7 @@ with open("skeleton-index.tsv", encoding="utf-8") as f:
         index[skeleton] = words
 ```
 
-`unigrams` and `bigrams` load with `datasets.load_dataset("HF_USERNAME/uz-lexicon-skeleton", "unigrams")`.
+`unigrams` and `bigrams` load with `datasets.load_dataset("Maqsudjonpolatov/uz-lexicon-skeleton", "unigrams")`.
 
 **Bigram cutoff.** At a cutoff of 3 the file would be 990,561,851 bytes; at 4, 721,519,271;
 at 5, 563,061,817. The smallest cutoff that keeps it under about 500 MB is **count ≥ 6**.
@@ -166,7 +166,7 @@ apply to the material derived from them.
   author = {Polatov, Maqsudjon},
   title  = {Uzbek frequency lexicon with skeleton index},
   year   = {2026},
-  url    = {https://huggingface.co/datasets/HF_USERNAME/uz-lexicon-skeleton},
+  url    = {https://huggingface.co/datasets/Maqsudjonpolatov/uz-lexicon-skeleton},
   note   = {Derived from tahrirchi/uz-books-v2 (MIT) and tahrirchi/uz-crawl (Apache-2.0)}
 }
 

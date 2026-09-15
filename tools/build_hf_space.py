@@ -24,7 +24,7 @@ OUT = ROOT / "hf" / "space"
 FOOTER_ANCHOR = '<span><a class="link" href="https://github.com/maqsudjon-cell/chertma" rel="noopener" data-i18n="source">Manba kodi</a></span>'
 FOOTER_LINKS = (
     '<span><a class="link" href="https://chertma.maqsudjon.com" target="_blank" rel="noopener">chertma.maqsudjon.com</a></span>\n'
-    '  <span><a class="link" href="https://huggingface.co/datasets/HF_USERNAME/uz-lexicon-skeleton" target="_blank" rel="noopener">uz-lexicon-skeleton</a></span>\n  '
+    '  <span><a class="link" href="https://huggingface.co/datasets/Maqsudjonpolatov/uz-lexicon-skeleton" target="_blank" rel="noopener">uz-lexicon-skeleton</a></span>\n  '
 )
 
 
