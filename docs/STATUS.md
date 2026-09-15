@@ -67,20 +67,17 @@ the human (2026-09-15 message):
   `python3 tools/build_site.py && python3 tools/build_hf_space.py`), `hf/UPLOAD-STEPS.md`.
   Defaults H1–H13 and Q32 in `docs/OPEN-QUESTIONS.md`.
 
-## Done (2026-09-15 evening) — morphology, mixed script, word list
+## Done (2026-09-16) — rulings applied, everything deployed
 
-Report: `docs/FOR-MAQSUDJON.md` (last section) and `docs/MORPHOLOGY-REVIEW.md`.
-
-- Engine: output never mixed-script (§6.5), deployed to the bot. Morphological fallback
-  implemented, **`morphology: false`** — STOPPED at "show me": 809 (read) + 13 (stem
-  correction) invariant forms touched; `qoyvor → qöyvor` under `true`.
-- Lexicons: `tools/build_lexicons.py --mid` (held-out 10 % removed; `data/heldout/`,
-  gitignored). Shipped lite = old word list + suffix section; `data/lexicon-lite-coverage.bin`
-  PARKED (181 invariant forms, 6 golden). Full rebuilt (400k). Mid built and measured,
-  not committed (rebuild with `--mid`).
-- Bot: `BOT_LEXICON` (default full), deployed on full. Timings in the report.
-- Tests: engine 54 (48 pass, 0 fail, 6 TODO); bot 42/42.
-- Website NOT redeployed (still the old engine).
+- **Morphology stage 1 ON** (`morphology: 'read'`), stage 2 rejected (M1). 809 invariant
+  forms convert; the suite checks each is a pure conversion and pins the count.
+  `shoshima → şoşima` in new-Latin output (G310, noted in the fixture).
+- **Lite word list unchanged** (M15). `data/lexicon-lite-coverage.bin` kept, unused.
+- **Website redeployed** (gh-pages from 28d39b7): new engine, no mixed-script output.
+  Verified live on chertma.maqsudjon.com.
+- **Bot redeployed**: full lexicon (400k) + stage 1. Cold 1.5 s, warm ~320 ms, webhook clean.
+- `main` pushed to GitHub (11 commits, no token in any diff or in history).
+- Tests: engine 57 (52 pass, 0 fail, 5 TODO); bot 42/42. Ranked sentences 70.7 %.
 
 ## Next (waits for the human)
 

@@ -309,13 +309,25 @@ The **website** still runs the old engine, so it still leaves unknown words in t
 new engine passes every test with the shipped lite; redeploy when you want it live:
 `python3 tools/build_site.py && tools/deploy_pages.sh`.
 
-### Needs you
+### Ruled on 2026-09-16, and applied
 
-1. Morphology: look at the 13 stage-2 forms and the 809 stage-1 list; say `false`, `'read'` or `true`.
-2. Lite by coverage: accept the 25 substitutions and 6 golden regressions for +3 points coverage, or
-   keep the frequency lite. The regressions come from Q29 (Russian-layout spellings admitted as words) —
-   ruling Q29 would fix most of them in either build.
-3. Defaults M1–M14 in `docs/OPEN-QUESTIONS.md`.
+1. **Morphology: stage 1 on, stage 2 off.** `morphology: 'read'` is the default. Stage 2 stays in the
+   code with a test that documents why it is rejected. One thing to know: `shoshima` now comes out as
+   `şoşima` in new-Latin output — it is on CLAUDE.md §1's passthrough list, but `shosh-` is a stem and
+   the word itself is untouched, so this is the same conversion as `ishlating → işlating`. In old-Latin
+   output it is still byte-identical. If you want it left alone, it needs a passthrough list, not a rule.
+2. **Lite stays as it was.** The coverage-picked build is kept at `data/lexicon-lite-coverage.bin`, unused.
+3. **Website redeployed** and verified live: `salom meni yangi ozbek alifbosida yozish uchun ishlating`
+   → `salom meni yangi özbek alifbosida yoziş uçun işlating`, Kirill `салом мени янги ўзбек алифбосида
+   ёзиш учун ишлатинг`, no Latin left. Unknown words too: `zzqwrtplon → ззқвртплон`, `Windows → Виндовс`.
+4. **Bot redeployed** on the full lexicon with stage 1. Everything is pushed to GitHub.
+
+### Still needs you
+
+- Defaults M2–M14 in `docs/OPEN-QUESTIONS.md` (the tuning behind stage 1 and the builds).
+- Q29: Russian-layout misspellings (`xozir`, `kuyidan`) are frequent enough in the crawl to be admitted
+  as words. Ruling it would let the coverage-picked lite ship without its 6 golden regressions.
+- The benchmark items and the hand-written dialect forms (Q23a) are still waiting on your review.
 
 Tests: engine 54 tests — 48 pass, 0 fail, 6 TODO (the new one: `qoyvor` under `morphology: true`);
 bot 42/42.
