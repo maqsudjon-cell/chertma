@@ -23,3 +23,6 @@ hf/space/*
 !hf/space/README.md
 data/hf-lexicon-stats.json
 data/hf-build.log
+data/heldout/
+data/raw/
+data/*.log

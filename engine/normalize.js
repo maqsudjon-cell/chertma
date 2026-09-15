@@ -44,7 +44,7 @@ export const BREAK_RE = /[.!?…\n]/;
 /**
  * §3: split text into segments covering it exactly.
  * kind: 'token' | 'gap' | 'protected' (URL, domain, email, mention, hashtag,
- * letters glued to a digit or underscore).
+ * letters glued to a digit or underscore — the latter also carry glued: true).
  */
 export function tokenize(text) {
   const prot = [];
@@ -70,7 +70,7 @@ export function tokenize(text) {
     const inside = pi < prot.length && prot[pi][0] < e && s < prot[pi][1];
     const glued = (s > 0 && GLUE_RE.test(text[s - 1])) || (e < text.length && GLUE_RE.test(text[e]));
     if (s > pos) out.push({ start: pos, end: s, kind: 'gap' });
-    out.push({ start: s, end: e, kind: inside || glued ? 'protected' : 'token' });
+    out.push(inside || glued ? { start: s, end: e, kind: 'protected', ...(inside ? {} : { glued: true }) } : { start: s, end: e, kind: 'token' });
     pos = e;
   }
   if (pos < text.length) out.push({ start: pos, end: text.length, kind: 'gap' });

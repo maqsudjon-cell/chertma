@@ -26,6 +26,7 @@ export const DEFAULT_OPTIONS = Object.freeze({
   fuzzyQK: false,
   fuzzyXH: false,
   cyrillicKeyboardRecovery: true,
+  morphology: false,       // §5.2 stem + suffix fallback: false | 'read' (stage 1) | true (stages 1+2). Off until reviewed (M1)
   maxSuggestions: 3,
 });
 
@@ -36,3 +37,7 @@ export const ACRONYM_MAX_LETTERS = 4;   // an isolated all-caps token this short
 export const SUGGEST_SCAN_ALL = 256;     // prefix ranges up to this size are scored in full
 export const SUGGEST_UNIGRAM_POOL = 64;  // otherwise: the most frequent words in the range…
 export const SUGGEST_BIGRAM_POOL = 128;  // …plus the strongest bigram successors of prevWord
+
+// Morphological fallback (§5.2). Conservative defaults, docs/OPEN-QUESTIONS.md M2–M4.
+export const MORPH_MIN_STEM_LETTERS = 3;    // a stem shorter than this is never corrected
+export const MORPH_MIN_SUFFIX_LETTERS = 2;  // one-letter suffixes are not split off

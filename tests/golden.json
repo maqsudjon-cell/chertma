@@ -1434,7 +1434,7 @@
    "id": "G177",
    "category": "cyr2new",
    "input": "15та, 20та, 30та кўринишидан кўра 15 та, 20 та, 30 та шакли осон тушунилади.",
-   "expected": "15та, 20та, 30та körinişidan köra 15 ta, 20 ta, 30 ta şakli oson tuşuniladi.",
+   "expected": "15ta, 20ta, 30ta körinişidan köra 15 ta, 20 ta, 30 ta şakli oson tuşuniladi.",
    "script": "new",
    "source": "uz-crawl telegram_blogs"
   },
@@ -1674,7 +1674,7 @@
    "id": "G207",
    "category": "cyr_russian_layout",
    "input": "Туркияда ишлаб чикарилган биринчи миллий электромобил TOGGнинг такдимоти булди бугун.",
-   "expected": "Turkiyada işlab çiqarilgan birinçi milliy elektromobil TOGGнинг taqdimoti böldi bugun.",
+   "expected": "Turkiyada işlab çiqarilgan birinçi milliy elektromobil TOGGning taqdimoti böldi bugun.",
    "script": "new",
    "source": "uz-crawl telegram_blogs (ў қ ғ ҳ replaced by у к г х)"
   },
