@@ -17,7 +17,8 @@ test('GET: health with timings and counts, no token, no content', async () => {
   assert.equal(a.res.statusCode, 200);
   assert.equal(body.cold, true);
   assert.ok(body.engineInitMs > 0);
-  assert.equal(body.lexiconWords, 50000);
+  assert.ok(['full', 'mid', 'lite'].includes(body.lexicon));
+  assert.ok(body.lexiconWords >= 50000);
   const b = http('GET');
   await h(b.req, b.res);
   assert.equal(b.json().cold, false);

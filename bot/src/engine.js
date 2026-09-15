@@ -4,7 +4,10 @@ import { readFileSync } from 'node:fs';
 
 const t0 = performance.now();
 const { Chertma } = await import('../_vendor/engine/index.js');
-const bytes = readFileSync(new URL('../_vendor/lexicon-lite.bin', import.meta.url));
+const bytes = readFileSync(new URL('../_vendor/lexicon.bin', import.meta.url));
+
+/** Which build is bundled: full, mid or lite (scripts/vendor.mjs). */
+export const lexiconBuild = JSON.parse(readFileSync(new URL('../_vendor/MANIFEST.json', import.meta.url), 'utf8')).lexicon;
 
 export const engine = new Chertma({ script: 'new' });
 await engine.load(bytes);

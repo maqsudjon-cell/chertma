@@ -10,7 +10,7 @@
 // Privacy: nothing that people type is logged, stored or counted beyond a number.
 
 import { timingSafeEqual } from 'node:crypto';
-import { engine as sharedEngine, initMs } from '../src/engine.js';
+import { engine as sharedEngine, initMs, lexiconBuild } from '../src/engine.js';
 import { createBot } from '../src/core.js';
 import { callApi } from '../src/telegram.js';
 
@@ -75,6 +75,7 @@ export function makeHandler({ env = process.env, fetchImpl = globalThis.fetch, n
           cold,
           engineInitMs: Math.round(initMs * 10) / 10,
           instanceAgeS: Math.round((now() - instanceStartedAt) / 1000),
+          lexicon: lexiconBuild,
           lexiconWords: engine.stats().lexiconSize,
           invocations,
           counts,

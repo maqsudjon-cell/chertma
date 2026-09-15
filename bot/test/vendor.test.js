@@ -8,11 +8,13 @@ import { fileURLToPath } from 'node:url';
 const bot = fileURLToPath(new URL('..', import.meta.url));
 const repo = fileURLToPath(new URL('../..', import.meta.url));
 
-test('bot/_vendor/engine is byte-identical to engine/', () => {
+test('bot/_vendor holds a byte-identical engine/ and lexicon build', () => {
   const files = readdirSync(repo + 'engine').filter((f) => f.endsWith('.js')).sort();
   assert.deepEqual(readdirSync(bot + '_vendor/engine').sort(), files);
   for (const f of files) assert.ok(readFileSync(repo + 'engine/' + f).equals(readFileSync(bot + '_vendor/engine/' + f)), f);
-  assert.ok(readFileSync(repo + 'data/lexicon-lite.bin').equals(readFileSync(bot + '_vendor/lexicon-lite.bin')));
+  const { lexicon } = JSON.parse(readFileSync(bot + '_vendor/MANIFEST.json', 'utf8'));
+  assert.ok(['full', 'mid', 'lite'].includes(lexicon));
+  assert.ok(readFileSync(repo + `data/lexicon-${lexicon}.bin`).equals(readFileSync(bot + '_vendor/lexicon.bin')));
 });
 
 test('engine/ has no uncommitted changes', () => {
