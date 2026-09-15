@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="uz">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Chertma — oddiy klaviaturada töğri özbekça</title>
+<meta name="description" content="Oddiy klaviaturada yozing — yangi lotin (Ş Ç Ö Ğ), eski lotin yoki kirillda töğri özbekça oling. Internetsiz işlaydi, hech narsa yuborilmaydi.">
+<meta name="theme-color" content="#0b0b0c">
+<meta name="color-scheme" content="dark">
+<link rel="manifest" href="manifest.json">
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<link rel="stylesheet" href="style.css">
+<meta property="og:title" content="Chertma">
+<meta property="og:description" content="Oddiy klaviaturada yozing — töğri özbekça oling.">
+<meta property="og:image" content="https://chertma.maqsudjon.com/icons/icon-512.png">
+</head>
+<body>
+<header class="top">
+  <div class="brand">
+    <span class="logo" aria-hidden="true"></span>
+    <span class="name">Chertma</span>
+  </div>
+  <div class="top-right">
+    <span id="status" class="status" data-state="loading" data-i18n="loading">yuklanmoqda…</span>
+    <button id="lang" class="lang" type="button" aria-label="Til / Language">EN</button>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <h1 data-i18n="tagline">Oddiy klaviaturada yozing — töğri özbekça oling.</h1>
+    <p class="sub" data-i18n="sub">Yangi alifbodagi Ş Ç Ö Ğ, eski lotin va kirill. Apostrof qidirmang.</p>
+  </section>
+
+  <nav class="tabs" role="tablist">
+    <button role="tab" id="tab-type" aria-selected="true" aria-controls="panel-type" data-i18n="tabType">Yozing</button>
+    <button role="tab" id="tab-convert" aria-selected="false" aria-controls="panel-convert" data-i18n="tabConvert">Ögiring</button>
+  </nav>
+
+  <section id="panel-type" role="tabpanel" aria-labelledby="tab-type" class="panel">
+    <label class="label" for="typing" data-i18n="typeLabel">Lotin yoki kirillda, apostrofsiz yozing</label>
+    <textarea id="typing" rows="4" spellcheck="false" autocapitalize="off" autocomplete="off" autocorrect="off"
+      data-i18n-placeholder="placeholder" placeholder="togri gap, ozbekcha yozish oson"></textarea>
+    <div id="suggest" class="suggest" aria-live="polite"></div>
+    <div class="examples">
+      <span class="muted" data-i18n="examples">Misollar:</span>
+      <button type="button" class="chip" data-example="togri gap, ozbekcha yozish oson">togri gap, ozbekcha…</button>
+      <button type="button" class="chip" data-example="wunaqa qilib yozsangiz ham boladi">wunaqa qilib…</button>
+      <button type="button" class="chip" data-example="iltimos, menga qongiroq qiling">qongiroq qiling</button>
+      <button type="button" class="chip" data-example="хозир келаман, рахмат">хозир келаман, рахмат</button>
+    </div>
+
+    <div class="outputs">
+      <div class="scripts" role="radiogroup" aria-label="Asosiy yozuv">
+        <button type="button" role="radio" data-script="new" data-i18n="scriptNew">Yangi lotin</button>
+        <button type="button" role="radio" data-script="old" data-i18n="scriptOld">Eski lotin</button>
+        <button type="button" role="radio" data-script="cyrillic" data-i18n="scriptCyr">Kirill</button>
+      </div>
+      <div class="out primary">
+        <div id="out-primary" class="out-text" aria-live="polite"></div>
+        <button id="copy-primary" type="button" class="copy" data-i18n="copy">Nusxa oliş</button>
+      </div>
+      <div class="out secondary"><span id="lab-2" class="out-label"></span><div id="out-2" class="out-text"></div></div>
+      <div class="out secondary"><span id="lab-3" class="out-label"></span><div id="out-3" class="out-text"></div></div>
+      <p class="meta"><span id="saved">0</span> <span data-i18n="saved">ta bosiş tejaldi</span>
+        <span class="hint" data-i18n="savedHint">— har bir tiklangan ş ç ö ğ ʼ telefonda kamida 2 bosiş</span></p>
+      <p class="meta muted" data-i18n="unknownNote">Tanilmagan sözlar yozilganidek qoladi.</p>
+    </div>
+  </section>
+
+  <section id="panel-convert" role="tabpanel" aria-labelledby="tab-convert" class="panel" hidden>
+    <label class="label" for="source" data-i18n="convertLabel">Matnni joylang</label>
+    <textarea id="source" rows="6" spellcheck="false" data-i18n-placeholder="convertPlaceholder" placeholder="Oʻzbekiston, Тошкент, shahar…"></textarea>
+    <div class="convert-row">
+      <label><span data-i18n="from">Qaysi yozuvdan</span>
+        <select id="from">
+          <option value="old" data-i18n="scriptOld">Eski lotin</option>
+          <option value="cyrillic" data-i18n="scriptCyr">Kirill</option>
+          <option value="new" data-i18n="scriptNew">Yangi lotin</option>
+        </select></label>
+      <span class="arrow" aria-hidden="true">→</span>
+      <label><span data-i18n="to">Qaysi yozuvga</span>
+        <select id="to">
+          <option value="new" data-i18n="scriptNew">Yangi lotin</option>
+          <option value="old" data-i18n="scriptOld">Eski lotin</option>
+          <option value="cyrillic" data-i18n="scriptCyr">Kirill</option>
+        </select></label>
+    </div>
+    <div class="out primary">
+      <div id="converted" class="out-text" aria-live="polite"></div>
+      <button id="copy-converted" type="button" class="copy" data-i18n="copy">Nusxa oliş</button>
+    </div>
+    <p class="meta muted" data-i18n="convertNote">Bu rejim hech narsani tuzatmaydi — faqat yozuvni almaştiradi.</p>
+  </section>
+
+  <section class="untouched">
+    <h2 data-i18n="untouchedTitle">Nimaga tegmaymiz</h2>
+    <p data-i18n="untouchedBody">Chertma imloni tuzatadi, şevani emas. Qisqartma, şeva va uslubingiz yozilganidek qoladi:</p>
+    <ul id="untouched-list" class="untouched-list">
+      <li data-word="kelaslar"><code>kelaslar</code><span data-i18n="kelaslar">kelasizlar</span></li>
+      <li data-word="qisela"><code>qisela</code><span data-i18n="qisela">qilsanglar</span></li>
+      <li data-word="balu"><code>balu</code><span data-i18n="balu">baliq</span></li>
+    </ul>
+  </section>
+
+  <section class="facts">
+    <div>
+      <h2 data-i18n="privacyTitle">Maxfiylik</h2>
+      <p data-i18n="privacyBody">Matningiz qurilmangizdan çiqmaydi. Sahifa va luğat yuklangaç, tarmoqqa hech qanday sörov yuborilmaydi. Cookie yöq, analitika yöq. Bir marta oçilgaç, internetsiz ham işlaydi.</p>
+    </div>
+    <div>
+      <h2>uz-alphabet-bench</h2>
+      <p data-i18n="benchBody">Yangi alifbo uçun oçiq baholaş töplami. Hozir qölda tekşirilmoqda; tayyor bölgaç eʼlon qilinadi.</p>
+      <a class="link" href="https://github.com/maqsudjon-cell/chertma/tree/main/bench" rel="noopener" data-i18n="benchLink">Qoralamani körish →</a>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <span>Chertma · <a class="link" href="https://maqsudjon.com" rel="noopener">Maqsudjon Polatov</a></span>
+  <span><a class="link" href="https://github.com/maqsudjon-cell/chertma" rel="noopener" data-i18n="source">Manba kodi</a></span>
+  <span class="muted" data-i18n="data">Luğat: tahrirchi/uz-books-v2 (MIT), tahrirchi/uz-crawl (Apache-2.0)</span>
+</footer>
+
+<script type="module" src="app.js"></script>
+</body>
+</html>
