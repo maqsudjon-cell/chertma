@@ -9,3 +9,4 @@ tools/.venv/
 data/protected-words.candidates.tsv
 data/bench-pool.json
 _site/
+.gh-pages-worktree/

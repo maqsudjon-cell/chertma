@@ -31,14 +31,22 @@ the human (2026-09-15 message):
   (1.6 GB, gitignored) is still on disk — needed only to re-pack.
 - `gh` authenticated as `maqsudjon-cell`.
 
+- Step 6 web: `web/` (commit 31d0cc9). Verified in the browser: live typing,
+  suggestions, convert, offline with the local server stopped, phone layout.
+  Build with `python3 tools/build_site.py` → `_site/` (gitignored).
+
 ## Running
 
-Nothing.
+- Deploy (step 7): creating `maqsudjon-cell/chertma` (public), pushing `main`,
+  publishing `_site/` as branch `gh-pages`, enabling Pages with the CNAME.
 
 ## Next
 
-1. `bench/review.md` (~500 draft items, parked), `bench/README.md`, `bench/run_eval.py`.
-2. `web/` demo + PWA; verify offline in the browser.
-3. Deploy: GitHub repo `maqsudjon-cell/chertma` (public), `gh-pages` branch built
-   from `web/` + `engine/` + lite lexicon, Pages on, `CNAME`.
-4. `README.md`, `docs/FOR-MAQSUDJON.md`, curl check.
+1. Verify `curl -sI https://chertma.maqsudjon.com | head -1`; report the failing
+   step if any (DNS / certificate / Pages build). No retry loops.
+2. `README.md` with a real before/after at the top.
+3. `bench/review.md` (~500 draft items, parked), `bench/README.md`, `bench/run_eval.py`.
+4. `docs/FOR-MAQSUDJON.md`.
+
+Deploy recipe (repeatable): `python3 tools/build_site.py`, then
+`tools/deploy_pages.sh` (publishes `_site/` to `gh-pages` via a git worktree).
