@@ -20,9 +20,16 @@ the human (2026-09-15 message):
 
 ## Done
 
-- Checkpoint 1: SPEC (commit 9027215).
-- Checkpoint 2: corpus pipeline, lexicons, report (commit 8b66e0f).
-- `gh` is authenticated as `maqsudjon-cell` (checked 2026-09-15).
+- Checkpoint 1: SPEC (commit 9027215). Checkpoint 2: corpus pipeline (8b66e0f).
+- Step 3 tests: `tests/*.test.js`, fixtures in `tests/golden.json`, `tests/fixtures/`.
+  Built by `tools/build_fixtures.py` + `tools/build_books_pairs.py` (both need
+  corpus data that is now deleted; the fixtures are committed).
+- Step 4 engine: `engine/*.js`. `npm test` → 45 tests, 40 pass, 5 TODO, 0 fail.
+  Defaults D1–D15 logged in `docs/OPEN-QUESTIONS.md`.
+- Constants tuned (`tools/tune.mjs`): brief's starting values kept.
+- `data/raw` deleted after the engine passed (3.9 GB freed). `data/uz-bigrams.tsv`
+  (1.6 GB, gitignored) is still on disk — needed only to re-pack.
+- `gh` authenticated as `maqsudjon-cell`.
 
 ## Running
 
@@ -30,11 +37,8 @@ Nothing.
 
 ## Next
 
-1. Test fixtures from `data/raw` (golden, invariant-generated 10k, perf
-   prefixes, books lat/cyr pairs, foreign-collision list, bench source pool).
-2. `tests/` — all suites, failing.
-3. `engine/` until tests pass.
-4. Delete `data/raw`.
-5. `bench/review.md` draft, `bench/README.md`, `bench/run_eval.py`.
-6. `web/` demo + PWA.
-7. Deploy, README, `docs/FOR-MAQSUDJON.md`.
+1. `bench/review.md` (~500 draft items, parked), `bench/README.md`, `bench/run_eval.py`.
+2. `web/` demo + PWA; verify offline in the browser.
+3. Deploy: GitHub repo `maqsudjon-cell/chertma` (public), `gh-pages` branch built
+   from `web/` + `engine/` + lite lexicon, Pages on, `CNAME`.
+4. `README.md`, `docs/FOR-MAQSUDJON.md`, curl check.

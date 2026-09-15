@@ -16,6 +16,21 @@ default, and where it lives so it can be reversed in one pass.
 
 | # | Question | Default taken | Where |
 |---|---|---|---|
+| D1 | Q19 — valid bare words vs. context | Keep the provisional rule: a token whose reading is a word is never rewritten. Acceptance criterion 1 therefore fails (`pisib` kept) and is reported as TODO. | `engine/index.js` `_valid`; `tests/acceptance.test.js` |
+| D2 | Q28 — corrections that remove a typed mark | `autocorrect()` drops every candidate with a −1 evidence position (a removed ʻ, ş→s, Cyrillic с→ş, a removed tutuq). `suggest()` still offers them. | `engine/index.js` (`ev.min >= 0`) |
+| D3 | Q21 — foreign words and names | A Title- or UPPER-case token that is not first in its sentence is only corrected to a word the corpus capitalises ≥ 90 % of the time. An upper-case token of ≤ 4 letters outside an all-caps sentence is never corrected (acronyms: BMT, NATO, ХАМАС). All-caps sentences are treated like lower case. | `engine/index.js`, `ACRONYM_MAX_LETTERS` |
+| D4 | Q24 — one-letter tokens | Never corrected. | `engine/index.js` |
+| D5 | Q29 — Russian-layout spellings in books | Not applied; the lexicon is unchanged, so `тугри` stays `tugri`. Applying it would add corrections, which is the less conservative direction. | `tools/pack_lexicon.py` (what-if only) |
+| D6 | Q2b — `ъ` after a vowel, `ўъ` | The Q2 ruling stays as ruled. Round-trip failures it causes (53 lite, 373 full words with ʼ before e/ye/yo/yu/ya) are counted, not failed. | `engine/translit.js`; `tests/translit.test.js` |
+| D7 | Q20 — rule 3 restored to "any marks removed" | Kept as restored at checkpoint 2. | `tools/pack_lexicon.py` |
+| D8 | Q22 — contamination filter on 2+ character tokens | Kept. | `tools/normalize_corpus.py` |
+| D9 | Q23b — what the "~10 000 generated" invariant forms are | No written spec was found in the repo. Taken as: 10 000 surface forms sampled (seed 20260915) from the telegram_blogs forms that are not valid tokens and share no skeleton with a lite word — the brief's "informal strings absent from the lexicon". | `tools/build_fixtures.py`; `tests/fixtures/invariant-generated.txt` |
+| D10 | Q26 — serving the lexicon | The site serves `lexicon-lite.bin.gz` and inflates it with the browser's `DecompressionStream`; no dependency. | `web/app.js` |
+| D11 | Ranking constants | Grid search over λ ∈ {0 … 3}, ν ∈ {0 … 2}, informal mix ∈ {0, 0.25, 0.5}: every setting keeps 312/312 strict cases; λ > 0 with mix 0.5 gives the fewest wrong corrections (18 vs 20). The brief's starting values λ 2.0, ν 0.5, mix 0.5 are in the best group and are kept. Ranked-case floor set to 0.65 from the measured 98/150. | `engine/constants.js`; `tools/tune.mjs`; `tests/thresholds.js` |
+| D12 | Books lat/cyr agreement floor | 0.998, from the measured 0.9983 over 29.9 M aligned tokens. | `tests/thresholds.js` |
+| D13 | `suggest()` and a typed valid word | A buffer that is itself a word is always among the suggestions (it replaces the last slot if it was not in the top N). | `engine/index.js` |
+| D14 | Q23a placeholder | `tests/fixtures/dialect-handwritten.json` is empty; the invariant suite reports INCOMPLETE until the 200 forms land. | `tests/invariant.test.js` |
+| D15 | Foreign-collision list definition | "Foreign tokens whose skeleton collides with a real Uzbek word": crawl forms with ≥ 30 occurrences, ≥ 80 % title case, no tutuq, not a lite word, whose key matches a lite word that is not itself capitalised. 77 rows. Parked; nothing uses it. | `tools/build_fixtures.py`; `data/foreign-collisions.tsv` |
 
 ## Open
 
@@ -187,6 +202,15 @@ the effect at 1 %, 5 % and 10 % and the words closest to each threshold, which
 is where real words (`uz`, `kul`, `tur`) would be wrongly rejected. `tugri`
 needs 5 % or more.
 **Needs:** ruling, and a ratio. Blocks step 4.
+
+### Q30 — Vowel before и in Cyrillic · OPEN (found unattended)
+
+The uz-books-v2 lat/cyr check (99.83 % agreement) shows a pattern besides
+Q2b: Cyrillic `нуқтаи`, `манбаи`, `саин`, `моил` against Latin `nuqtayi`,
+`manbayi`, `sayin`, `moyil` — the Latin inserts `y` between a vowel and `и`.
+Our rule gives `nuqtai`. Nothing changed; `docs/CHECKPOINT-2.md` style numbers are
+in the test output (`tests/translit.test.js`).
+**Needs:** ruling.
 
 ### Q13b — The 24 proposed minimal pairs · OPEN
 
