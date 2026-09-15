@@ -35,18 +35,21 @@ the human (2026-09-15 message):
   suggestions, convert, offline with the local server stopped, phone layout.
   Build with `python3 tools/build_site.py` → `_site/` (gitignored).
 
+- Step 7 deploy (2026-09-15): repo https://github.com/maqsudjon-cell/chertma
+  (public), `main` pushed, `gh-pages` published by `tools/deploy_pages.sh`,
+  Pages built, certificate approved, HTTPS enforced.
+  `curl -sI https://chertma.maqsudjon.com | head -1` → `HTTP/2 200`.
+  Live page checked in the browser: engine runs, service worker active.
+- README.md written (real before/after at the top).
+
 ## Running
 
-- Deploy (step 7): creating `maqsudjon-cell/chertma` (public), pushing `main`,
-  publishing `_site/` as branch `gh-pages`, enabling Pages with the CNAME.
+Nothing.
 
 ## Next
 
-1. Verify `curl -sI https://chertma.maqsudjon.com | head -1`; report the failing
-   step if any (DNS / certificate / Pages build). No retry loops.
-2. `README.md` with a real before/after at the top.
-3. `bench/review.md` (~500 draft items, parked), `bench/README.md`, `bench/run_eval.py`.
-4. `docs/FOR-MAQSUDJON.md`.
+1. `bench/review.md` (~500 draft items, parked), `bench/README.md` (draft card),
+   `bench/run_eval.py`. Publish nothing.
+2. `docs/FOR-MAQSUDJON.md`; final test run into `docs/TEST-OUTPUT.txt`.
 
-Deploy recipe (repeatable): `python3 tools/build_site.py`, then
-`tools/deploy_pages.sh` (publishes `_site/` to `gh-pages` via a git worktree).
+Deploy recipe (repeatable): `python3 tools/build_site.py && tools/deploy_pages.sh`.
