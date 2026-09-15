@@ -8,6 +8,15 @@ Status: `OPEN` = needs the human · `CLOSED` = ruled (date).
 
 ---
 
+## Defaults taken unattended (2026-09-15)
+
+The human was away; standing rule: take the conservative default ("return the
+input unchanged"), log it here, keep going. Each entry names the question, the
+default, and where it lives so it can be reversed in one pass.
+
+| # | Question | Default taken | Where |
+|---|---|---|---|
+
 ## Open
 
 ### Q19 — "Valid tokens are never rewritten" vs. context-resolved ambiguity · OPEN
