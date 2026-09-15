@@ -42,14 +42,19 @@ the human (2026-09-15 message):
   Live page checked in the browser: engine runs, service worker active.
 - README.md written (real before/after at the top).
 
+- Step 5 bench (parked): `bench/review.md` — 440 draft items (ascii2new 100,
+  old2new 80, cyr2new 80, preserve 100, apostrophe 40, edge 40, ambiguity 0
+  because the pairs are parked). `bench/README.md` draft card (EN + UZ),
+  `bench/run_eval.py` (chertma / hf / api backends; checked on a 3-item synthetic
+  file only), `tools/build_benchmark.py --export` writes jsonl from rows marked
+  keep. Nothing published anywhere.
+
 ## Running
 
 Nothing.
 
 ## Next
 
-1. `bench/review.md` (~500 draft items, parked), `bench/README.md` (draft card),
-   `bench/run_eval.py`. Publish nothing.
-2. `docs/FOR-MAQSUDJON.md`; final test run into `docs/TEST-OUTPUT.txt`.
+1. `docs/FOR-MAQSUDJON.md`; final test run into `docs/TEST-OUTPUT.txt`; push.
 
 Deploy recipe (repeatable): `python3 tools/build_site.py && tools/deploy_pages.sh`.

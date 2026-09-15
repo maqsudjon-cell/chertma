@@ -216,6 +216,16 @@ Our rule gives `nuqtai`. Nothing changed; counts are printed by
 `tests/translit.test.js`.
 **Needs:** ruling.
 
+### Q31 — Is `qoyvor` a passthrough form? · OPEN (found unattended)
+
+The brief lists `qoyvor` among forms that pass through untouched. The full
+lexicon contains `qöyvor` (old `qoʻyvor`, "let go"), so in the full build
+`qoyvor` is corrected to `qöyvor`; the lite build leaves it. If `qoyvor` is the
+ASCII spelling of `qoʻyvor`, the correction is right and the brief's list is
+wrong; if it is a separate dialect form, it needs the protected list.
+**Default taken:** left out of the benchmark's `preserve` drafts and out of the
+acceptance tests (criterion 2 does not name it). **Needs:** ruling.
+
 ### Q13b — The 24 proposed minimal pairs · OPEN
 
 In `docs/AMBIGUITY-REVIEW.md`. Nothing enters `tests/` or `bench/` until each

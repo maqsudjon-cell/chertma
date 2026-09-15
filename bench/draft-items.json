@@ -1,0 +1,7042 @@
+[
+ {
+  "id": "ASC0000",
+  "category": "ascii2new",
+  "context": null,
+  "question": "\"boling\" so'zining yangi alifbodagi to'g'ri shakli qaysi?",
+  "options": [
+   "boling",
+   "böling",
+   "boʻling",
+   "bölinğ"
+  ],
+  "answer": 1,
+  "source": "lexicon (69433 corpus occurrences)",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "ASC0001",
+  "category": "ascii2new",
+  "context": null,
+  "question": "\"otirishdi\" so'zining yangi alifbodagi to'g'ri shakli qaysi?",
+  "options": [
+   "otirişdi",
+   "ötirişdi",
+   "oʻtirishdi",
+   "ötirisdi"
+  ],
+  "answer": 1,
+  "source": "lexicon (7891 corpus occurrences)",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "ASC0002",
+  "category": "ascii2new",
+  "context": null,
+  "question": "\"bogbon\" so'zining yangi alifbodagi to'g'ri shakli qaysi?",
+  "options": [
+   "bogbon",
+   "boğbön",
+   "boğbon",
+   "bogʻbon"
+  ],
+  "answer": 2,
+  "source": "lexicon (13561 corpus occurrences)",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "ASC0003",
+  "category": "ascii2new",
+  "context": null,
+  "question": "\"soradim\" so'zining yangi alifbodagi to'g'ri shakli qaysi?",
+  "options": [
+   "soʻradim",
+   "soradim",
+   "söradim",
+   "şöradim"
+  ],
+  "answer": 2,
+  "source": "lexicon (36310 corpus occurrences)",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "ASC0004",
+  "category": "ascii2new",
+  "context": null,
+  "question": "\"organilmagan\" so'zining yangi alifbodagi to'g'ri shakli qaysi?",
+  "options": [
+   "organilmagan",
+   "örganilmagan",
+   "örganilmağan",
+   "oʻrganilmagan"
+  ],
+  "answer": 1,
+  "source": "lexicon (12040 corpus occurrences)",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "ASC0005",
+  "category": "ascii2new",
+  "context": null,
+  "question": "\"kopayishi\" so'zining yangi alifbodagi to'g'ri shakli qaysi?",
+  "options": [
+   "koʻpayishi",
+   "köpayisi",
+   "kopayişi",
+   "köpayişi"
+  ],
+  "answer": 3,
+  "source": "lexicon (63347 corpus occurrences)",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "ASC0006",
+  "category": "ascii2new",
+  "context": null,
+  "question": "\"somdan\" so'zining yangi alifbodagi to'g'ri shakli qaysi?",
+  "options": [
+   "soʻmdan",
+   "sömdan",
+   "şömdan",
+   "somdan"
+  ],
+  "answer": 1,
+  "source": "lexicon (56818 corpus occurrences)",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "ASC0007",
+  "category": "ascii2new",
+  "context": null,
+  "question": "\"kochatlar\" so'zining yangi alifbodagi to'g'ri shakli qaysi?",
+  "options": [
+   "köcatlar",
+   "koʻchatlar",
+   "köçatlar",
+   "koçatlar"
+  ],
+  "answer": 2,
+  "source": "lexicon (16523 corpus occurrences)",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "ASC0008",
+  "category": "ascii2new",
+  "context": null,
+  "question": "\"boglab\" so'zining yangi alifbodagi to'g'ri shakli qaysi?",
+  "options": [
+   "boğlab",
+   "boglab",
+   "bogʻlab",
+   "böğlab"
+  ],
+  "answer": 0,
+  "source": "lexicon (93062 corpus occurrences)",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "ASC0009",
+  "category": "ascii2new",
+  "context": null,
+  "question": "\"qolyozmalar\" so'zining yangi alifbodagi to'g'ri shakli qaysi?",
+  "options": [
+   "qolyozmalar",
+   "qölyözmalar",
+   "qoʻlyozmalar",
+   "qölyozmalar"
+  ],
+  "answer": 3,
+  "source": "lexicon (13879 corpus occurrences)",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "ASC0010",
+  "category": "ascii2new",
+  "context": null,
+  "question": "\"otirishi\" so'zining yangi alifbodagi to'g'ri shakli qaysi?",
+  "options": [
+   "ötirisi",
+   "otirişi",
+   "ötirişi",
+   "oʻtirishi"
+  ],
+  "answer": 2,
+  "source": "lexicon (9117 corpus occurrences)",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "ASC0011",
+  "category": "ascii2new",
+  "context": null,
+  "question": "\"qoshigi\" so'zining yangi alifbodagi to'g'ri shakli qaysi?",
+  "options": [
+   "qoʻshigʻi",
+   "qösiği",
+   "qöşiği",
+   "qöşigi"
+  ],
+  "answer": 2,
+  "source": "lexicon (25153 corpus occurrences)",
+  "note": "",
+  "split": "dev"
+ },
+ {
+  "id": "ASC0012",
+  "category": "ascii2new",
+  "context": null,
+  "question": "\"organilgan\" so'zining yangi alifbodagi to'g'ri shakli qaysi?",
+  "options": [
+   "organilgan",
+   "örganilgan",
+   "oʻrganilgan",
+   "örganilğan"
+  ],
+  "answer": 1,
+  "source": "lexicon (53080 corpus occurrences)",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "ASC0013",
+  "category": "ascii2new",
+  "context": null,
+  "question": "\"urugchilik\" so'zining yangi alifbodagi to'g'ri shakli qaysi?",
+  "options": [
+   "uruğcilik",
+   "uruğçilik",
+   "urugʻchilik",
+   "urugçilik"
+  ],
+  "answer": 1,
+  "source": "lexicon (18371 corpus occurrences)",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "ASC0014",
+  "category": "ascii2new",
+  "context": null,
+  "question": "\"bogdorchilik\" so'zining yangi alifbodagi to'g'ri shakli qaysi?",
+  "options": [
+   "bogʻdorchilik",
+   "boğdorçilik",
+   "bogdorçilik",
+   "boğdorcilik"
+  ],
+  "answer": 1,
+  "source": "lexicon (16051 corpus occurrences)",
+  "note": "",
+  "split": "dev"
+ },
+ {
+  "id": "ASC0015",
+  "category": "ascii2new",
+  "context": null,
+  "question": "\"dostlik\" so'zining yangi alifbodagi to'g'ri shakli qaysi?",
+  "options": [
+   "döstlik",
+   "döştlik",
+   "doʻstlik",
+   "dostlik"
+  ],
+  "answer": 0,
+  "source": "lexicon (70093 corpus occurrences)",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "ASC0016",
+  "category": "ascii2new",
+  "context": null,
+  "question": "\"sozboshi\" so'zining yangi alifbodagi to'g'ri shakli qaysi?",
+  "options": [
+   "sözboşi",
+   "soʻzboshi",
+   "sözbosi",
+   "sozboşi"
+  ],
+  "answer": 0,
+  "source": "lexicon (9595 corpus occurrences)",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "ASC0017",
+  "category": "ascii2new",
+  "context": null,
+  "question": "\"bolishida\" so'zining yangi alifbodagi to'g'ri shakli qaysi?",
+  "options": [
+   "bölişida",
+   "bolişida",
+   "boʻlishida",
+   "bölisida"
+  ],
+  "answer": 0,
+  "source": "lexicon (34932 corpus occurrences)",
+  "note": "",
+  "split": "dev"
+ },
+ {
+  "id": "ASC0018",
+  "category": "ascii2new",
+  "context": null,
+  "question": "\"tumshugi\" so'zining yangi alifbodagi to'g'ri shakli qaysi?",
+  "options": [
+   "tumsuği",
+   "tumshugʻi",
+   "tumşugi",
+   "tumşuği"
+  ],
+  "answer": 3,
+  "source": "lexicon (9135 corpus occurrences)",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "ASC0019",
+  "category": "ascii2new",
+  "context": null,
+  "question": "\"ozagi\" so'zining yangi alifbodagi to'g'ri shakli qaysi?",
+  "options": [
+   "oʻzagi",
+   "özagi",
+   "ozagi",
+   "özaği"
+  ],
+  "answer": 1,
+  "source": "lexicon (15616 corpus occurrences)",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "ASC0020",
+  "category": "ascii2new",
+  "context": null,
+  "question": "\"otmishi\" so'zining yangi alifbodagi to'g'ri shakli qaysi?",
+  "options": [
+   "otmişi",
+   "oʻtmishi",
+   "ötmisi",
+   "ötmişi"
+  ],
+  "answer": 3,
+  "source": "lexicon (10736 corpus occurrences)",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "ASC0021",
+  "category": "ascii2new",
+  "context": null,
+  "question": "\"yoqligini\" so'zining yangi alifbodagi to'g'ri shakli qaysi?",
+  "options": [
+   "yoʻqligini",
+   "yoqligini",
+   "yöqliğini",
+   "yöqligini"
+  ],
+  "answer": 3,
+  "source": "lexicon (50490 corpus occurrences)",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "ASC0022",
+  "category": "ascii2new",
+  "context": null,
+  "question": "\"boglaydigan\" so'zining yangi alifbodagi to'g'ri shakli qaysi?",
+  "options": [
+   "boğlaydigan",
+   "boğlaydiğan",
+   "boglaydigan",
+   "bogʻlaydigan"
+  ],
+  "answer": 0,
+  "source": "lexicon (8573 corpus occurrences)",
+  "note": "",
+  "split": "dev"
+ },
+ {
+  "id": "ASC0023",
+  "category": "ascii2new",
+  "context": null,
+  "question": "\"sugurtalovchi\" so'zining yangi alifbodagi to'g'ri shakli qaysi?",
+  "options": [
+   "suğurtalovçi",
+   "sugurtalovçi",
+   "sugʻurtalovchi",
+   "suğurtalovci"
+  ],
+  "answer": 0,
+  "source": "lexicon (9122 corpus occurrences)",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "ASC0024",
+  "category": "ascii2new",
+  "context": null,
+  "question": "\"ogayni\" so'zining yangi alifbodagi to'g'ri shakli qaysi?",
+  "options": [
+   "ogʻayni",
+   "ogayni",
+   "öğayni",
+   "oğayni"
+  ],
+  "answer": 3,
+  "source": "lexicon (13855 corpus occurrences)",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "ASC0025",
+  "category": "ascii2new",
+  "context": null,
+  "question": "\"uygunlashib\" so'zining yangi alifbodagi to'g'ri shakli qaysi?",
+  "options": [
+   "uyğunlaşib",
+   "uygʻunlashib",
+   "uyğunlasib",
+   "uygunlaşib"
+  ],
+  "answer": 0,
+  "source": "lexicon (8645 corpus occurrences)",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "ASC0026",
+  "category": "ascii2new",
+  "context": null,
+  "question": "\"korsatishga\" so'zining yangi alifbodagi to'g'ri shakli qaysi?",
+  "options": [
+   "koʻrsatishga",
+   "korsatişga",
+   "körsatisga",
+   "körsatişga"
+  ],
+  "answer": 3,
+  "source": "lexicon (51363 corpus occurrences)",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "ASC0027",
+  "category": "ascii2new",
+  "context": null,
+  "question": "\"yollarga\" so'zining yangi alifbodagi to'g'ri shakli qaysi?",
+  "options": [
+   "yollarga",
+   "yöllarga",
+   "yoʻllarga",
+   "yöllarğa"
+  ],
+  "answer": 1,
+  "source": "lexicon (9302 corpus occurrences)",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "ASC0028",
+  "category": "ascii2new",
+  "context": null,
+  "question": "\"korsatkichlar\" so'zining yangi alifbodagi to'g'ri shakli qaysi?",
+  "options": [
+   "koʻrsatkichlar",
+   "körsatkiclar",
+   "korsatkiçlar",
+   "körsatkiçlar"
+  ],
+  "answer": 3,
+  "source": "lexicon (123651 corpus occurrences)",
+  "note": "",
+  "split": "dev"
+ },
+ {
+  "id": "ASC0029",
+  "category": "ascii2new",
+  "context": null,
+  "question": "\"oshanda\" so'zining yangi alifbodagi to'g'ri shakli qaysi?",
+  "options": [
+   "öşanda",
+   "ösanda",
+   "oʻshanda",
+   "oşanda"
+  ],
+  "answer": 0,
+  "source": "lexicon (111152 corpus occurrences)",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "ASC0030",
+  "category": "ascii2new",
+  "context": null,
+  "question": "\"ozingizni\" so'zining yangi alifbodagi to'g'ri shakli qaysi?",
+  "options": [
+   "oʻzingizni",
+   "özinğizni",
+   "özingizni",
+   "ozingizni"
+  ],
+  "answer": 2,
+  "source": "lexicon (41831 corpus occurrences)",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "ASC0031",
+  "category": "ascii2new",
+  "context": null,
+  "question": "\"yogochdan\" so'zining yangi alifbodagi to'g'ri shakli qaysi?",
+  "options": [
+   "yoğoçdan",
+   "yogʻochdan",
+   "yogoçdan",
+   "yoğocdan"
+  ],
+  "answer": 0,
+  "source": "lexicon (14699 corpus occurrences)",
+  "note": "",
+  "split": "dev"
+ },
+ {
+  "id": "ASC0032",
+  "category": "ascii2new",
+  "context": null,
+  "question": "\"bolgin\" so'zining yangi alifbodagi to'g'ri shakli qaysi?",
+  "options": [
+   "bolgin",
+   "boʻlgin",
+   "bölğin",
+   "bölgin"
+  ],
+  "answer": 3,
+  "source": "lexicon (9471 corpus occurrences)",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "ASC0033",
+  "category": "ascii2new",
+  "context": null,
+  "question": "\"sugorilgan\" so'zining yangi alifbodagi to'g'ri shakli qaysi?",
+  "options": [
+   "sugʻorilgan",
+   "suğorilğan",
+   "sugorilgan",
+   "suğorilgan"
+  ],
+  "answer": 3,
+  "source": "lexicon (11367 corpus occurrences)",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "ASC0034",
+  "category": "ascii2new",
+  "context": null,
+  "question": "\"boglovchi\" so'zining yangi alifbodagi to'g'ri shakli qaysi?",
+  "options": [
+   "boglovçi",
+   "boğlovçi",
+   "boğlovci",
+   "bogʻlovchi"
+  ],
+  "answer": 1,
+  "source": "lexicon (57089 corpus occurrences)",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "ASC0035",
+  "category": "ascii2new",
+  "context": null,
+  "question": "\"toqimasining\" so'zining yangi alifbodagi to'g'ri shakli qaysi?",
+  "options": [
+   "töqimasining",
+   "toqimasining",
+   "töqimasininğ",
+   "toʻqimasining"
+  ],
+  "answer": 0,
+  "source": "lexicon (10345 corpus occurrences)",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "ASC0036",
+  "category": "ascii2new",
+  "context": null,
+  "question": "\"qolqop\" so'zining yangi alifbodagi to'g'ri shakli qaysi?",
+  "options": [
+   "qolqop",
+   "qölqöp",
+   "qoʻlqop",
+   "qölqop"
+  ],
+  "answer": 3,
+  "source": "lexicon (11451 corpus occurrences)",
+  "note": "",
+  "split": "dev"
+ },
+ {
+  "id": "ASC0037",
+  "category": "ascii2new",
+  "context": null,
+  "question": "\"yoqolishi\" so'zining yangi alifbodagi to'g'ri shakli qaysi?",
+  "options": [
+   "yöqolişi",
+   "yoʻqolishi",
+   "yoqolişi",
+   "yöqolisi"
+  ],
+  "answer": 0,
+  "source": "lexicon (28345 corpus occurrences)",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "ASC0038",
+  "category": "ascii2new",
+  "context": null,
+  "question": "\"ogitlash\" so'zining yangi alifbodagi to'g'ri shakli qaysi?",
+  "options": [
+   "oğitlaş",
+   "öğitlaş",
+   "öğitlas",
+   "oʻgʻitlash"
+  ],
+  "answer": 1,
+  "source": "lexicon (9957 corpus occurrences)",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "ASC0039",
+  "category": "ascii2new",
+  "context": null,
+  "question": "\"qaldirgoch\" so'zining yangi alifbodagi to'g'ri shakli qaysi?",
+  "options": [
+   "qaldirgoç",
+   "qaldirgʻoch",
+   "qaldirğoç",
+   "qaldirğoc"
+  ],
+  "answer": 2,
+  "source": "lexicon (11999 corpus occurrences)",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "ASC0040",
+  "category": "ascii2new",
+  "context": null,
+  "question": "\"olchamda\" so'zining yangi alifbodagi to'g'ri shakli qaysi?",
+  "options": [
+   "oʻlchamda",
+   "ölçamda",
+   "olçamda",
+   "ölcamda"
+  ],
+  "answer": 1,
+  "source": "lexicon (9435 corpus occurrences)",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "ASC0041",
+  "category": "ascii2new",
+  "context": null,
+  "question": "\"qomondonlik\" so'zining yangi alifbodagi to'g'ri shakli qaysi?",
+  "options": [
+   "qoʻmondonlik",
+   "qömondonlik",
+   "qomondonlik",
+   "qömondönlik"
+  ],
+  "answer": 1,
+  "source": "lexicon (10312 corpus occurrences)",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "ASC0042",
+  "category": "ascii2new",
+  "context": null,
+  "question": "\"sigimini\" so'zining yangi alifbodagi to'g'ri shakli qaysi?",
+  "options": [
+   "sigimini",
+   "sigʻimini",
+   "şiğimini",
+   "siğimini"
+  ],
+  "answer": 3,
+  "source": "lexicon (8894 corpus occurrences)",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "ASC0043",
+  "category": "ascii2new",
+  "context": null,
+  "question": "\"goshtning\" so'zining yangi alifbodagi to'g'ri shakli qaysi?",
+  "options": [
+   "göştning",
+   "goʻshtning",
+   "goştning",
+   "göstning"
+  ],
+  "answer": 0,
+  "source": "lexicon (8398 corpus occurrences)",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "ASC0044",
+  "category": "ascii2new",
+  "context": null,
+  "question": "\"shorlik\" so'zining yangi alifbodagi to'g'ri shakli qaysi?",
+  "options": [
+   "şorlik",
+   "şörlik",
+   "sörlik",
+   "shoʻrlik"
+  ],
+  "answer": 1,
+  "source": "lexicon (23354 corpus occurrences)",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "ASC0045",
+  "category": "ascii2new",
+  "context": null,
+  "question": "\"ozing\" so'zining yangi alifbodagi to'g'ri shakli qaysi?",
+  "options": [
+   "özinğ",
+   "oʻzing",
+   "özing",
+   "ozing"
+  ],
+  "answer": 2,
+  "source": "lexicon (107796 corpus occurrences)",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "ASC0046",
+  "category": "ascii2new",
+  "context": null,
+  "question": "\"dostlar\" so'zining yangi alifbodagi to'g'ri shakli qaysi?",
+  "options": [
+   "dostlar",
+   "döstlar",
+   "döştlar",
+   "doʻstlar"
+  ],
+  "answer": 1,
+  "source": "lexicon (45029 corpus occurrences)",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "ASC0047",
+  "category": "ascii2new",
+  "context": null,
+  "question": "\"ozbekning\" so'zining yangi alifbodagi to'g'ri shakli qaysi?",
+  "options": [
+   "oʻzbekning",
+   "özbekning",
+   "ozbekning",
+   "özbekninğ"
+  ],
+  "answer": 1,
+  "source": "lexicon (10449 corpus occurrences)",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "ASC0048",
+  "category": "ascii2new",
+  "context": null,
+  "question": "\"olchash\" so'zining yangi alifbodagi to'g'ri shakli qaysi?",
+  "options": [
+   "olçaş",
+   "ölçaş",
+   "oʻlchash",
+   "ölcaş"
+  ],
+  "answer": 1,
+  "source": "lexicon (205402 corpus occurrences)",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "ASC0049",
+  "category": "ascii2new",
+  "context": null,
+  "question": "\"nojoya\" so'zining yangi alifbodagi to'g'ri shakli qaysi?",
+  "options": [
+   "nöjöya",
+   "nojoʻya",
+   "nojoya",
+   "nojöya"
+  ],
+  "answer": 3,
+  "source": "lexicon (26138 corpus occurrences)",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "ASC0050",
+  "category": "ascii2new",
+  "context": null,
+  "question": "\"kotarishga\" so'zining yangi alifbodagi to'g'ri shakli qaysi?",
+  "options": [
+   "kötarisga",
+   "kotarişga",
+   "kötarişga",
+   "koʻtarishga"
+  ],
+  "answer": 2,
+  "source": "lexicon (17609 corpus occurrences)",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "ASC0051",
+  "category": "ascii2new",
+  "context": null,
+  "question": "\"bolgusi\" so'zining yangi alifbodagi to'g'ri shakli qaysi?",
+  "options": [
+   "bölğuşi",
+   "bolğusi",
+   "boʻlgʻusi",
+   "bölğusi"
+  ],
+  "answer": 3,
+  "source": "lexicon (23652 corpus occurrences)",
+  "note": "",
+  "split": "dev"
+ },
+ {
+  "id": "ASC0052",
+  "category": "ascii2new",
+  "context": null,
+  "question": "\"konglum\" so'zining yangi alifbodagi to'g'ri shakli qaysi?",
+  "options": [
+   "koʻnglum",
+   "könğlum",
+   "konglum",
+   "könglum"
+  ],
+  "answer": 3,
+  "source": "lexicon (11064 corpus occurrences)",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "ASC0053",
+  "category": "ascii2new",
+  "context": null,
+  "question": "\"ozgarishini\" so'zining yangi alifbodagi to'g'ri shakli qaysi?",
+  "options": [
+   "ozgarişini",
+   "özgarişini",
+   "özgarisini",
+   "oʻzgarishini"
+  ],
+  "answer": 1,
+  "source": "lexicon (45465 corpus occurrences)",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "ASC0054",
+  "category": "ascii2new",
+  "context": null,
+  "question": "\"korsatdilar\" so'zining yangi alifbodagi to'g'ri shakli qaysi?",
+  "options": [
+   "korsatdilar",
+   "körsatdilar",
+   "körşatdilar",
+   "koʻrsatdilar"
+  ],
+  "answer": 1,
+  "source": "lexicon (8600 corpus occurrences)",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "ASC0055",
+  "category": "ascii2new",
+  "context": null,
+  "question": "\"toldirilgan\" so'zining yangi alifbodagi to'g'ri shakli qaysi?",
+  "options": [
+   "toʻldirilgan",
+   "töldirilğan",
+   "töldirilgan",
+   "toldirilgan"
+  ],
+  "answer": 2,
+  "source": "lexicon (44872 corpus occurrences)",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "ASC0056",
+  "category": "ascii2new",
+  "context": null,
+  "question": "\"uygonib\" so'zining yangi alifbodagi to'g'ri shakli qaysi?",
+  "options": [
+   "uyğonib",
+   "uygʻonib",
+   "uygonib",
+   "uyğönib"
+  ],
+  "answer": 0,
+  "source": "lexicon (23178 corpus occurrences)",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "ASC0057",
+  "category": "ascii2new",
+  "context": null,
+  "question": "\"olchangan\" so'zining yangi alifbodagi to'g'ri shakli qaysi?",
+  "options": [
+   "oʻlchangan",
+   "ölçangan",
+   "ölcangan",
+   "olçangan"
+  ],
+  "answer": 1,
+  "source": "lexicon (20358 corpus occurrences)",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "ASC0058",
+  "category": "ascii2new",
+  "context": null,
+  "question": "\"boyoqlar\" so'zining yangi alifbodagi to'g'ri shakli qaysi?",
+  "options": [
+   "böyöqlar",
+   "boyoqlar",
+   "böyoqlar",
+   "boʻyoqlar"
+  ],
+  "answer": 2,
+  "source": "lexicon (25696 corpus occurrences)",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "ASC0059",
+  "category": "ascii2new",
+  "context": null,
+  "question": "\"goyalarini\" so'zining yangi alifbodagi to'g'ri shakli qaysi?",
+  "options": [
+   "gʻoyalarini",
+   "goyalarini",
+   "ğöyalarini",
+   "ğoyalarini"
+  ],
+  "answer": 3,
+  "source": "lexicon (29675 corpus occurrences)",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "ASC0060",
+  "category": "ascii2new",
+  "context": null,
+  "question": "\"galabaga\" so'zining yangi alifbodagi to'g'ri shakli qaysi?",
+  "options": [
+   "ğalabağa",
+   "galabaga",
+   "gʻalabaga",
+   "ğalabaga"
+  ],
+  "answer": 3,
+  "source": "lexicon (20248 corpus occurrences)",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "ASC0061",
+  "category": "ascii2new",
+  "context": null,
+  "question": "\"goyaning\" so'zining yangi alifbodagi to'g'ri shakli qaysi?",
+  "options": [
+   "ğoyaning",
+   "gʻoyaning",
+   "goyaning",
+   "ğoyaninğ"
+  ],
+  "answer": 0,
+  "source": "lexicon (11042 corpus occurrences)",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "ASC0062",
+  "category": "ascii2new",
+  "context": null,
+  "question": "\"korgazmasi\" so'zining yangi alifbodagi to'g'ri shakli qaysi?",
+  "options": [
+   "koʻrgazmasi",
+   "korgazmasi",
+   "körgazmasi",
+   "körgazmaşi"
+  ],
+  "answer": 2,
+  "source": "lexicon (13830 corpus occurrences)",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "ASC0063",
+  "category": "ascii2new",
+  "context": null,
+  "question": "\"dostligi\" so'zining yangi alifbodagi to'g'ri shakli qaysi?",
+  "options": [
+   "döstliği",
+   "döstligi",
+   "dostligi",
+   "doʻstligi"
+  ],
+  "answer": 1,
+  "source": "lexicon (11124 corpus occurrences)",
+  "note": "",
+  "split": "dev"
+ },
+ {
+  "id": "ASC0064",
+  "category": "ascii2new",
+  "context": null,
+  "question": "\"soglom\" so'zining yangi alifbodagi to'g'ri shakli qaysi?",
+  "options": [
+   "soğlöm",
+   "sogʻlom",
+   "soğlom",
+   "soglom"
+  ],
+  "answer": 2,
+  "source": "lexicon (172610 corpus occurrences)",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "ASC0065",
+  "category": "ascii2new",
+  "context": null,
+  "question": "\"ozgarishlar\" so'zining yangi alifbodagi to'g'ri shakli qaysi?",
+  "options": [
+   "ozgarişlar",
+   "özgarişlar",
+   "oʻzgarishlar",
+   "özgarislar"
+  ],
+  "answer": 1,
+  "source": "lexicon (253747 corpus occurrences)",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "ASC0066",
+  "category": "ascii2new",
+  "context": null,
+  "question": "\"oyogida\" so'zining yangi alifbodagi to'g'ri shakli qaysi?",
+  "options": [
+   "oyogʻida",
+   "oyogida",
+   "oyoğida",
+   "oyöğida"
+  ],
+  "answer": 2,
+  "source": "lexicon (7906 corpus occurrences)",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "ASC0067",
+  "category": "ascii2new",
+  "context": null,
+  "question": "\"uygongan\" so'zining yangi alifbodagi to'g'ri shakli qaysi?",
+  "options": [
+   "uyğonğan",
+   "uygongan",
+   "uyğongan",
+   "uygʻongan"
+  ],
+  "answer": 2,
+  "source": "lexicon (12177 corpus occurrences)",
+  "note": "",
+  "split": "dev"
+ },
+ {
+  "id": "ASC0068",
+  "category": "ascii2new",
+  "context": null,
+  "question": "\"songi\" so'zining yangi alifbodagi to'g'ri shakli qaysi?",
+  "options": [
+   "songi",
+   "sönği",
+   "söngi",
+   "soʻngi"
+  ],
+  "answer": 2,
+  "source": "lexicon (16846 corpus occurrences)",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "ASC0069",
+  "category": "ascii2new",
+  "context": null,
+  "question": "\"qulogiga\" so'zining yangi alifbodagi to'g'ri shakli qaysi?",
+  "options": [
+   "quloğiga",
+   "qulöğiga",
+   "qulogiga",
+   "qulogʻiga"
+  ],
+  "answer": 0,
+  "source": "lexicon (33858 corpus occurrences)",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "ASC0070",
+  "category": "ascii2new",
+  "context": null,
+  "question": "\"kotargan\" so'zining yangi alifbodagi to'g'ri shakli qaysi?",
+  "options": [
+   "kötarğan",
+   "koʻtargan",
+   "kotargan",
+   "kötargan"
+  ],
+  "answer": 3,
+  "source": "lexicon (40655 corpus occurrences)",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "ASC0071",
+  "category": "ascii2new",
+  "context": null,
+  "question": "\"koklarga\" so'zining yangi alifbodagi to'g'ri shakli qaysi?",
+  "options": [
+   "köklarğa",
+   "koʻklarga",
+   "köklarga",
+   "koklarga"
+  ],
+  "answer": 2,
+  "source": "lexicon (8435 corpus occurrences)",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "ASC0072",
+  "category": "ascii2new",
+  "context": null,
+  "question": "\"qoshgan\" so'zining yangi alifbodagi to'g'ri shakli qaysi?",
+  "options": [
+   "qoşgan",
+   "qösgan",
+   "qoʻshgan",
+   "qöşgan"
+  ],
+  "answer": 3,
+  "source": "lexicon (65113 corpus occurrences)",
+  "note": "",
+  "split": "dev"
+ },
+ {
+  "id": "ASC0073",
+  "category": "ascii2new",
+  "context": null,
+  "question": "\"ozgarishining\" so'zining yangi alifbodagi to'g'ri shakli qaysi?",
+  "options": [
+   "özgarişining",
+   "oʻzgarishining",
+   "ozgarişining",
+   "özgarisining"
+  ],
+  "answer": 0,
+  "source": "lexicon (11185 corpus occurrences)",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "ASC0074",
+  "category": "ascii2new",
+  "context": null,
+  "question": "\"yigilishida\" so'zining yangi alifbodagi to'g'ri shakli qaysi?",
+  "options": [
+   "yiğilisida",
+   "yiğilişida",
+   "yigʻilishida",
+   "yigilişida"
+  ],
+  "answer": 1,
+  "source": "lexicon (32718 corpus occurrences)",
+  "note": "",
+  "split": "dev"
+ },
+ {
+  "id": "ASC0075",
+  "category": "ascii2new",
+  "context": null,
+  "question": "\"qoymas\" so'zining yangi alifbodagi to'g'ri shakli qaysi?",
+  "options": [
+   "qoʻymas",
+   "qöymas",
+   "qoymas",
+   "qöymaş"
+  ],
+  "answer": 1,
+  "source": "lexicon (8758 corpus occurrences)",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "ASC0076",
+  "category": "ascii2new",
+  "context": null,
+  "question": "\"yoqotishi\" so'zining yangi alifbodagi to'g'ri shakli qaysi?",
+  "options": [
+   "yöqotişi",
+   "yöqotisi",
+   "yoqotişi",
+   "yoʻqotishi"
+  ],
+  "answer": 0,
+  "source": "lexicon (9508 corpus occurrences)",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "ASC0077",
+  "category": "ascii2new",
+  "context": null,
+  "question": "\"toshak\" so'zining yangi alifbodagi to'g'ri shakli qaysi?",
+  "options": [
+   "toşak",
+   "tösak",
+   "toʻshak",
+   "töşak"
+  ],
+  "answer": 3,
+  "source": "lexicon (10186 corpus occurrences)",
+  "note": "",
+  "split": "dev"
+ },
+ {
+  "id": "ASC0078",
+  "category": "ascii2new",
+  "context": null,
+  "question": "\"qoyilganligi\" so'zining yangi alifbodagi to'g'ri shakli qaysi?",
+  "options": [
+   "qoyilganligi",
+   "qoʻyilganligi",
+   "qöyilganligi",
+   "qöyilganliği"
+  ],
+  "answer": 2,
+  "source": "lexicon (8335 corpus occurrences)",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "ASC0079",
+  "category": "ascii2new",
+  "context": null,
+  "question": "\"ozgaruvchi\" so'zining yangi alifbodagi to'g'ri shakli qaysi?",
+  "options": [
+   "özgaruvçi",
+   "özgaruvci",
+   "oʻzgaruvchi",
+   "ozgaruvçi"
+  ],
+  "answer": 0,
+  "source": "lexicon (36256 corpus occurrences)",
+  "note": "",
+  "split": "dev"
+ },
+ {
+  "id": "ASC0080",
+  "category": "ascii2new",
+  "context": null,
+  "question": "\"obroli\" so'zining yangi alifbodagi to'g'ri shakli qaysi?",
+  "options": [
+   "öbröli",
+   "obroʻli",
+   "obroli",
+   "obröli"
+  ],
+  "answer": 3,
+  "source": "lexicon (12754 corpus occurrences)",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "ASC0081",
+  "category": "ascii2new",
+  "context": null,
+  "question": "\"goyalariga\" so'zining yangi alifbodagi to'g'ri shakli qaysi?",
+  "options": [
+   "gʻoyalariga",
+   "ğoyalariğa",
+   "ğoyalariga",
+   "goyalariga"
+  ],
+  "answer": 2,
+  "source": "lexicon (9852 corpus occurrences)",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "ASC0082",
+  "category": "ascii2new",
+  "context": null,
+  "question": "\"toqnash\" so'zining yangi alifbodagi to'g'ri shakli qaysi?",
+  "options": [
+   "töqnas",
+   "toʻqnash",
+   "töqnaş",
+   "toqnaş"
+  ],
+  "answer": 2,
+  "source": "lexicon (14576 corpus occurrences)",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "ASC0083",
+  "category": "ascii2new",
+  "context": null,
+  "question": "\"romol\" so'zining yangi alifbodagi to'g'ri shakli qaysi?",
+  "options": [
+   "römol",
+   "roʻmol",
+   "römöl",
+   "romol"
+  ],
+  "answer": 0,
+  "source": "lexicon (16386 corpus occurrences)",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "ASC0084",
+  "category": "ascii2new",
+  "context": null,
+  "question": "\"soginib\" so'zining yangi alifbodagi to'g'ri shakli qaysi?",
+  "options": [
+   "soğinib",
+   "söğinib",
+   "soginib",
+   "sogʻinib"
+  ],
+  "answer": 0,
+  "source": "lexicon (13007 corpus occurrences)",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "ASC0085",
+  "category": "ascii2new",
+  "context": null,
+  "question": "\"ochoq\" so'zining yangi alifbodagi to'g'ri shakli qaysi?",
+  "options": [
+   "öcoq",
+   "oʻchoq",
+   "öçoq",
+   "oçoq"
+  ],
+  "answer": 2,
+  "source": "lexicon (14701 corpus occurrences)",
+  "note": "",
+  "split": "dev"
+ },
+ {
+  "id": "ASC0086",
+  "category": "ascii2new",
+  "context": null,
+  "question": "\"sogligi\" so'zining yangi alifbodagi to'g'ri shakli qaysi?",
+  "options": [
+   "söğliği",
+   "sogliği",
+   "soğliği",
+   "sogʻligʻi"
+  ],
+  "answer": 2,
+  "source": "lexicon (23557 corpus occurrences)",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "ASC0087",
+  "category": "ascii2new",
+  "context": null,
+  "question": "\"qomondonligi\" so'zining yangi alifbodagi to'g'ri shakli qaysi?",
+  "options": [
+   "qömondonligi",
+   "qoʻmondonligi",
+   "qömondonliği",
+   "qomondonligi"
+  ],
+  "answer": 0,
+  "source": "lexicon (7961 corpus occurrences)",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "ASC0088",
+  "category": "ascii2new",
+  "context": null,
+  "question": "\"ortogim\" so'zining yangi alifbodagi to'g'ri shakli qaysi?",
+  "options": [
+   "örtoğim",
+   "örtogim",
+   "ortoğim",
+   "oʻrtogʻim"
+  ],
+  "answer": 0,
+  "source": "lexicon (8388 corpus occurrences)",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "ASC0089",
+  "category": "ascii2new",
+  "context": null,
+  "question": "\"korsatmoqda\" so'zining yangi alifbodagi to'g'ri shakli qaysi?",
+  "options": [
+   "koʻrsatmoqda",
+   "körsatmöqda",
+   "korsatmoqda",
+   "körsatmoqda"
+  ],
+  "answer": 3,
+  "source": "lexicon (41497 corpus occurrences)",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "ASC0090",
+  "category": "ascii2new",
+  "context": null,
+  "question": "\"kozga\" so'zining yangi alifbodagi to'g'ri shakli qaysi?",
+  "options": [
+   "kozga",
+   "közğa",
+   "közga",
+   "koʻzga"
+  ],
+  "answer": 2,
+  "source": "lexicon (153370 corpus occurrences)",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "ASC0091",
+  "category": "ascii2new",
+  "context": null,
+  "question": "\"qoshdi\" so'zining yangi alifbodagi to'g'ri shakli qaysi?",
+  "options": [
+   "qoʻshdi",
+   "qöşdi",
+   "qoşdi",
+   "qösdi"
+  ],
+  "answer": 1,
+  "source": "lexicon (20063 corpus occurrences)",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "ASC0092",
+  "category": "ascii2new",
+  "context": null,
+  "question": "\"tolovchilar\" so'zining yangi alifbodagi to'g'ri shakli qaysi?",
+  "options": [
+   "tolovçilar",
+   "toʻlovchilar",
+   "tölovçilar",
+   "tölovcilar"
+  ],
+  "answer": 2,
+  "source": "lexicon (19845 corpus occurrences)",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "ASC0093",
+  "category": "ascii2new",
+  "context": null,
+  "question": "\"bolganim\" so'zining yangi alifbodagi to'g'ri shakli qaysi?",
+  "options": [
+   "boʻlganim",
+   "bolganim",
+   "bölganim",
+   "bölğanim"
+  ],
+  "answer": 2,
+  "source": "lexicon (10234 corpus occurrences)",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "ASC0094",
+  "category": "ascii2new",
+  "context": null,
+  "question": "\"oxshar\" so'zining yangi alifbodagi to'g'ri shakli qaysi?",
+  "options": [
+   "öxsar",
+   "öxşar",
+   "oʻxshar",
+   "oxşar"
+  ],
+  "answer": 1,
+  "source": "lexicon (13963 corpus occurrences)",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "ASC0095",
+  "category": "ascii2new",
+  "context": null,
+  "question": "\"konikmasini\" so'zining yangi alifbodagi to'g'ri shakli qaysi?",
+  "options": [
+   "koʻnikmasini",
+   "könikmaşini",
+   "könikmasini",
+   "konikmasini"
+  ],
+  "answer": 2,
+  "source": "lexicon (10698 corpus occurrences)",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "ASC0096",
+  "category": "ascii2new",
+  "context": null,
+  "question": "\"ozingni\" so'zining yangi alifbodagi to'g'ri shakli qaysi?",
+  "options": [
+   "özingni",
+   "oʻzingni",
+   "özinğni",
+   "ozingni"
+  ],
+  "answer": 0,
+  "source": "lexicon (40281 corpus occurrences)",
+  "note": "",
+  "split": "dev"
+ },
+ {
+  "id": "ASC0097",
+  "category": "ascii2new",
+  "context": null,
+  "question": "\"boyovchi\" so'zining yangi alifbodagi to'g'ri shakli qaysi?",
+  "options": [
+   "böyovci",
+   "boʻyovchi",
+   "boyovçi",
+   "böyovçi"
+  ],
+  "answer": 3,
+  "source": "lexicon (8156 corpus occurrences)",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "ASC0098",
+  "category": "ascii2new",
+  "context": null,
+  "question": "\"ozingizning\" so'zining yangi alifbodagi to'g'ri shakli qaysi?",
+  "options": [
+   "özingizning",
+   "özingizninğ",
+   "ozingizning",
+   "oʻzingizning"
+  ],
+  "answer": 0,
+  "source": "lexicon (10935 corpus occurrences)",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "ASC0099",
+  "category": "ascii2new",
+  "context": null,
+  "question": "\"tolaligicha\" so'zining yangi alifbodagi to'g'ri shakli qaysi?",
+  "options": [
+   "tölaligica",
+   "toʻlaligicha",
+   "tölaligiça",
+   "tolaligiça"
+  ],
+  "answer": 2,
+  "source": "lexicon (17192 corpus occurrences)",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "OLD0000",
+  "category": "old2new",
+  "context": null,
+  "question": "Eski lotindagi \"tugʻish\" so'zi yangi alifboda qanday yoziladi?",
+  "options": [
+   "tuğis",
+   "tuğiş",
+   "tugish",
+   "tugiş"
+  ],
+  "answer": 1,
+  "source": "lexicon (15050 corpus occurrences)",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "OLD0001",
+  "category": "old2new",
+  "context": null,
+  "question": "Eski lotindagi \"soʻzlovchi\" so'zi yangi alifboda qanday yoziladi?",
+  "options": [
+   "sözlovci",
+   "sozlovchi",
+   "sözlovçi",
+   "sozlovçi"
+  ],
+  "answer": 2,
+  "source": "lexicon (10876 corpus occurrences)",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "OLD0002",
+  "category": "old2new",
+  "context": null,
+  "question": "Eski lotindagi \"boshligʻiga\" so'zi yangi alifboda qanday yoziladi?",
+  "options": [
+   "boşliğiga",
+   "boshligiga",
+   "bosliğiga",
+   "boşligiga"
+  ],
+  "answer": 0,
+  "source": "lexicon (8550 corpus occurrences)",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "OLD0003",
+  "category": "old2new",
+  "context": null,
+  "question": "Eski lotindagi \"oʻldirishga\" so'zi yangi alifboda qanday yoziladi?",
+  "options": [
+   "oldirishga",
+   "öldirişga",
+   "öldirisga",
+   "oldirişga"
+  ],
+  "answer": 1,
+  "source": "lexicon (9593 corpus occurrences)",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "OLD0004",
+  "category": "old2new",
+  "context": null,
+  "question": "Eski lotindagi \"oʻsishni\" so'zi yangi alifboda qanday yoziladi?",
+  "options": [
+   "osişni",
+   "ösişni",
+   "ösisni",
+   "osishni"
+  ],
+  "answer": 1,
+  "source": "lexicon (13577 corpus occurrences)",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "OLD0005",
+  "category": "old2new",
+  "context": null,
+  "question": "Eski lotindagi \"qoʻshing\" so'zi yangi alifboda qanday yoziladi?",
+  "options": [
+   "qöşing",
+   "qoşing",
+   "qoshing",
+   "qösing"
+  ],
+  "answer": 0,
+  "source": "lexicon (9959 corpus occurrences)",
+  "note": "",
+  "split": "dev"
+ },
+ {
+  "id": "OLD0006",
+  "category": "old2new",
+  "context": null,
+  "question": "Eski lotindagi \"oʻsadigan\" so'zi yangi alifboda qanday yoziladi?",
+  "options": [
+   "ösadiğan",
+   "osadigan",
+   "öşadigan",
+   "ösadigan"
+  ],
+  "answer": 3,
+  "source": "lexicon (25962 corpus occurrences)",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "OLD0007",
+  "category": "old2new",
+  "context": null,
+  "question": "Eski lotindagi \"soʻzlarining\" so'zi yangi alifboda qanday yoziladi?",
+  "options": [
+   "sözlarininğ",
+   "sözlarining",
+   "sozlarining",
+   "şözlarining"
+  ],
+  "answer": 1,
+  "source": "lexicon (10284 corpus occurrences)",
+  "note": "",
+  "split": "dev"
+ },
+ {
+  "id": "OLD0008",
+  "category": "old2new",
+  "context": null,
+  "question": "Eski lotindagi \"goʻsht\" so'zi yangi alifboda qanday yoziladi?",
+  "options": [
+   "göşt",
+   "gosht",
+   "göst",
+   "goşt"
+  ],
+  "answer": 0,
+  "source": "lexicon (111817 corpus occurrences)",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "OLD0009",
+  "category": "old2new",
+  "context": null,
+  "question": "Eski lotindagi \"boʻgʻimlar\" so'zi yangi alifboda qanday yoziladi?",
+  "options": [
+   "böğimlar",
+   "bogimlar",
+   "boğimlar",
+   "bögimlar"
+  ],
+  "answer": 0,
+  "source": "lexicon (9797 corpus occurrences)",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "OLD0010",
+  "category": "old2new",
+  "context": null,
+  "question": "Eski lotindagi \"oʻzgaruvchilar\" so'zi yangi alifboda qanday yoziladi?",
+  "options": [
+   "ozgaruvchilar",
+   "özgaruvçilar",
+   "ozgaruvçilar",
+   "özgaruvcilar"
+  ],
+  "answer": 1,
+  "source": "lexicon (16964 corpus occurrences)",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "OLD0011",
+  "category": "old2new",
+  "context": null,
+  "question": "Eski lotindagi \"sariyogʻ\" so'zi yangi alifboda qanday yoziladi?",
+  "options": [
+   "sariyöğ",
+   "şariyoğ",
+   "sariyog",
+   "sariyoğ"
+  ],
+  "answer": 3,
+  "source": "lexicon (13381 corpus occurrences)",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "OLD0012",
+  "category": "old2new",
+  "context": null,
+  "question": "Eski lotindagi \"shugʻullanishi\" so'zi yangi alifboda qanday yoziladi?",
+  "options": [
+   "şuğullanişi",
+   "şugullanişi",
+   "suğullanişi",
+   "shugullanishi"
+  ],
+  "answer": 0,
+  "source": "lexicon (13086 corpus occurrences)",
+  "note": "",
+  "split": "dev"
+ },
+ {
+  "id": "OLD0013",
+  "category": "old2new",
+  "context": null,
+  "question": "Eski lotindagi \"yoʻnalishlarga\" so'zi yangi alifboda qanday yoziladi?",
+  "options": [
+   "yonalişlarga",
+   "yönalislarga",
+   "yonalishlarga",
+   "yönalişlarga"
+  ],
+  "answer": 3,
+  "source": "lexicon (9268 corpus occurrences)",
+  "note": "",
+  "split": "dev"
+ },
+ {
+  "id": "OLD0014",
+  "category": "old2new",
+  "context": null,
+  "question": "Eski lotindagi \"oraligʻidagi\" so'zi yangi alifboda qanday yoziladi?",
+  "options": [
+   "oraliğidaği",
+   "oraligidagi",
+   "öraliğidagi",
+   "oraliğidagi"
+  ],
+  "answer": 3,
+  "source": "lexicon (27990 corpus occurrences)",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "OLD0015",
+  "category": "old2new",
+  "context": null,
+  "question": "Eski lotindagi \"ogʻirligiga\" so'zi yangi alifboda qanday yoziladi?",
+  "options": [
+   "oğirligiğa",
+   "ogirligiga",
+   "oğirliğiga",
+   "oğirligiga"
+  ],
+  "answer": 3,
+  "source": "lexicon (13066 corpus occurrences)",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "OLD0016",
+  "category": "old2new",
+  "context": null,
+  "question": "Eski lotindagi \"ogʻrishi\" so'zi yangi alifboda qanday yoziladi?",
+  "options": [
+   "oğrisi",
+   "ogrişi",
+   "oğrişi",
+   "ogrishi"
+  ],
+  "answer": 2,
+  "source": "lexicon (7890 corpus occurrences)",
+  "note": "",
+  "split": "dev"
+ },
+ {
+  "id": "OLD0017",
+  "category": "old2new",
+  "context": null,
+  "question": "Eski lotindagi \"qirgʻogʻida\" so'zi yangi alifboda qanday yoziladi?",
+  "options": [
+   "qirğoğida",
+   "qirgoğida",
+   "qirğogida",
+   "qirgogida"
+  ],
+  "answer": 0,
+  "source": "lexicon (10190 corpus occurrences)",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "OLD0018",
+  "category": "old2new",
+  "context": null,
+  "question": "Eski lotindagi \"soʻzlash\" so'zi yangi alifboda qanday yoziladi?",
+  "options": [
+   "sozlash",
+   "sözlaş",
+   "sozlaş",
+   "sözlas"
+  ],
+  "answer": 1,
+  "source": "lexicon (14357 corpus occurrences)",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "OLD0019",
+  "category": "old2new",
+  "context": null,
+  "question": "Eski lotindagi \"koʻrmoqchi\" so'zi yangi alifboda qanday yoziladi?",
+  "options": [
+   "kormoqchi",
+   "körmoqçi",
+   "kormoqçi",
+   "körmoqci"
+  ],
+  "answer": 1,
+  "source": "lexicon (9333 corpus occurrences)",
+  "note": "",
+  "split": "dev"
+ },
+ {
+  "id": "OLD0020",
+  "category": "old2new",
+  "context": null,
+  "question": "Eski lotindagi \"topshirigʻi\" so'zi yangi alifboda qanday yoziladi?",
+  "options": [
+   "topshirigi",
+   "topşirigi",
+   "topsiriği",
+   "topşiriği"
+  ],
+  "answer": 3,
+  "source": "lexicon (22074 corpus occurrences)",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "OLD0021",
+  "category": "old2new",
+  "context": null,
+  "question": "Eski lotindagi \"shoʻrva\" so'zi yangi alifboda qanday yoziladi?",
+  "options": [
+   "şörva",
+   "sörva",
+   "shorva",
+   "şorva"
+  ],
+  "answer": 0,
+  "source": "lexicon (16289 corpus occurrences)",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "OLD0022",
+  "category": "old2new",
+  "context": null,
+  "question": "Eski lotindagi \"choʻzilish\" so'zi yangi alifboda qanday yoziladi?",
+  "options": [
+   "çoziliş",
+   "chozilish",
+   "çöziliş",
+   "cöziliş"
+  ],
+  "answer": 2,
+  "source": "lexicon (13268 corpus occurrences)",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "OLD0023",
+  "category": "old2new",
+  "context": null,
+  "question": "Eski lotindagi \"mashgʻulot\" so'zi yangi alifboda qanday yoziladi?",
+  "options": [
+   "masğulot",
+   "maşgulot",
+   "mashgulot",
+   "maşğulot"
+  ],
+  "answer": 3,
+  "source": "lexicon (148770 corpus occurrences)",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "OLD0024",
+  "category": "old2new",
+  "context": null,
+  "question": "Eski lotindagi \"koʻrsatkichli\" so'zi yangi alifboda qanday yoziladi?",
+  "options": [
+   "körsatkicli",
+   "korsatkiçli",
+   "korsatkichli",
+   "körsatkiçli"
+  ],
+  "answer": 3,
+  "source": "lexicon (9037 corpus occurrences)",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "OLD0025",
+  "category": "old2new",
+  "context": null,
+  "question": "Eski lotindagi \"oyogʻini\" so'zi yangi alifboda qanday yoziladi?",
+  "options": [
+   "oyoğini",
+   "oyöğini",
+   "oyogini",
+   "öyoğini"
+  ],
+  "answer": 0,
+  "source": "lexicon (35803 corpus occurrences)",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "OLD0026",
+  "category": "old2new",
+  "context": null,
+  "question": "Eski lotindagi \"choʻntagidan\" so'zi yangi alifboda qanday yoziladi?",
+  "options": [
+   "chontagidan",
+   "cöntagidan",
+   "çöntagidan",
+   "çontagidan"
+  ],
+  "answer": 2,
+  "source": "lexicon (14509 corpus occurrences)",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "OLD0027",
+  "category": "old2new",
+  "context": null,
+  "question": "Eski lotindagi \"bogʻlanishini\" so'zi yangi alifboda qanday yoziladi?",
+  "options": [
+   "boglanishini",
+   "boglanişini",
+   "boğlanişini",
+   "boğlanisini"
+  ],
+  "answer": 2,
+  "source": "lexicon (7816 corpus occurrences)",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "OLD0028",
+  "category": "old2new",
+  "context": null,
+  "question": "Eski lotindagi \"sargʻish\" so'zi yangi alifboda qanday yoziladi?",
+  "options": [
+   "sarğis",
+   "sargish",
+   "sargiş",
+   "sarğiş"
+  ],
+  "answer": 3,
+  "source": "lexicon (29845 corpus occurrences)",
+  "note": "",
+  "split": "dev"
+ },
+ {
+  "id": "OLD0029",
+  "category": "old2new",
+  "context": null,
+  "question": "Eski lotindagi \"goʻshti\" so'zi yangi alifboda qanday yoziladi?",
+  "options": [
+   "gösti",
+   "göşti",
+   "goshti",
+   "goşti"
+  ],
+  "answer": 1,
+  "source": "lexicon (39299 corpus occurrences)",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "OLD0030",
+  "category": "old2new",
+  "context": null,
+  "question": "Eski lotindagi \"oʻtishida\" so'zi yangi alifboda qanday yoziladi?",
+  "options": [
+   "otishida",
+   "otişida",
+   "ötisida",
+   "ötişida"
+  ],
+  "answer": 3,
+  "source": "lexicon (8122 corpus occurrences)",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "OLD0031",
+  "category": "old2new",
+  "context": null,
+  "question": "Eski lotindagi \"oʻychan\" so'zi yangi alifboda qanday yoziladi?",
+  "options": [
+   "oychan",
+   "oyçan",
+   "öyçan",
+   "öycan"
+  ],
+  "answer": 2,
+  "source": "lexicon (11635 corpus occurrences)",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "OLD0032",
+  "category": "old2new",
+  "context": null,
+  "question": "Eski lotindagi \"oʻzicha\" so'zi yangi alifboda qanday yoziladi?",
+  "options": [
+   "öziça",
+   "özica",
+   "ozicha",
+   "oziça"
+  ],
+  "answer": 0,
+  "source": "lexicon (51328 corpus occurrences)",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "OLD0033",
+  "category": "old2new",
+  "context": null,
+  "question": "Eski lotindagi \"toʻqnashuvlar\" so'zi yangi alifboda qanday yoziladi?",
+  "options": [
+   "toqnaşuvlar",
+   "töqnaşuvlar",
+   "töqnasuvlar",
+   "toqnashuvlar"
+  ],
+  "answer": 1,
+  "source": "lexicon (13884 corpus occurrences)",
+  "note": "",
+  "split": "dev"
+ },
+ {
+  "id": "OLD0034",
+  "category": "old2new",
+  "context": null,
+  "question": "Eski lotindagi \"oʻzgarish\" so'zi yangi alifboda qanday yoziladi?",
+  "options": [
+   "ozgarish",
+   "özgaris",
+   "özgariş",
+   "ozgariş"
+  ],
+  "answer": 2,
+  "source": "lexicon (110605 corpus occurrences)",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "OLD0035",
+  "category": "old2new",
+  "context": null,
+  "question": "Eski lotindagi \"oʻchmas\" so'zi yangi alifboda qanday yoziladi?",
+  "options": [
+   "ochmas",
+   "oçmas",
+   "öcmas",
+   "öçmas"
+  ],
+  "answer": 3,
+  "source": "lexicon (9482 corpus occurrences)",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "OLD0036",
+  "category": "old2new",
+  "context": null,
+  "question": "Eski lotindagi \"oʻqitishni\" so'zi yangi alifboda qanday yoziladi?",
+  "options": [
+   "oqitishni",
+   "oqitişni",
+   "öqitisni",
+   "öqitişni"
+  ],
+  "answer": 3,
+  "source": "lexicon (15190 corpus occurrences)",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "OLD0037",
+  "category": "old2new",
+  "context": null,
+  "question": "Eski lotindagi \"qoʻshilishi\" so'zi yangi alifboda qanday yoziladi?",
+  "options": [
+   "qoshilishi",
+   "qösilişi",
+   "qoşilişi",
+   "qöşilişi"
+  ],
+  "answer": 3,
+  "source": "lexicon (34702 corpus occurrences)",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "OLD0038",
+  "category": "old2new",
+  "context": null,
+  "question": "Eski lotindagi \"soʻzsiz\" so'zi yangi alifboda qanday yoziladi?",
+  "options": [
+   "sözsiz",
+   "şözsiz",
+   "sozsiz",
+   "sözşiz"
+  ],
+  "answer": 0,
+  "source": "lexicon (40804 corpus occurrences)",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "OLD0039",
+  "category": "old2new",
+  "context": null,
+  "question": "Eski lotindagi \"doʻkonga\" so'zi yangi alifboda qanday yoziladi?",
+  "options": [
+   "dökonğa",
+   "dökönga",
+   "dokonga",
+   "dökonga"
+  ],
+  "answer": 3,
+  "source": "lexicon (8652 corpus occurrences)",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "OLD0040",
+  "category": "old2new",
+  "context": null,
+  "question": "Eski lotindagi \"toʻrtinchisi\" so'zi yangi alifboda qanday yoziladi?",
+  "options": [
+   "tortinçisi",
+   "törtincisi",
+   "törtinçisi",
+   "tortinchisi"
+  ],
+  "answer": 2,
+  "source": "lexicon (8416 corpus occurrences)",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "OLD0041",
+  "category": "old2new",
+  "context": null,
+  "question": "Eski lotindagi \"koʻzgusi\" so'zi yangi alifboda qanday yoziladi?",
+  "options": [
+   "közguşi",
+   "kozgusi",
+   "közğusi",
+   "közgusi"
+  ],
+  "answer": 3,
+  "source": "lexicon (8680 corpus occurrences)",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "OLD0042",
+  "category": "old2new",
+  "context": null,
+  "question": "Eski lotindagi \"xoʻjaligining\" so'zi yangi alifboda qanday yoziladi?",
+  "options": [
+   "xojaligining",
+   "xöjaligininğ",
+   "xöjaliğining",
+   "xöjaligining"
+  ],
+  "answer": 3,
+  "source": "lexicon (50344 corpus occurrences)",
+  "note": "",
+  "split": "dev"
+ },
+ {
+  "id": "OLD0043",
+  "category": "old2new",
+  "context": null,
+  "question": "Eski lotindagi \"oʻzgarishsiz\" so'zi yangi alifboda qanday yoziladi?",
+  "options": [
+   "özgarissiz",
+   "özgarişsiz",
+   "ozgarişsiz",
+   "ozgarishsiz"
+  ],
+  "answer": 1,
+  "source": "lexicon (18516 corpus occurrences)",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "OLD0044",
+  "category": "old2new",
+  "context": null,
+  "question": "Eski lotindagi \"oʻrnatish\" so'zi yangi alifboda qanday yoziladi?",
+  "options": [
+   "örnatis",
+   "örnatiş",
+   "ornatiş",
+   "ornatish"
+  ],
+  "answer": 1,
+  "source": "lexicon (148791 corpus occurrences)",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "OLD0045",
+  "category": "old2new",
+  "context": null,
+  "question": "Eski lotindagi \"toʻlanishi\" so'zi yangi alifboda qanday yoziladi?",
+  "options": [
+   "tölanişi",
+   "tolanişi",
+   "tölanisi",
+   "tolanishi"
+  ],
+  "answer": 0,
+  "source": "lexicon (23785 corpus occurrences)",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "OLD0046",
+  "category": "old2new",
+  "context": null,
+  "question": "Eski lotindagi \"boʻlishga\" so'zi yangi alifboda qanday yoziladi?",
+  "options": [
+   "bolishga",
+   "bölisga",
+   "bolişga",
+   "bölişga"
+  ],
+  "answer": 3,
+  "source": "lexicon (84219 corpus occurrences)",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "OLD0047",
+  "category": "old2new",
+  "context": null,
+  "question": "Eski lotindagi \"choʻli\" so'zi yangi alifboda qanday yoziladi?",
+  "options": [
+   "çöli",
+   "cöli",
+   "çoli",
+   "choli"
+  ],
+  "answer": 0,
+  "source": "lexicon (7904 corpus occurrences)",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "OLD0048",
+  "category": "old2new",
+  "context": null,
+  "question": "Eski lotindagi \"bogʻga\" so'zi yangi alifboda qanday yoziladi?",
+  "options": [
+   "boğğa",
+   "boğga",
+   "böğga",
+   "bogga"
+  ],
+  "answer": 1,
+  "source": "lexicon (13408 corpus occurrences)",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "OLD0049",
+  "category": "old2new",
+  "context": null,
+  "question": "Eski lotindagi \"choʻlda\" so'zi yangi alifboda qanday yoziladi?",
+  "options": [
+   "çölda",
+   "cholda",
+   "cölda",
+   "çolda"
+  ],
+  "answer": 0,
+  "source": "lexicon (10859 corpus occurrences)",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "OLD0050",
+  "category": "old2new",
+  "context": null,
+  "question": "Eski lotindagi \"qoʻmitasining\" so'zi yangi alifboda qanday yoziladi?",
+  "options": [
+   "qomitasining",
+   "qömitasininğ",
+   "qömitasining",
+   "qömitaşining"
+  ],
+  "answer": 2,
+  "source": "lexicon (50751 corpus occurrences)",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "OLD0051",
+  "category": "old2new",
+  "context": null,
+  "question": "Eski lotindagi \"toʻlovchining\" so'zi yangi alifboda qanday yoziladi?",
+  "options": [
+   "tolovchining",
+   "tölovcining",
+   "tölovçining",
+   "tolovçining"
+  ],
+  "answer": 2,
+  "source": "lexicon (14150 corpus occurrences)",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "OLD0052",
+  "category": "old2new",
+  "context": null,
+  "question": "Eski lotindagi \"toʻlovchi\" so'zi yangi alifboda qanday yoziladi?",
+  "options": [
+   "tölovci",
+   "tolovchi",
+   "tölovçi",
+   "tolovçi"
+  ],
+  "answer": 2,
+  "source": "lexicon (20651 corpus occurrences)",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "OLD0053",
+  "category": "old2new",
+  "context": null,
+  "question": "Eski lotindagi \"yoʻlchi\" so'zi yangi alifboda qanday yoziladi?",
+  "options": [
+   "yolçi",
+   "yölci",
+   "yolchi",
+   "yölçi"
+  ],
+  "answer": 3,
+  "source": "lexicon (10888 corpus occurrences)",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "OLD0054",
+  "category": "old2new",
+  "context": null,
+  "question": "Eski lotindagi \"mashgʻulotning\" so'zi yangi alifboda qanday yoziladi?",
+  "options": [
+   "maşğulotning",
+   "masğulotning",
+   "maşgulotning",
+   "mashgulotning"
+  ],
+  "answer": 0,
+  "source": "lexicon (26051 corpus occurrences)",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "OLD0055",
+  "category": "old2new",
+  "context": null,
+  "question": "Eski lotindagi \"koʻrsatgich\" so'zi yangi alifboda qanday yoziladi?",
+  "options": [
+   "korsatgiç",
+   "körsatgiç",
+   "korsatgich",
+   "körsatgic"
+  ],
+  "answer": 1,
+  "source": "lexicon (9001 corpus occurrences)",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "OLD0056",
+  "category": "old2new",
+  "context": null,
+  "question": "Eski lotindagi \"oʻquvchini\" so'zi yangi alifboda qanday yoziladi?",
+  "options": [
+   "oquvchini",
+   "öquvcini",
+   "öquvçini",
+   "oquvçini"
+  ],
+  "answer": 2,
+  "source": "lexicon (18374 corpus occurrences)",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "OLD0057",
+  "category": "old2new",
+  "context": null,
+  "question": "Eski lotindagi \"oʻtkazishga\" so'zi yangi alifboda qanday yoziladi?",
+  "options": [
+   "ötkazisga",
+   "otkazişga",
+   "ötkazişga",
+   "otkazishga"
+  ],
+  "answer": 2,
+  "source": "lexicon (58273 corpus occurrences)",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "OLD0058",
+  "category": "old2new",
+  "context": null,
+  "question": "Eski lotindagi \"koʻpchilikni\" so'zi yangi alifboda qanday yoziladi?",
+  "options": [
+   "köpçilikni",
+   "kopçilikni",
+   "köpcilikni",
+   "kopchilikni"
+  ],
+  "answer": 0,
+  "source": "lexicon (16696 corpus occurrences)",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "OLD0059",
+  "category": "old2new",
+  "context": null,
+  "question": "Eski lotindagi \"oʻrganing\" so'zi yangi alifboda qanday yoziladi?",
+  "options": [
+   "örganinğ",
+   "örganing",
+   "organing",
+   "örğaning"
+  ],
+  "answer": 1,
+  "source": "lexicon (11431 corpus occurrences)",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "OLD0060",
+  "category": "old2new",
+  "context": null,
+  "question": "Eski lotindagi \"goʻyoki\" so'zi yangi alifboda qanday yoziladi?",
+  "options": [
+   "göyöki",
+   "göyoki",
+   "ğöyoki",
+   "goyoki"
+  ],
+  "answer": 1,
+  "source": "lexicon (36376 corpus occurrences)",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "OLD0061",
+  "category": "old2new",
+  "context": null,
+  "question": "Eski lotindagi \"qoʻngʻirot\" so'zi yangi alifboda qanday yoziladi?",
+  "options": [
+   "qonğirot",
+   "qöngirot",
+   "qongirot",
+   "qönğirot"
+  ],
+  "answer": 3,
+  "source": "lexicon (14602 corpus occurrences)",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "OLD0062",
+  "category": "old2new",
+  "context": null,
+  "question": "Eski lotindagi \"oʻgʻlon\" so'zi yangi alifboda qanday yoziladi?",
+  "options": [
+   "öğlon",
+   "oğlon",
+   "oglon",
+   "öglon"
+  ],
+  "answer": 0,
+  "source": "lexicon (13635 corpus occurrences)",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "OLD0063",
+  "category": "old2new",
+  "context": null,
+  "question": "Eski lotindagi \"choʻntak\" so'zi yangi alifboda qanday yoziladi?",
+  "options": [
+   "çöntak",
+   "cöntak",
+   "chontak",
+   "çontak"
+  ],
+  "answer": 0,
+  "source": "lexicon (11872 corpus occurrences)",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "OLD0064",
+  "category": "old2new",
+  "context": null,
+  "question": "Eski lotindagi \"salmogʻi\" so'zi yangi alifboda qanday yoziladi?",
+  "options": [
+   "salmöği",
+   "şalmoği",
+   "salmoği",
+   "salmogi"
+  ],
+  "answer": 2,
+  "source": "lexicon (25632 corpus occurrences)",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "OLD0065",
+  "category": "old2new",
+  "context": null,
+  "question": "Eski lotindagi \"oʻynashi\" so'zi yangi alifboda qanday yoziladi?",
+  "options": [
+   "öynaşi",
+   "oynaşi",
+   "oynashi",
+   "öynasi"
+  ],
+  "answer": 0,
+  "source": "lexicon (12257 corpus occurrences)",
+  "note": "",
+  "split": "dev"
+ },
+ {
+  "id": "OLD0066",
+  "category": "old2new",
+  "context": null,
+  "question": "Eski lotindagi \"hisobvaragʻi\" so'zi yangi alifboda qanday yoziladi?",
+  "options": [
+   "hişobvaraği",
+   "hisöbvaraği",
+   "hisobvaragi",
+   "hisobvaraği"
+  ],
+  "answer": 3,
+  "source": "lexicon (12787 corpus occurrences)",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "OLD0067",
+  "category": "old2new",
+  "context": null,
+  "question": "Eski lotindagi \"choʻkib\" so'zi yangi alifboda qanday yoziladi?",
+  "options": [
+   "chokib",
+   "çökib",
+   "çokib",
+   "cökib"
+  ],
+  "answer": 1,
+  "source": "lexicon (30129 corpus occurrences)",
+  "note": "",
+  "split": "dev"
+ },
+ {
+  "id": "OLD0068",
+  "category": "old2new",
+  "context": null,
+  "question": "Eski lotindagi \"koʻrishi\" so'zi yangi alifboda qanday yoziladi?",
+  "options": [
+   "korishi",
+   "korişi",
+   "körişi",
+   "körisi"
+  ],
+  "answer": 2,
+  "source": "lexicon (39948 corpus occurrences)",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "OLD0069",
+  "category": "old2new",
+  "context": null,
+  "question": "Eski lotindagi \"qoʻshaloq\" so'zi yangi alifboda qanday yoziladi?",
+  "options": [
+   "qöşaloq",
+   "qoshaloq",
+   "qoşaloq",
+   "qösaloq"
+  ],
+  "answer": 0,
+  "source": "lexicon (11782 corpus occurrences)",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "OLD0070",
+  "category": "old2new",
+  "context": null,
+  "question": "Eski lotindagi \"jamgʻarmasiga\" so'zi yangi alifboda qanday yoziladi?",
+  "options": [
+   "jamğarmasiğa",
+   "jamğarmasiga",
+   "jamgarmasiga",
+   "jamğarmaşiga"
+  ],
+  "answer": 1,
+  "source": "lexicon (16772 corpus occurrences)",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "OLD0071",
+  "category": "old2new",
+  "context": null,
+  "question": "Eski lotindagi \"qoʻshilsa\" so'zi yangi alifboda qanday yoziladi?",
+  "options": [
+   "qösilsa",
+   "qoşilsa",
+   "qöşilsa",
+   "qoshilsa"
+  ],
+  "answer": 2,
+  "source": "lexicon (15186 corpus occurrences)",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "OLD0072",
+  "category": "old2new",
+  "context": null,
+  "question": "Eski lotindagi \"qogʻozlar\" so'zi yangi alifboda qanday yoziladi?",
+  "options": [
+   "qoğözlar",
+   "qogozlar",
+   "qoğozlar",
+   "qöğozlar"
+  ],
+  "answer": 2,
+  "source": "lexicon (88471 corpus occurrences)",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "OLD0073",
+  "category": "old2new",
+  "context": null,
+  "question": "Eski lotindagi \"qoʻshinlarini\" so'zi yangi alifboda qanday yoziladi?",
+  "options": [
+   "qoshinlarini",
+   "qöşinlarini",
+   "qösinlarini",
+   "qoşinlarini"
+  ],
+  "answer": 1,
+  "source": "lexicon (11533 corpus occurrences)",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "OLD0074",
+  "category": "old2new",
+  "context": null,
+  "question": "Eski lotindagi \"ogʻirligini\" so'zi yangi alifboda qanday yoziladi?",
+  "options": [
+   "öğirligini",
+   "oğirliğini",
+   "ogirligini",
+   "oğirligini"
+  ],
+  "answer": 3,
+  "source": "lexicon (21545 corpus occurrences)",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "OLD0075",
+  "category": "old2new",
+  "context": null,
+  "question": "Eski lotindagi \"toʻrtinchidan\" so'zi yangi alifboda qanday yoziladi?",
+  "options": [
+   "törtincidan",
+   "törtinçidan",
+   "tortinchidan",
+   "tortinçidan"
+  ],
+  "answer": 1,
+  "source": "lexicon (22177 corpus occurrences)",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "OLD0076",
+  "category": "old2new",
+  "context": null,
+  "question": "Eski lotindagi \"koʻchasi\" so'zi yangi alifboda qanday yoziladi?",
+  "options": [
+   "kochasi",
+   "koçasi",
+   "köçasi",
+   "köcasi"
+  ],
+  "answer": 2,
+  "source": "lexicon (80434 corpus occurrences)",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "OLD0077",
+  "category": "old2new",
+  "context": null,
+  "question": "Eski lotindagi \"qoʻyishgan\" so'zi yangi alifboda qanday yoziladi?",
+  "options": [
+   "qoyishgan",
+   "qöyişgan",
+   "qöyisgan",
+   "qoyişgan"
+  ],
+  "answer": 1,
+  "source": "lexicon (10681 corpus occurrences)",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "OLD0078",
+  "category": "old2new",
+  "context": null,
+  "question": "Eski lotindagi \"boʻlgach\" so'zi yangi alifboda qanday yoziladi?",
+  "options": [
+   "bölgac",
+   "bolgach",
+   "bolgaç",
+   "bölgaç"
+  ],
+  "answer": 3,
+  "source": "lexicon (54054 corpus occurrences)",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "OLD0079",
+  "category": "old2new",
+  "context": null,
+  "question": "Eski lotindagi \"koʻpayish\" so'zi yangi alifboda qanday yoziladi?",
+  "options": [
+   "köpayis",
+   "köpayiş",
+   "kopayiş",
+   "kopayish"
+  ],
+  "answer": 1,
+  "source": "lexicon (25148 corpus occurrences)",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "CYR0000",
+  "category": "cyr2new",
+  "context": null,
+  "question": "Kirilldagi \"ёшим\" so'zining yangi lotin alifbosidagi to'g'ri shakli qaysi?",
+  "options": [
+   "yoshim",
+   "yosim",
+   "yöşim",
+   "yoşim"
+  ],
+  "answer": 3,
+  "source": "lexicon (12112 corpus occurrences)",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "CYR0001",
+  "category": "cyr2new",
+  "context": null,
+  "question": "Kirilldagi \"иккинчисини\" so'zining yangi lotin alifbosidagi to'g'ri shakli qaysi?",
+  "options": [
+   "ikkinçişini",
+   "ikkinchisini",
+   "ikkinçisini",
+   "ikkincisini"
+  ],
+  "answer": 2,
+  "source": "lexicon (17369 corpus occurrences)",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "CYR0002",
+  "category": "cyr2new",
+  "context": null,
+  "question": "Kirilldagi \"нурланишнинг\" so'zining yangi lotin alifbosidagi to'g'ri shakli qaysi?",
+  "options": [
+   "nurlanişninğ",
+   "nurlanishning",
+   "nurlanisning",
+   "nurlanişning"
+  ],
+  "answer": 3,
+  "source": "lexicon (9559 corpus occurrences)",
+  "note": "",
+  "split": "dev"
+ },
+ {
+  "id": "CYR0003",
+  "category": "cyr2new",
+  "context": null,
+  "question": "Kirilldagi \"товуш\" so'zining yangi lotin alifbosidagi to'g'ri shakli qaysi?",
+  "options": [
+   "tövuş",
+   "tovus",
+   "tovuş",
+   "tovush"
+  ],
+  "answer": 2,
+  "source": "lexicon (155281 corpus occurrences)",
+  "note": "",
+  "split": "dev"
+ },
+ {
+  "id": "CYR0004",
+  "category": "cyr2new",
+  "context": null,
+  "question": "Kirilldagi \"қачонгача\" so'zining yangi lotin alifbosidagi to'g'ri shakli qaysi?",
+  "options": [
+   "qaçongaça",
+   "qachongacha",
+   "qacongaca",
+   "qacongaça"
+  ],
+  "answer": 0,
+  "source": "lexicon (8830 corpus occurrences)",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "CYR0005",
+  "category": "cyr2new",
+  "context": null,
+  "question": "Kirilldagi \"бузилишига\" so'zining yangi lotin alifbosidagi to'g'ri shakli qaysi?",
+  "options": [
+   "buzilishiga",
+   "buzilişiga",
+   "buzilişiğa",
+   "buzilisiga"
+  ],
+  "answer": 1,
+  "source": "lexicon (38463 corpus occurrences)",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "CYR0006",
+  "category": "cyr2new",
+  "context": null,
+  "question": "Kirilldagi \"иқтисодчилар\" so'zining yangi lotin alifbosidagi to'g'ri shakli qaysi?",
+  "options": [
+   "iqtisodçilar",
+   "iqtisödçilar",
+   "iqtisodchilar",
+   "iqtisodcilar"
+  ],
+  "answer": 0,
+  "source": "lexicon (8535 corpus occurrences)",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "CYR0007",
+  "category": "cyr2new",
+  "context": null,
+  "question": "Kirilldagi \"тозалаш\" so'zining yangi lotin alifbosidagi to'g'ri shakli qaysi?",
+  "options": [
+   "tozalash",
+   "tozalaş",
+   "tozalas",
+   "tözalaş"
+  ],
+  "answer": 1,
+  "source": "lexicon (163989 corpus occurrences)",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "CYR0008",
+  "category": "cyr2new",
+  "context": null,
+  "question": "Kirilldagi \"ичкарисида\" so'zining yangi lotin alifbosidagi to'g'ri shakli qaysi?",
+  "options": [
+   "içkarişida",
+   "ickarisida",
+   "ichkarisida",
+   "içkarisida"
+  ],
+  "answer": 3,
+  "source": "lexicon (8927 corpus occurrences)",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "CYR0009",
+  "category": "cyr2new",
+  "context": null,
+  "question": "Kirilldagi \"шарсимон\" so'zining yangi lotin alifbosidagi to'g'ri shakli qaysi?",
+  "options": [
+   "şarsimön",
+   "sarsimon",
+   "şarsimon",
+   "sharsimon"
+  ],
+  "answer": 2,
+  "source": "lexicon (16240 corpus occurrences)",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "CYR0010",
+  "category": "cyr2new",
+  "context": null,
+  "question": "Kirilldagi \"террорчилик\" so'zining yangi lotin alifbosidagi to'g'ri shakli qaysi?",
+  "options": [
+   "terrorchilik",
+   "terrörçilik",
+   "terrorçilik",
+   "terrorcilik"
+  ],
+  "answer": 2,
+  "source": "lexicon (23403 corpus occurrences)",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "CYR0011",
+  "category": "cyr2new",
+  "context": null,
+  "question": "Kirilldagi \"ичган\" so'zining yangi lotin alifbosidagi to'g'ri shakli qaysi?",
+  "options": [
+   "içğan",
+   "ichgan",
+   "icgan",
+   "içgan"
+  ],
+  "answer": 3,
+  "source": "lexicon (15460 corpus occurrences)",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "CYR0012",
+  "category": "cyr2new",
+  "context": null,
+  "question": "Kirilldagi \"гапиришни\" so'zining yangi lotin alifbosidagi to'g'ri shakli qaysi?",
+  "options": [
+   "gapirishni",
+   "gapirisni",
+   "ğapirişni",
+   "gapirişni"
+  ],
+  "answer": 3,
+  "source": "lexicon (8076 corpus occurrences)",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "CYR0013",
+  "category": "cyr2new",
+  "context": null,
+  "question": "Kirilldagi \"шошма\" so'zining yangi lotin alifbosidagi to'g'ri shakli qaysi?",
+  "options": [
+   "soşma",
+   "sosma",
+   "şoşma",
+   "shoshma"
+  ],
+  "answer": 2,
+  "source": "lexicon (11876 corpus occurrences)",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "CYR0014",
+  "category": "cyr2new",
+  "context": null,
+  "question": "Kirilldagi \"участкалари\" so'zining yangi lotin alifbosidagi to'g'ri shakli qaysi?",
+  "options": [
+   "uçastkalari",
+   "uchastkalari",
+   "ucastkalari",
+   "uçaştkalari"
+  ],
+  "answer": 0,
+  "source": "lexicon (31538 corpus occurrences)",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "CYR0015",
+  "category": "cyr2new",
+  "context": null,
+  "question": "Kirilldagi \"даволаш\" so'zining yangi lotin alifbosidagi to'g'ri shakli qaysi?",
+  "options": [
+   "davölaş",
+   "davolas",
+   "davolash",
+   "davolaş"
+  ],
+  "answer": 3,
+  "source": "lexicon (202543 corpus occurrences)",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "CYR0016",
+  "category": "cyr2new",
+  "context": null,
+  "question": "Kirilldagi \"шаклларнинг\" so'zining yangi lotin alifbosidagi to'g'ri shakli qaysi?",
+  "options": [
+   "şakllarninğ",
+   "shakllarning",
+   "sakllarning",
+   "şakllarning"
+  ],
+  "answer": 3,
+  "source": "lexicon (10085 corpus occurrences)",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "CYR0017",
+  "category": "cyr2new",
+  "context": null,
+  "question": "Kirilldagi \"этишича\" so'zining yangi lotin alifbosidagi to'g'ri shakli qaysi?",
+  "options": [
+   "etişiça",
+   "etisiça",
+   "etishicha",
+   "etisica"
+  ],
+  "answer": 0,
+  "source": "lexicon (18573 corpus occurrences)",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "CYR0018",
+  "category": "cyr2new",
+  "context": null,
+  "question": "Kirilldagi \"ўлдирган\" so'zining yangi lotin alifbosidagi to'g'ri shakli qaysi?",
+  "options": [
+   "öldirgan",
+   "oʻldirgan",
+   "öldirğan",
+   "oldirgan"
+  ],
+  "answer": 0,
+  "source": "lexicon (15624 corpus occurrences)",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "CYR0019",
+  "category": "cyr2new",
+  "context": null,
+  "question": "Kirilldagi \"ташхиси\" so'zining yangi lotin alifbosidagi to'g'ri shakli qaysi?",
+  "options": [
+   "taşxisi",
+   "tasxisi",
+   "taşxişi",
+   "tashxisi"
+  ],
+  "answer": 0,
+  "source": "lexicon (19012 corpus occurrences)",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "CYR0020",
+  "category": "cyr2new",
+  "context": null,
+  "question": "Kirilldagi \"топширилади\" so'zining yangi lotin alifbosidagi to'g'ri shakli qaysi?",
+  "options": [
+   "topshiriladi",
+   "töpşiriladi",
+   "topsiriladi",
+   "topşiriladi"
+  ],
+  "answer": 3,
+  "source": "lexicon (28192 corpus occurrences)",
+  "note": "",
+  "split": "dev"
+ },
+ {
+  "id": "CYR0021",
+  "category": "cyr2new",
+  "context": null,
+  "question": "Kirilldagi \"оширган\" so'zining yangi lotin alifbosidagi to'g'ri shakli qaysi?",
+  "options": [
+   "oshirgan",
+   "oşirğan",
+   "osirgan",
+   "oşirgan"
+  ],
+  "answer": 3,
+  "source": "lexicon (40331 corpus occurrences)",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "CYR0022",
+  "category": "cyr2new",
+  "context": null,
+  "question": "Kirilldagi \"кучланиш\" so'zining yangi lotin alifbosidagi to'g'ri shakli qaysi?",
+  "options": [
+   "kuçlaniş",
+   "kuclanis",
+   "kuclaniş",
+   "kuchlanish"
+  ],
+  "answer": 0,
+  "source": "lexicon (143253 corpus occurrences)",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "CYR0023",
+  "category": "cyr2new",
+  "context": null,
+  "question": "Kirilldagi \"учрайдиган\" so'zining yangi lotin alifbosidagi to'g'ri shakli qaysi?",
+  "options": [
+   "uchraydigan",
+   "ucraydigan",
+   "uçraydiğan",
+   "uçraydigan"
+  ],
+  "answer": 3,
+  "source": "lexicon (80096 corpus occurrences)",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "CYR0024",
+  "category": "cyr2new",
+  "context": null,
+  "question": "Kirilldagi \"қилишдаги\" so'zining yangi lotin alifbosidagi to'g'ri shakli qaysi?",
+  "options": [
+   "qilisdagi",
+   "qilişdagi",
+   "qilişdaği",
+   "qilishdagi"
+  ],
+  "answer": 1,
+  "source": "lexicon (14689 corpus occurrences)",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "CYR0025",
+  "category": "cyr2new",
+  "context": null,
+  "question": "Kirilldagi \"метргача\" so'zining yangi lotin alifbosidagi to'g'ri shakli qaysi?",
+  "options": [
+   "metrgacha",
+   "metrgaca",
+   "metrgaça",
+   "metrğaça"
+  ],
+  "answer": 2,
+  "source": "lexicon (22233 corpus occurrences)",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "CYR0026",
+  "category": "cyr2new",
+  "context": null,
+  "question": "Kirilldagi \"шимолга\" so'zining yangi lotin alifbosidagi to'g'ri shakli qaysi?",
+  "options": [
+   "şimolğa",
+   "şimolga",
+   "shimolga",
+   "simolga"
+  ],
+  "answer": 1,
+  "source": "lexicon (8463 corpus occurrences)",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "CYR0027",
+  "category": "cyr2new",
+  "context": null,
+  "question": "Kirilldagi \"ишлатишда\" so'zining yangi lotin alifbosidagi to'g'ri shakli qaysi?",
+  "options": [
+   "islatisda",
+   "ishlatishda",
+   "islatişda",
+   "işlatişda"
+  ],
+  "answer": 3,
+  "source": "lexicon (10264 corpus occurrences)",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "CYR0028",
+  "category": "cyr2new",
+  "context": null,
+  "question": "Kirilldagi \"мочевина\" so'zining yangi lotin alifbosidagi to'g'ri shakli qaysi?",
+  "options": [
+   "möçevina",
+   "mochevina",
+   "moçevina",
+   "mocevina"
+  ],
+  "answer": 2,
+  "source": "lexicon (9124 corpus occurrences)",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "CYR0029",
+  "category": "cyr2new",
+  "context": null,
+  "question": "Kirilldagi \"бошинг\" so'zining yangi lotin alifbosidagi to'g'ri shakli qaysi?",
+  "options": [
+   "boşinğ",
+   "boshing",
+   "boşing",
+   "bosing"
+  ],
+  "answer": 2,
+  "source": "lexicon (10563 corpus occurrences)",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "CYR0030",
+  "category": "cyr2new",
+  "context": null,
+  "question": "Kirilldagi \"тушунтириш\" so'zining yangi lotin alifbosidagi to'g'ri shakli qaysi?",
+  "options": [
+   "tusuntiriş",
+   "tushuntirish",
+   "tuşuntiriş",
+   "tusuntiris"
+  ],
+  "answer": 2,
+  "source": "lexicon (101145 corpus occurrences)",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "CYR0031",
+  "category": "cyr2new",
+  "context": null,
+  "question": "Kirilldagi \"учрашувнинг\" so'zining yangi lotin alifbosidagi to'g'ri shakli qaysi?",
+  "options": [
+   "ucraşuvning",
+   "uchrashuvning",
+   "ucrasuvning",
+   "uçraşuvning"
+  ],
+  "answer": 3,
+  "source": "lexicon (18507 corpus occurrences)",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "CYR0032",
+  "category": "cyr2new",
+  "context": null,
+  "question": "Kirilldagi \"айланишига\" so'zining yangi lotin alifbosidagi to'g'ri shakli qaysi?",
+  "options": [
+   "aylanishiga",
+   "aylanişiğa",
+   "aylanisiga",
+   "aylanişiga"
+  ],
+  "answer": 3,
+  "source": "lexicon (14099 corpus occurrences)",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "CYR0033",
+  "category": "cyr2new",
+  "context": null,
+  "question": "Kirilldagi \"ўтганлар\" so'zining yangi lotin alifbosidagi to'g'ri shakli qaysi?",
+  "options": [
+   "oʻtganlar",
+   "otganlar",
+   "ötganlar",
+   "ötğanlar"
+  ],
+  "answer": 2,
+  "source": "lexicon (8501 corpus occurrences)",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "CYR0034",
+  "category": "cyr2new",
+  "context": null,
+  "question": "Kirilldagi \"тошнинг\" so'zining yangi lotin alifbosidagi to'g'ri shakli qaysi?",
+  "options": [
+   "toşning",
+   "toshning",
+   "tosning",
+   "toşninğ"
+  ],
+  "answer": 0,
+  "source": "lexicon (8370 corpus occurrences)",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "CYR0035",
+  "category": "cyr2new",
+  "context": null,
+  "question": "Kirilldagi \"нонушта\" so'zining yangi lotin alifbosidagi to'g'ri shakli qaysi?",
+  "options": [
+   "nonuşta",
+   "nonusta",
+   "nönuşta",
+   "nonushta"
+  ],
+  "answer": 0,
+  "source": "lexicon (19687 corpus occurrences)",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "CYR0036",
+  "category": "cyr2new",
+  "context": null,
+  "question": "Kirilldagi \"бошлабди\" so'zining yangi lotin alifbosidagi to'g'ri shakli qaysi?",
+  "options": [
+   "boslabdi",
+   "boşlabdi",
+   "boshlabdi",
+   "böşlabdi"
+  ],
+  "answer": 1,
+  "source": "lexicon (13685 corpus occurrences)",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "CYR0037",
+  "category": "cyr2new",
+  "context": null,
+  "question": "Kirilldagi \"нишонлаш\" so'zining yangi lotin alifbosidagi to'g'ri shakli qaysi?",
+  "options": [
+   "nişonlaş",
+   "nisonlaş",
+   "nisonlas",
+   "nishonlash"
+  ],
+  "answer": 0,
+  "source": "lexicon (12726 corpus occurrences)",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "CYR0038",
+  "category": "cyr2new",
+  "context": null,
+  "question": "Kirilldagi \"шудгор\" so'zining yangi lotin alifbosidagi to'g'ri shakli qaysi?",
+  "options": [
+   "sudgor",
+   "şudgör",
+   "shudgor",
+   "şudgor"
+  ],
+  "answer": 3,
+  "source": "lexicon (11447 corpus occurrences)",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "CYR0039",
+  "category": "cyr2new",
+  "context": null,
+  "question": "Kirilldagi \"туғилган\" so'zining yangi lotin alifbosidagi to'g'ri shakli qaysi?",
+  "options": [
+   "tugilgan",
+   "tuğilgan",
+   "tugʻilgan",
+   "tuğilğan"
+  ],
+  "answer": 1,
+  "source": "lexicon (236207 corpus occurrences)",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "CYR0040",
+  "category": "cyr2new",
+  "context": null,
+  "question": "Kirilldagi \"узоқлашиб\" so'zining yangi lotin alifbosidagi to'g'ri shakli qaysi?",
+  "options": [
+   "uzöqlaşib",
+   "uzoqlasib",
+   "uzoqlashib",
+   "uzoqlaşib"
+  ],
+  "answer": 3,
+  "source": "lexicon (12371 corpus occurrences)",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "CYR0041",
+  "category": "cyr2new",
+  "context": null,
+  "question": "Kirilldagi \"босқичидаги\" so'zining yangi lotin alifbosidagi to'g'ri shakli qaysi?",
+  "options": [
+   "bosqichidagi",
+   "bosqiçidagi",
+   "bosqiçidaği",
+   "bosqicidagi"
+  ],
+  "answer": 1,
+  "source": "lexicon (8007 corpus occurrences)",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "CYR0042",
+  "category": "cyr2new",
+  "context": null,
+  "question": "Kirilldagi \"қонунчиликни\" so'zining yangi lotin alifbosidagi to'g'ri shakli qaysi?",
+  "options": [
+   "qönunçilikni",
+   "qonunchilikni",
+   "qonuncilikni",
+   "qonunçilikni"
+  ],
+  "answer": 3,
+  "source": "lexicon (14703 corpus occurrences)",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "CYR0043",
+  "category": "cyr2new",
+  "context": null,
+  "question": "Kirilldagi \"ташишни\" so'zining yangi lotin alifbosidagi to'g'ri shakli qaysi?",
+  "options": [
+   "tasişni",
+   "taşişni",
+   "tashishni",
+   "tasisni"
+  ],
+  "answer": 1,
+  "source": "lexicon (8008 corpus occurrences)",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "CYR0044",
+  "category": "cyr2new",
+  "context": null,
+  "question": "Kirilldagi \"енгиш\" so'zining yangi lotin alifbosidagi to'g'ri shakli qaysi?",
+  "options": [
+   "yenğiş",
+   "yengish",
+   "yengis",
+   "yengiş"
+  ],
+  "answer": 3,
+  "source": "lexicon (15107 corpus occurrences)",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "CYR0045",
+  "category": "cyr2new",
+  "context": null,
+  "question": "Kirilldagi \"ундовчи\" so'zining yangi lotin alifbosidagi to'g'ri shakli qaysi?",
+  "options": [
+   "undövçi",
+   "undovchi",
+   "undovci",
+   "undovçi"
+  ],
+  "answer": 3,
+  "source": "lexicon (9234 corpus occurrences)",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "CYR0046",
+  "category": "cyr2new",
+  "context": null,
+  "question": "Kirilldagi \"ишинг\" so'zining yangi lotin alifbosidagi to'g'ri shakli qaysi?",
+  "options": [
+   "işinğ",
+   "ishing",
+   "işing",
+   "ising"
+  ],
+  "answer": 2,
+  "source": "lexicon (14822 corpus occurrences)",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "CYR0047",
+  "category": "cyr2new",
+  "context": null,
+  "question": "Kirilldagi \"спортчи\" so'zining yangi lotin alifbosidagi to'g'ri shakli qaysi?",
+  "options": [
+   "sportchi",
+   "spörtçi",
+   "sportçi",
+   "sportci"
+  ],
+  "answer": 2,
+  "source": "lexicon (46036 corpus occurrences)",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "CYR0048",
+  "category": "cyr2new",
+  "context": null,
+  "question": "Kirilldagi \"аралашган\" so'zining yangi lotin alifbosidagi to'g'ri shakli qaysi?",
+  "options": [
+   "aralashgan",
+   "aralaşğan",
+   "aralasgan",
+   "aralaşgan"
+  ],
+  "answer": 3,
+  "source": "lexicon (14150 corpus occurrences)",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "CYR0049",
+  "category": "cyr2new",
+  "context": null,
+  "question": "Kirilldagi \"қондиришга\" so'zining yangi lotin alifbosidagi to'g'ri shakli qaysi?",
+  "options": [
+   "qondirişga",
+   "qondirisga",
+   "qondirişğa",
+   "qondirishga"
+  ],
+  "answer": 0,
+  "source": "lexicon (15753 corpus occurrences)",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "CYR0050",
+  "category": "cyr2new",
+  "context": null,
+  "question": "Kirilldagi \"чунончи\" so'zining yangi lotin alifbosidagi to'g'ri shakli qaysi?",
+  "options": [
+   "chunonchi",
+   "çunonçi",
+   "cunonci",
+   "cunonçi"
+  ],
+  "answer": 1,
+  "source": "lexicon (87022 corpus occurrences)",
+  "note": "",
+  "split": "dev"
+ },
+ {
+  "id": "CYR0051",
+  "category": "cyr2new",
+  "context": null,
+  "question": "Kirilldagi \"ўтганда\" so'zining yangi lotin alifbosidagi to'g'ri shakli qaysi?",
+  "options": [
+   "otganda",
+   "oʻtganda",
+   "ötğanda",
+   "ötganda"
+  ],
+  "answer": 3,
+  "source": "lexicon (25451 corpus occurrences)",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "CYR0052",
+  "category": "cyr2new",
+  "context": null,
+  "question": "Kirilldagi \"бошқарувини\" so'zining yangi lotin alifbosidagi to'g'ri shakli qaysi?",
+  "options": [
+   "boşqaruvini",
+   "bosqaruvini",
+   "böşqaruvini",
+   "boshqaruvini"
+  ],
+  "answer": 0,
+  "source": "lexicon (15262 corpus occurrences)",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "CYR0053",
+  "category": "cyr2new",
+  "context": null,
+  "question": "Kirilldagi \"учидаги\" so'zining yangi lotin alifbosidagi to'g'ri shakli qaysi?",
+  "options": [
+   "uchidagi",
+   "uçidaği",
+   "uçidagi",
+   "ucidagi"
+  ],
+  "answer": 2,
+  "source": "lexicon (8500 corpus occurrences)",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "CYR0054",
+  "category": "cyr2new",
+  "context": null,
+  "question": "Kirilldagi \"футболчи\" so'zining yangi lotin alifbosidagi to'g'ri shakli qaysi?",
+  "options": [
+   "futbolci",
+   "futbolchi",
+   "futbolçi",
+   "futbölçi"
+  ],
+  "answer": 2,
+  "source": "lexicon (75215 corpus occurrences)",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "CYR0055",
+  "category": "cyr2new",
+  "context": null,
+  "question": "Kirilldagi \"тушунчасини\" so'zining yangi lotin alifbosidagi to'g'ri shakli qaysi?",
+  "options": [
+   "tusuncasini",
+   "tushunchasini",
+   "tuşunçasini",
+   "tusunçasini"
+  ],
+  "answer": 2,
+  "source": "lexicon (33623 corpus occurrences)",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "CYR0056",
+  "category": "cyr2new",
+  "context": null,
+  "question": "Kirilldagi \"сабабчи\" so'zining yangi lotin alifbosidagi to'g'ri shakli qaysi?",
+  "options": [
+   "şababçi",
+   "sababchi",
+   "sababci",
+   "sababçi"
+  ],
+  "answer": 3,
+  "source": "lexicon (37740 corpus occurrences)",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "CYR0057",
+  "category": "cyr2new",
+  "context": null,
+  "question": "Kirilldagi \"қонунчиликда\" so'zining yangi lotin alifbosidagi to'g'ri shakli qaysi?",
+  "options": [
+   "qönunçilikda",
+   "qonunchilikda",
+   "qonunçilikda",
+   "qonuncilikda"
+  ],
+  "answer": 2,
+  "source": "lexicon (30220 corpus occurrences)",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "CYR0058",
+  "category": "cyr2new",
+  "context": null,
+  "question": "Kirilldagi \"ижрочилик\" so'zining yangi lotin alifbosidagi to'g'ri shakli qaysi?",
+  "options": [
+   "ijroçilik",
+   "ijrochilik",
+   "ijröçilik",
+   "ijrocilik"
+  ],
+  "answer": 0,
+  "source": "lexicon (17689 corpus occurrences)",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "CYR0059",
+  "category": "cyr2new",
+  "context": null,
+  "question": "Kirilldagi \"сарфланиши\" so'zining yangi lotin alifbosidagi to'g'ri shakli qaysi?",
+  "options": [
+   "sarflanishi",
+   "sarflanişi",
+   "şarflanişi",
+   "sarflanisi"
+  ],
+  "answer": 1,
+  "source": "lexicon (17054 corpus occurrences)",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "CYR0060",
+  "category": "cyr2new",
+  "context": null,
+  "question": "Kirilldagi \"тозалашда\" so'zining yangi lotin alifbosidagi to'g'ri shakli qaysi?",
+  "options": [
+   "tözalaşda",
+   "tozalasda",
+   "tozalaşda",
+   "tozalashda"
+  ],
+  "answer": 2,
+  "source": "lexicon (11478 corpus occurrences)",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "CYR0061",
+  "category": "cyr2new",
+  "context": null,
+  "question": "Kirilldagi \"қисқариши\" so'zining yangi lotin alifbosidagi to'g'ri shakli qaysi?",
+  "options": [
+   "qisqarishi",
+   "qisqarişi",
+   "qisqarisi",
+   "qişqarişi"
+  ],
+  "answer": 1,
+  "source": "lexicon (28510 corpus occurrences)",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "CYR0062",
+  "category": "cyr2new",
+  "context": null,
+  "question": "Kirilldagi \"пасайтириш\" so'zining yangi lotin alifbosidagi to'g'ri shakli qaysi?",
+  "options": [
+   "pasaytiriş",
+   "pasaytiris",
+   "pasaytirish",
+   "paşaytiriş"
+  ],
+  "answer": 0,
+  "source": "lexicon (32057 corpus occurrences)",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "CYR0063",
+  "category": "cyr2new",
+  "context": null,
+  "question": "Kirilldagi \"жиҳозлаш\" so'zining yangi lotin alifbosidagi to'g'ri shakli qaysi?",
+  "options": [
+   "jihozlaş",
+   "jihozlas",
+   "jihozlash",
+   "jihözlaş"
+  ],
+  "answer": 0,
+  "source": "lexicon (34625 corpus occurrences)",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "CYR0064",
+  "category": "cyr2new",
+  "context": null,
+  "question": "Kirilldagi \"шунчалар\" so'zining yangi lotin alifbosidagi to'g'ri shakli qaysi?",
+  "options": [
+   "suncalar",
+   "sunçalar",
+   "shunchalar",
+   "şunçalar"
+  ],
+  "answer": 3,
+  "source": "lexicon (22449 corpus occurrences)",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "CYR0065",
+  "category": "cyr2new",
+  "context": null,
+  "question": "Kirilldagi \"учламчи\" so'zining yangi lotin alifbosidagi to'g'ri shakli qaysi?",
+  "options": [
+   "uçlamçi",
+   "uclamci",
+   "uclamçi",
+   "uchlamchi"
+  ],
+  "answer": 0,
+  "source": "lexicon (13596 corpus occurrences)",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "CYR0066",
+  "category": "cyr2new",
+  "context": null,
+  "question": "Kirilldagi \"ганч\" so'zining yangi lotin alifbosidagi to'g'ri shakli qaysi?",
+  "options": [
+   "ganç",
+   "ğanç",
+   "ganc",
+   "ganch"
+  ],
+  "answer": 0,
+  "source": "lexicon (10793 corpus occurrences)",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "CYR0067",
+  "category": "cyr2new",
+  "context": null,
+  "question": "Kirilldagi \"футболчилари\" so'zining yangi lotin alifbosidagi to'g'ri shakli qaysi?",
+  "options": [
+   "futbölçilari",
+   "futbolçilari",
+   "futbolchilari",
+   "futbolcilari"
+  ],
+  "answer": 1,
+  "source": "lexicon (10792 corpus occurrences)",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "CYR0068",
+  "category": "cyr2new",
+  "context": null,
+  "question": "Kirilldagi \"ташвишлари\" so'zining yangi lotin alifbosidagi to'g'ri shakli qaysi?",
+  "options": [
+   "taşvişlari",
+   "tasvislari",
+   "tasvişlari",
+   "tashvishlari"
+  ],
+  "answer": 0,
+  "source": "lexicon (9828 corpus occurrences)",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "CYR0069",
+  "category": "cyr2new",
+  "context": null,
+  "question": "Kirilldagi \"текширилиши\" so'zining yangi lotin alifbosidagi to'g'ri shakli qaysi?",
+  "options": [
+   "tekshirilishi",
+   "tekşirilişi",
+   "teksirilişi",
+   "teksirilisi"
+  ],
+  "answer": 1,
+  "source": "lexicon (9204 corpus occurrences)",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "CYR0070",
+  "category": "cyr2new",
+  "context": null,
+  "question": "Kirilldagi \"чораларини\" so'zining yangi lotin alifbosidagi to'g'ri shakli qaysi?",
+  "options": [
+   "çöralarini",
+   "çoralarini",
+   "choralarini",
+   "coralarini"
+  ],
+  "answer": 1,
+  "source": "lexicon (69722 corpus occurrences)",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "CYR0071",
+  "category": "cyr2new",
+  "context": null,
+  "question": "Kirilldagi \"унгача\" so'zining yangi lotin alifbosidagi to'g'ri shakli qaysi?",
+  "options": [
+   "unğaça",
+   "ungaca",
+   "ungacha",
+   "ungaça"
+  ],
+  "answer": 3,
+  "source": "lexicon (13573 corpus occurrences)",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "CYR0072",
+  "category": "cyr2new",
+  "context": null,
+  "question": "Kirilldagi \"ёшидаги\" so'zining yangi lotin alifbosidagi to'g'ri shakli qaysi?",
+  "options": [
+   "yoshidagi",
+   "yoşidagi",
+   "yosidagi",
+   "yoşidaği"
+  ],
+  "answer": 1,
+  "source": "lexicon (33395 corpus occurrences)",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "CYR0073",
+  "category": "cyr2new",
+  "context": null,
+  "question": "Kirilldagi \"чумоли\" so'zining yangi lotin alifbosidagi to'g'ri shakli qaysi?",
+  "options": [
+   "chumoli",
+   "çumoli",
+   "cumoli",
+   "çumöli"
+  ],
+  "answer": 1,
+  "source": "lexicon (16027 corpus occurrences)",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "CYR0074",
+  "category": "cyr2new",
+  "context": null,
+  "question": "Kirilldagi \"қувватловчи\" so'zining yangi lotin alifbosidagi to'g'ri shakli qaysi?",
+  "options": [
+   "quvvatlovçi",
+   "quvvatlövçi",
+   "quvvatlovci",
+   "quvvatlovchi"
+  ],
+  "answer": 0,
+  "source": "lexicon (9574 corpus occurrences)",
+  "note": "",
+  "split": "dev"
+ },
+ {
+  "id": "CYR0075",
+  "category": "cyr2new",
+  "context": null,
+  "question": "Kirilldagi \"аралашмаси\" so'zining yangi lotin alifbosidagi to'g'ri shakli qaysi?",
+  "options": [
+   "aralasmasi",
+   "aralashmasi",
+   "aralaşmasi",
+   "aralaşmaşi"
+  ],
+  "answer": 2,
+  "source": "lexicon (46991 corpus occurrences)",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "CYR0076",
+  "category": "cyr2new",
+  "context": null,
+  "question": "Kirilldagi \"кенгашлар\" so'zining yangi lotin alifbosidagi to'g'ri shakli qaysi?",
+  "options": [
+   "kenğaşlar",
+   "kengaslar",
+   "kengaşlar",
+   "kengashlar"
+  ],
+  "answer": 2,
+  "source": "lexicon (10659 corpus occurrences)",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "CYR0077",
+  "category": "cyr2new",
+  "context": null,
+  "question": "Kirilldagi \"бошимни\" so'zining yangi lotin alifbosidagi to'g'ri shakli qaysi?",
+  "options": [
+   "bosimni",
+   "boşimni",
+   "böşimni",
+   "boshimni"
+  ],
+  "answer": 1,
+  "source": "lexicon (19952 corpus occurrences)",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "CYR0078",
+  "category": "cyr2new",
+  "context": null,
+  "question": "Kirilldagi \"тушиш\" so'zining yangi lotin alifbosidagi to'g'ri shakli qaysi?",
+  "options": [
+   "tusis",
+   "tusiş",
+   "tuşiş",
+   "tushish"
+  ],
+  "answer": 2,
+  "source": "lexicon (57467 corpus occurrences)",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "CYR0079",
+  "category": "cyr2new",
+  "context": null,
+  "question": "Kirilldagi \"машинасига\" so'zining yangi lotin alifbosidagi to'g'ri shakli qaysi?",
+  "options": [
+   "maşinasiga",
+   "masinasiga",
+   "mashinasiga",
+   "maşinasiğa"
+  ],
+  "answer": 0,
+  "source": "lexicon (9168 corpus occurrences)",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "PRE0000",
+  "category": "preserve",
+  "context": null,
+  "question": "Avtomatik tuzatishda \"kelaslar\" so'zi qanday bo'lishi kerak?",
+  "options": [
+   "o'zgarmaydi",
+   "kelasizlar",
+   "Kelaslar",
+   "kelaşlar"
+  ],
+  "answer": 0,
+  "source": "CLAUDE.md §1",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "PRE0001",
+  "category": "preserve",
+  "context": null,
+  "question": "Avtomatik tuzatishda \"qisela\" so'zi qanday bo'lishi kerak?",
+  "options": [
+   "o'zgarmaydi",
+   "Qisela",
+   "qilsanglar",
+   "qişela"
+  ],
+  "answer": 0,
+  "source": "CLAUDE.md §1",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "PRE0002",
+  "category": "preserve",
+  "context": null,
+  "question": "Avtomatik tuzatishda \"balu\" so'zi qanday bo'lishi kerak?",
+  "options": [
+   "o'zgarmaydi",
+   "Balu",
+   "balʼu",
+   "baliq"
+  ],
+  "answer": 0,
+  "source": "CLAUDE.md §1",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "PRE0003",
+  "category": "preserve",
+  "context": null,
+  "question": "Avtomatik tuzatishda \"bormimiz\" so'zi qanday bo'lishi kerak?",
+  "options": [
+   "bormimizʼ",
+   "börmimiz",
+   "Bormimiz",
+   "o'zgarmaydi"
+  ],
+  "answer": 3,
+  "source": "CLAUDE.md §1",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "PRE0004",
+  "category": "preserve",
+  "context": null,
+  "question": "Avtomatik tuzatishda \"guys\" so'zi qanday bo'lishi kerak?",
+  "options": [
+   "guyş",
+   "ğuys",
+   "ğuyş",
+   "o'zgarmaydi"
+  ],
+  "answer": 3,
+  "source": "generated passthrough pool (Q23b) — replace with the Q23a hand-written forms",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "PRE0005",
+  "category": "preserve",
+  "context": null,
+  "question": "Avtomatik tuzatishda \"amerikasigi\" so'zi qanday bo'lishi kerak?",
+  "options": [
+   "o'zgarmaydi",
+   "amerikaşigi",
+   "amerikasiği",
+   "amerikaşiği"
+  ],
+  "answer": 0,
+  "source": "generated passthrough pool (Q23b) — replace with the Q23a hand-written forms",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "PRE0006",
+  "category": "preserve",
+  "context": null,
+  "question": "Avtomatik tuzatishda \"andersonii\" so'zi qanday bo'lishi kerak?",
+  "options": [
+   "andersönii",
+   "o'zgarmaydi",
+   "anderşönii",
+   "anderşonii"
+  ],
+  "answer": 1,
+  "source": "generated passthrough pool (Q23b) — replace with the Q23a hand-written forms",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "PRE0007",
+  "category": "preserve",
+  "context": null,
+  "question": "Avtomatik tuzatishda \"insofniyam\" so'zi qanday bo'lishi kerak?",
+  "options": [
+   "insöfniyam",
+   "inşofniyam",
+   "o'zgarmaydi",
+   "inşöfniyam"
+  ],
+  "answer": 2,
+  "source": "generated passthrough pool (Q23b) — replace with the Q23a hand-written forms",
+  "note": "",
+  "split": "dev"
+ },
+ {
+  "id": "PRE0008",
+  "category": "preserve",
+  "context": null,
+  "question": "Avtomatik tuzatishda \"tomondamiz\" so'zi qanday bo'lishi kerak?",
+  "options": [
+   "tömöndamiz",
+   "o'zgarmaydi",
+   "tomöndamiz",
+   "tömondamiz"
+  ],
+  "answer": 1,
+  "source": "generated passthrough pool (Q23b) — replace with the Q23a hand-written forms",
+  "note": "",
+  "split": "dev"
+ },
+ {
+  "id": "PRE0009",
+  "category": "preserve",
+  "context": null,
+  "question": "Avtomatik tuzatishda \"komikslardan\" so'zi qanday bo'lishi kerak?",
+  "options": [
+   "kömikslardan",
+   "komikşlardan",
+   "o'zgarmaydi",
+   "kömikşlardan"
+  ],
+  "answer": 2,
+  "source": "generated passthrough pool (Q23b) — replace with the Q23a hand-written forms",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "PRE0010",
+  "category": "preserve",
+  "context": null,
+  "question": "Avtomatik tuzatishda \"hukmdoring\" so'zi qanday bo'lishi kerak?",
+  "options": [
+   "hukmdöring",
+   "hukmdörinğ",
+   "o'zgarmaydi",
+   "hukmdorinğ"
+  ],
+  "answer": 2,
+  "source": "generated passthrough pool (Q23b) — replace with the Q23a hand-written forms",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "PRE0011",
+  "category": "preserve",
+  "context": null,
+  "question": "Avtomatik tuzatishda \"tamomlaysiz\" so'zi qanday bo'lishi kerak?",
+  "options": [
+   "tamömlaysiz",
+   "o'zgarmaydi",
+   "tamömlayşiz",
+   "tamomlayşiz"
+  ],
+  "answer": 1,
+  "source": "generated passthrough pool (Q23b) — replace with the Q23a hand-written forms",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "PRE0012",
+  "category": "preserve",
+  "context": null,
+  "question": "Avtomatik tuzatishda \"sonlarimga\" so'zi qanday bo'lishi kerak?",
+  "options": [
+   "o'zgarmaydi",
+   "şonlarimğa",
+   "şönlarimga",
+   "sönlarimga"
+  ],
+  "answer": 0,
+  "source": "generated passthrough pool (Q23b) — replace with the Q23a hand-written forms",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "PRE0013",
+  "category": "preserve",
+  "context": null,
+  "question": "Avtomatik tuzatishda \"islomofob\" so'zi qanday bo'lishi kerak?",
+  "options": [
+   "işlomöfob",
+   "o'zgarmaydi",
+   "işlömofob",
+   "islömoföb"
+  ],
+  "answer": 1,
+  "source": "generated passthrough pool (Q23b) — replace with the Q23a hand-written forms",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "PRE0014",
+  "category": "preserve",
+  "context": null,
+  "question": "Avtomatik tuzatishda \"podkastdagi\" so'zi qanday bo'lishi kerak?",
+  "options": [
+   "pödkastdaği",
+   "pödkastdagi",
+   "o'zgarmaydi",
+   "podkaştdagi"
+  ],
+  "answer": 2,
+  "source": "generated passthrough pool (Q23b) — replace with the Q23a hand-written forms",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "PRE0015",
+  "category": "preserve",
+  "context": null,
+  "question": "Avtomatik tuzatishda \"joylolmadim\" so'zi qanday bo'lishi kerak?",
+  "options": [
+   "joylölmadim",
+   "jöylölmadim",
+   "o'zgarmaydi",
+   "jöylolmadim"
+  ],
+  "answer": 2,
+  "source": "generated passthrough pool (Q23b) — replace with the Q23a hand-written forms",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "PRE0016",
+  "category": "preserve",
+  "context": null,
+  "question": "Avtomatik tuzatishda \"noxolislikda\" so'zi qanday bo'lishi kerak?",
+  "options": [
+   "o'zgarmaydi",
+   "noxölişlikda",
+   "noxolişlikda",
+   "noxölislikda"
+  ],
+  "answer": 0,
+  "source": "generated passthrough pool (Q23b) — replace with the Q23a hand-written forms",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "PRE0017",
+  "category": "preserve",
+  "context": null,
+  "question": "Avtomatik tuzatishda \"salomida\" so'zi qanday bo'lishi kerak?",
+  "options": [
+   "şalömida",
+   "şalomida",
+   "o'zgarmaydi",
+   "salömida"
+  ],
+  "answer": 2,
+  "source": "generated passthrough pool (Q23b) — replace with the Q23a hand-written forms",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "PRE0018",
+  "category": "preserve",
+  "context": null,
+  "question": "Avtomatik tuzatishda \"postniyam\" so'zi qanday bo'lishi kerak?",
+  "options": [
+   "o'zgarmaydi",
+   "poştniyam",
+   "pöştniyam",
+   "pöstniyam"
+  ],
+  "answer": 0,
+  "source": "generated passthrough pool (Q23b) — replace with the Q23a hand-written forms",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "PRE0019",
+  "category": "preserve",
+  "context": null,
+  "question": "Avtomatik tuzatishda \"xosroqdir\" so'zi qanday bo'lishi kerak?",
+  "options": [
+   "xöşroqdir",
+   "o'zgarmaydi",
+   "xosröqdir",
+   "xoşröqdir"
+  ],
+  "answer": 1,
+  "source": "generated passthrough pool (Q23b) — replace with the Q23a hand-written forms",
+  "note": "",
+  "split": "dev"
+ },
+ {
+  "id": "PRE0020",
+  "category": "preserve",
+  "context": null,
+  "question": "Avtomatik tuzatishda \"dollarimga\" so'zi qanday bo'lishi kerak?",
+  "options": [
+   "o'zgarmaydi",
+   "döllarimga",
+   "dollarimğa",
+   "döllarimğa"
+  ],
+  "answer": 0,
+  "source": "generated passthrough pool (Q23b) — replace with the Q23a hand-written forms",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "PRE0021",
+  "category": "preserve",
+  "context": null,
+  "question": "Avtomatik tuzatishda \"xayolinga\" so'zi qanday bo'lishi kerak?",
+  "options": [
+   "xayolinğa",
+   "o'zgarmaydi",
+   "xayölinğa",
+   "xayölinga"
+  ],
+  "answer": 1,
+  "source": "generated passthrough pool (Q23b) — replace with the Q23a hand-written forms",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "PRE0022",
+  "category": "preserve",
+  "context": null,
+  "question": "Avtomatik tuzatishda \"ahlatxonaga\" so'zi qanday bo'lishi kerak?",
+  "options": [
+   "ahlatxönaga",
+   "o'zgarmaydi",
+   "ahlatxönağa",
+   "ahlatxonağa"
+  ],
+  "answer": 1,
+  "source": "generated passthrough pool (Q23b) — replace with the Q23a hand-written forms",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "PRE0023",
+  "category": "preserve",
+  "context": null,
+  "question": "Avtomatik tuzatishda \"improvements\" so'zi qanday bo'lishi kerak?",
+  "options": [
+   "imprövements",
+   "o'zgarmaydi",
+   "improvementş",
+   "imprövementş"
+  ],
+  "answer": 1,
+  "source": "generated passthrough pool (Q23b) — replace with the Q23a hand-written forms",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "PRE0024",
+  "category": "preserve",
+  "context": null,
+  "question": "Avtomatik tuzatishda \"saratondir\" so'zi qanday bo'lishi kerak?",
+  "options": [
+   "şaratondir",
+   "şaratöndir",
+   "saratöndir",
+   "o'zgarmaydi"
+  ],
+  "answer": 3,
+  "source": "generated passthrough pool (Q23b) — replace with the Q23a hand-written forms",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "PRE0025",
+  "category": "preserve",
+  "context": null,
+  "question": "Avtomatik tuzatishda \"olinganakan\" so'zi qanday bo'lishi kerak?",
+  "options": [
+   "olinğanakan",
+   "ölinğanakan",
+   "o'zgarmaydi",
+   "ölinganakan"
+  ],
+  "answer": 2,
+  "source": "generated passthrough pool (Q23b) — replace with the Q23a hand-written forms",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "PRE0026",
+  "category": "preserve",
+  "context": null,
+  "question": "Avtomatik tuzatishda \"lavozmiga\" so'zi qanday bo'lishi kerak?",
+  "options": [
+   "lavozmiğa",
+   "lavözmiğa",
+   "o'zgarmaydi",
+   "lavözmiga"
+  ],
+  "answer": 2,
+  "source": "generated passthrough pool (Q23b) — replace with the Q23a hand-written forms",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "PRE0027",
+  "category": "preserve",
+  "context": null,
+  "question": "Avtomatik tuzatishda \"summangizni\" so'zi qanday bo'lishi kerak?",
+  "options": [
+   "şummanğizni",
+   "summanğizni",
+   "o'zgarmaydi",
+   "şummangizni"
+  ],
+  "answer": 2,
+  "source": "generated passthrough pool (Q23b) — replace with the Q23a hand-written forms",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "PRE0028",
+  "category": "preserve",
+  "context": null,
+  "question": "Avtomatik tuzatishda \"bittasisiz\" so'zi qanday bo'lishi kerak?",
+  "options": [
+   "bittaşisiz",
+   "bittaşişiz",
+   "bittasişiz",
+   "o'zgarmaydi"
+  ],
+  "answer": 3,
+  "source": "generated passthrough pool (Q23b) — replace with the Q23a hand-written forms",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "PRE0029",
+  "category": "preserve",
+  "context": null,
+  "question": "Avtomatik tuzatishda \"pygmaeus\" so'zi qanday bo'lishi kerak?",
+  "options": [
+   "pygmaeuş",
+   "pyğmaeus",
+   "pyğmaeuş",
+   "o'zgarmaydi"
+  ],
+  "answer": 3,
+  "source": "generated passthrough pool (Q23b) — replace with the Q23a hand-written forms",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "PRE0030",
+  "category": "preserve",
+  "context": null,
+  "question": "Avtomatik tuzatishda \"forsteri\" so'zi qanday bo'lishi kerak?",
+  "options": [
+   "forşteri",
+   "förşteri",
+   "försteri",
+   "o'zgarmaydi"
+  ],
+  "answer": 3,
+  "source": "generated passthrough pool (Q23b) — replace with the Q23a hand-written forms",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "PRE0031",
+  "category": "preserve",
+  "context": null,
+  "question": "Avtomatik tuzatishda \"kasbnigina\" so'zi qanday bo'lishi kerak?",
+  "options": [
+   "kaşbniğina",
+   "kasbniğina",
+   "kaşbnigina",
+   "o'zgarmaydi"
+  ],
+  "answer": 3,
+  "source": "generated passthrough pool (Q23b) — replace with the Q23a hand-written forms",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "PRE0032",
+  "category": "preserve",
+  "context": null,
+  "question": "Avtomatik tuzatishda \"bobasirat\" so'zi qanday bo'lishi kerak?",
+  "options": [
+   "böbasirat",
+   "o'zgarmaydi",
+   "bobaşirat",
+   "böbaşirat"
+  ],
+  "answer": 1,
+  "source": "generated passthrough pool (Q23b) — replace with the Q23a hand-written forms",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "PRE0033",
+  "category": "preserve",
+  "context": null,
+  "question": "Avtomatik tuzatishda \"blogosfera\" so'zi qanday bo'lishi kerak?",
+  "options": [
+   "o'zgarmaydi",
+   "blöğosfera",
+   "bloğösfera",
+   "blogösfera"
+  ],
+  "answer": 0,
+  "source": "generated passthrough pool (Q23b) — replace with the Q23a hand-written forms",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "PRE0034",
+  "category": "preserve",
+  "context": null,
+  "question": "Avtomatik tuzatishda \"hayotgan\" so'zi qanday bo'lishi kerak?",
+  "options": [
+   "hayötğan",
+   "hayötgan",
+   "hayotğan",
+   "o'zgarmaydi"
+  ],
+  "answer": 3,
+  "source": "generated passthrough pool (Q23b) — replace with the Q23a hand-written forms",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "PRE0035",
+  "category": "preserve",
+  "context": null,
+  "question": "Avtomatik tuzatishda \"nostalgia\" so'zi qanday bo'lishi kerak?",
+  "options": [
+   "nöstalgia",
+   "o'zgarmaydi",
+   "noştalğia",
+   "noştalgia"
+  ],
+  "answer": 1,
+  "source": "generated passthrough pool (Q23b) — replace with the Q23a hand-written forms",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "PRE0036",
+  "category": "preserve",
+  "context": null,
+  "question": "Avtomatik tuzatishda \"seriallariga\" so'zi qanday bo'lishi kerak?",
+  "options": [
+   "şeriallariga",
+   "seriallariğa",
+   "o'zgarmaydi",
+   "şeriallariğa"
+  ],
+  "answer": 2,
+  "source": "generated passthrough pool (Q23b) — replace with the Q23a hand-written forms",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "PRE0037",
+  "category": "preserve",
+  "context": null,
+  "question": "Avtomatik tuzatishda \"kommentlarga\" so'zi qanday bo'lishi kerak?",
+  "options": [
+   "kommentlarğa",
+   "kömmentlarğa",
+   "o'zgarmaydi",
+   "kömmentlarga"
+  ],
+  "answer": 2,
+  "source": "generated passthrough pool (Q23b) — replace with the Q23a hand-written forms",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "PRE0038",
+  "category": "preserve",
+  "context": null,
+  "question": "Avtomatik tuzatishda \"okapisi\" so'zi qanday bo'lishi kerak?",
+  "options": [
+   "okapişi",
+   "ökapisi",
+   "o'zgarmaydi",
+   "ökapişi"
+  ],
+  "answer": 2,
+  "source": "generated passthrough pool (Q23b) — replace with the Q23a hand-written forms",
+  "note": "",
+  "split": "dev"
+ },
+ {
+  "id": "PRE0039",
+  "category": "preserve",
+  "context": null,
+  "question": "Avtomatik tuzatishda \"direktorsiz\" so'zi qanday bo'lishi kerak?",
+  "options": [
+   "direktörşiz",
+   "o'zgarmaydi",
+   "direktörsiz",
+   "direktorşiz"
+  ],
+  "answer": 1,
+  "source": "generated passthrough pool (Q23b) — replace with the Q23a hand-written forms",
+  "note": "",
+  "split": "dev"
+ },
+ {
+  "id": "PRE0040",
+  "category": "preserve",
+  "context": null,
+  "question": "Avtomatik tuzatishda \"roksiz\" so'zi qanday bo'lishi kerak?",
+  "options": [
+   "rökşiz",
+   "röksiz",
+   "rokşiz",
+   "o'zgarmaydi"
+  ],
+  "answer": 3,
+  "source": "generated passthrough pool (Q23b) — replace with the Q23a hand-written forms",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "PRE0041",
+  "category": "preserve",
+  "context": null,
+  "question": "Avtomatik tuzatishda \"yagonasini\" so'zi qanday bo'lishi kerak?",
+  "options": [
+   "yagönasini",
+   "o'zgarmaydi",
+   "yagonaşini",
+   "yagönaşini"
+  ],
+  "answer": 1,
+  "source": "generated passthrough pool (Q23b) — replace with the Q23a hand-written forms",
+  "note": "",
+  "split": "dev"
+ },
+ {
+  "id": "PRE0042",
+  "category": "preserve",
+  "context": null,
+  "question": "Avtomatik tuzatishda \"ulgursang\" so'zi qanday bo'lishi kerak?",
+  "options": [
+   "ulgursanğ",
+   "ulgurşang",
+   "o'zgarmaydi",
+   "ulğursanğ"
+  ],
+  "answer": 2,
+  "source": "generated passthrough pool (Q23b) — replace with the Q23a hand-written forms",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "PRE0043",
+  "category": "preserve",
+  "context": null,
+  "question": "Avtomatik tuzatishda \"fiasko\" so'zi qanday bo'lishi kerak?",
+  "options": [
+   "o'zgarmaydi",
+   "fiaşkö",
+   "fiaşko",
+   "fiaskö"
+  ],
+  "answer": 0,
+  "source": "generated passthrough pool (Q23b) — replace with the Q23a hand-written forms",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "PRE0044",
+  "category": "preserve",
+  "context": null,
+  "question": "Avtomatik tuzatishda \"kesasan\" so'zi qanday bo'lishi kerak?",
+  "options": [
+   "kesaşan",
+   "o'zgarmaydi",
+   "keşaşan",
+   "keşasan"
+  ],
+  "answer": 1,
+  "source": "generated passthrough pool (Q23b) — replace with the Q23a hand-written forms",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "PRE0045",
+  "category": "preserve",
+  "context": null,
+  "question": "Avtomatik tuzatishda \"assistga\" so'zi qanday bo'lishi kerak?",
+  "options": [
+   "assiştga",
+   "assiştğa",
+   "asşiştga",
+   "o'zgarmaydi"
+  ],
+  "answer": 3,
+  "source": "generated passthrough pool (Q23b) — replace with the Q23a hand-written forms",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "PRE0046",
+  "category": "preserve",
+  "context": null,
+  "question": "Avtomatik tuzatishda \"podkastiga\" so'zi qanday bo'lishi kerak?",
+  "options": [
+   "podkastiğa",
+   "podkaştiga",
+   "o'zgarmaydi",
+   "podkaştiğa"
+  ],
+  "answer": 2,
+  "source": "generated passthrough pool (Q23b) — replace with the Q23a hand-written forms",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "PRE0047",
+  "category": "preserve",
+  "context": null,
+  "question": "Avtomatik tuzatishda \"bonusiga\" so'zi qanday bo'lishi kerak?",
+  "options": [
+   "bonuşiğa",
+   "o'zgarmaydi",
+   "bonuşiga",
+   "bönusiga"
+  ],
+  "answer": 1,
+  "source": "generated passthrough pool (Q23b) — replace with the Q23a hand-written forms",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "PRE0048",
+  "category": "preserve",
+  "context": null,
+  "question": "Avtomatik tuzatishda \"sayohatimni\" so'zi qanday bo'lishi kerak?",
+  "options": [
+   "şayöhatimni",
+   "sayöhatimni",
+   "o'zgarmaydi",
+   "şayohatimni"
+  ],
+  "answer": 2,
+  "source": "generated passthrough pool (Q23b) — replace with the Q23a hand-written forms",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "PRE0049",
+  "category": "preserve",
+  "context": null,
+  "question": "Avtomatik tuzatishda \"osyotrsimon\" so'zi qanday bo'lishi kerak?",
+  "options": [
+   "o'zgarmaydi",
+   "osyötrşimon",
+   "osyotrsimön",
+   "ösyotrşimon"
+  ],
+  "answer": 0,
+  "source": "generated passthrough pool (Q23b) — replace with the Q23a hand-written forms",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "PRE0050",
+  "category": "preserve",
+  "context": null,
+  "question": "Avtomatik tuzatishda \"ahmoqmisan\" so'zi qanday bo'lishi kerak?",
+  "options": [
+   "o'zgarmaydi",
+   "ahmöqmisan",
+   "ahmöqmişan",
+   "ahmoqmişan"
+  ],
+  "answer": 0,
+  "source": "generated passthrough pool (Q23b) — replace with the Q23a hand-written forms",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "PRE0051",
+  "category": "preserve",
+  "context": null,
+  "question": "Avtomatik tuzatishda \"aeroprotni\" so'zi qanday bo'lishi kerak?",
+  "options": [
+   "aeröprötni",
+   "aeroprötni",
+   "o'zgarmaydi",
+   "aeröprotni"
+  ],
+  "answer": 2,
+  "source": "generated passthrough pool (Q23b) — replace with the Q23a hand-written forms",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "PRE0052",
+  "category": "preserve",
+  "context": null,
+  "question": "Avtomatik tuzatishda \"kriptoloyiha\" so'zi qanday bo'lishi kerak?",
+  "options": [
+   "kriptölöyiha",
+   "kriptolöyiha",
+   "kriptöloyiha",
+   "o'zgarmaydi"
+  ],
+  "answer": 3,
+  "source": "generated passthrough pool (Q23b) — replace with the Q23a hand-written forms",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "PRE0053",
+  "category": "preserve",
+  "context": null,
+  "question": "Avtomatik tuzatishda \"sunhangii\" so'zi qanday bo'lishi kerak?",
+  "options": [
+   "o'zgarmaydi",
+   "şunhangii",
+   "şunhanğii",
+   "sunhanğii"
+  ],
+  "answer": 0,
+  "source": "generated passthrough pool (Q23b) — replace with the Q23a hand-written forms",
+  "note": "",
+  "split": "dev"
+ },
+ {
+  "id": "PRE0054",
+  "category": "preserve",
+  "context": null,
+  "question": "Avtomatik tuzatishda \"nomzodmi\" so'zi qanday bo'lishi kerak?",
+  "options": [
+   "o'zgarmaydi",
+   "nomzödmi",
+   "nömzodmi",
+   "nömzödmi"
+  ],
+  "answer": 0,
+  "source": "generated passthrough pool (Q23b) — replace with the Q23a hand-written forms",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "PRE0055",
+  "category": "preserve",
+  "context": null,
+  "question": "Avtomatik tuzatishda \"rassomlikmi\" so'zi qanday bo'lishi kerak?",
+  "options": [
+   "o'zgarmaydi",
+   "raşsomlikmi",
+   "raşsömlikmi",
+   "rasşomlikmi"
+  ],
+  "answer": 0,
+  "source": "generated passthrough pool (Q23b) — replace with the Q23a hand-written forms",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "PRE0056",
+  "category": "preserve",
+  "context": null,
+  "question": "Avtomatik tuzatishda \"poyjoma\" so'zi qanday bo'lishi kerak?",
+  "options": [
+   "poyjöma",
+   "pöyjoma",
+   "pöyjöma",
+   "o'zgarmaydi"
+  ],
+  "answer": 3,
+  "source": "generated passthrough pool (Q23b) — replace with the Q23a hand-written forms",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "PRE0057",
+  "category": "preserve",
+  "context": null,
+  "question": "Avtomatik tuzatishda \"mostiga\" so'zi qanday bo'lishi kerak?",
+  "options": [
+   "möstiga",
+   "moştiğa",
+   "mostiğa",
+   "o'zgarmaydi"
+  ],
+  "answer": 3,
+  "source": "generated passthrough pool (Q23b) — replace with the Q23a hand-written forms",
+  "note": "",
+  "split": "dev"
+ },
+ {
+  "id": "PRE0058",
+  "category": "preserve",
+  "context": null,
+  "question": "Avtomatik tuzatishda \"arosatdan\" so'zi qanday bo'lishi kerak?",
+  "options": [
+   "aroşatdan",
+   "o'zgarmaydi",
+   "aröşatdan",
+   "arösatdan"
+  ],
+  "answer": 1,
+  "source": "generated passthrough pool (Q23b) — replace with the Q23a hand-written forms",
+  "note": "",
+  "split": "dev"
+ },
+ {
+  "id": "PRE0059",
+  "category": "preserve",
+  "context": null,
+  "question": "Avtomatik tuzatishda \"maqtasangiz\" so'zi qanday bo'lishi kerak?",
+  "options": [
+   "maqtasanğiz",
+   "maqtaşangiz",
+   "maqtaşanğiz",
+   "o'zgarmaydi"
+  ],
+  "answer": 3,
+  "source": "generated passthrough pool (Q23b) — replace with the Q23a hand-written forms",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "PRE0060",
+  "category": "preserve",
+  "context": null,
+  "question": "Avtomatik tuzatishda \"hayolingizda\" so'zi qanday bo'lishi kerak?",
+  "options": [
+   "hayolinğizda",
+   "hayölingizda",
+   "o'zgarmaydi",
+   "hayölinğizda"
+  ],
+  "answer": 2,
+  "source": "generated passthrough pool (Q23b) — replace with the Q23a hand-written forms",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "PRE0061",
+  "category": "preserve",
+  "context": null,
+  "question": "Avtomatik tuzatishda \"obreros\" so'zi qanday bo'lishi kerak?",
+  "options": [
+   "obreröş",
+   "obrerös",
+   "o'zgarmaydi",
+   "öbreros"
+  ],
+  "answer": 2,
+  "source": "generated passthrough pool (Q23b) — replace with the Q23a hand-written forms",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "PRE0062",
+  "category": "preserve",
+  "context": null,
+  "question": "Avtomatik tuzatishda \"tugatiboq\" so'zi qanday bo'lishi kerak?",
+  "options": [
+   "tugatiböq",
+   "tuğatiböq",
+   "tuğatiboq",
+   "o'zgarmaydi"
+  ],
+  "answer": 3,
+  "source": "generated passthrough pool (Q23b) — replace with the Q23a hand-written forms",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "PRE0063",
+  "category": "preserve",
+  "context": null,
+  "question": "Avtomatik tuzatishda \"javoningizda\" so'zi qanday bo'lishi kerak?",
+  "options": [
+   "javoninğizda",
+   "javöningizda",
+   "o'zgarmaydi",
+   "javöninğizda"
+  ],
+  "answer": 2,
+  "source": "generated passthrough pool (Q23b) — replace with the Q23a hand-written forms",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "PRE0064",
+  "category": "preserve",
+  "context": null,
+  "question": "Avtomatik tuzatishda \"sagasidagi\" so'zi qanday bo'lishi kerak?",
+  "options": [
+   "o'zgarmaydi",
+   "sağasidagi",
+   "şagasidaği",
+   "şagaşidagi"
+  ],
+  "answer": 0,
+  "source": "generated passthrough pool (Q23b) — replace with the Q23a hand-written forms",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "PRE0065",
+  "category": "preserve",
+  "context": null,
+  "question": "Avtomatik tuzatishda \"supermenga\" so'zi qanday bo'lishi kerak?",
+  "options": [
+   "supermenğa",
+   "o'zgarmaydi",
+   "şupermenğa",
+   "şupermenga"
+  ],
+  "answer": 1,
+  "source": "generated passthrough pool (Q23b) — replace with the Q23a hand-written forms",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "PRE0066",
+  "category": "preserve",
+  "context": null,
+  "question": "Avtomatik tuzatishda \"hassu\" so'zi qanday bo'lishi kerak?",
+  "options": [
+   "haşşu",
+   "haşsu",
+   "hasşu",
+   "o'zgarmaydi"
+  ],
+  "answer": 3,
+  "source": "generated passthrough pool (Q23b) — replace with the Q23a hand-written forms",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "PRE0067",
+  "category": "preserve",
+  "context": null,
+  "question": "Avtomatik tuzatishda \"frontieres\" so'zi qanday bo'lishi kerak?",
+  "options": [
+   "frontiereş",
+   "fröntieres",
+   "o'zgarmaydi",
+   "fröntiereş"
+  ],
+  "answer": 2,
+  "source": "generated passthrough pool (Q23b) — replace with the Q23a hand-written forms",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "PRE0068",
+  "category": "preserve",
+  "context": null,
+  "question": "Avtomatik tuzatishda \"yorvorgan\" so'zi qanday bo'lishi kerak?",
+  "options": [
+   "yorvörğan",
+   "yörvorğan",
+   "o'zgarmaydi",
+   "yorvorğan"
+  ],
+  "answer": 2,
+  "source": "generated passthrough pool (Q23b) — replace with the Q23a hand-written forms",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "PRE0069",
+  "category": "preserve",
+  "context": null,
+  "question": "Avtomatik tuzatishda \"sarkazmlarga\" so'zi qanday bo'lishi kerak?",
+  "options": [
+   "sarkazmlarğa",
+   "o'zgarmaydi",
+   "şarkazmlarğa",
+   "şarkazmlarga"
+  ],
+  "answer": 1,
+  "source": "generated passthrough pool (Q23b) — replace with the Q23a hand-written forms",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "PRE0070",
+  "category": "preserve",
+  "context": null,
+  "question": "Avtomatik tuzatishda \"bolmasaydim\" so'zi qanday bo'lishi kerak?",
+  "options": [
+   "bolmaşaydim",
+   "bölmaşaydim",
+   "o'zgarmaydi",
+   "bölmasaydim"
+  ],
+  "answer": 2,
+  "source": "generated passthrough pool (Q23b) — replace with the Q23a hand-written forms",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "PRE0071",
+  "category": "preserve",
+  "context": null,
+  "question": "Avtomatik tuzatishda \"arnoldining\" so'zi qanday bo'lishi kerak?",
+  "options": [
+   "o'zgarmaydi",
+   "arnöldining",
+   "arnoldininğ",
+   "arnöldininğ"
+  ],
+  "answer": 0,
+  "source": "generated passthrough pool (Q23b) — replace with the Q23a hand-written forms",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "PRE0072",
+  "category": "preserve",
+  "context": null,
+  "question": "Avtomatik tuzatishda \"sagasini\" so'zi qanday bo'lishi kerak?",
+  "options": [
+   "sağaşini",
+   "sağasini",
+   "sagaşini",
+   "o'zgarmaydi"
+  ],
+  "answer": 3,
+  "source": "generated passthrough pool (Q23b) — replace with the Q23a hand-written forms",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "PRE0073",
+  "category": "preserve",
+  "context": null,
+  "question": "Avtomatik tuzatishda \"bookblogerni\" so'zi qanday bo'lishi kerak?",
+  "options": [
+   "böokblögerni",
+   "böokblogerni",
+   "o'zgarmaydi",
+   "bookbloğerni"
+  ],
+  "answer": 2,
+  "source": "generated passthrough pool (Q23b) — replace with the Q23a hand-written forms",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "PRE0074",
+  "category": "preserve",
+  "context": null,
+  "question": "Avtomatik tuzatishda \"botimizga\" so'zi qanday bo'lishi kerak?",
+  "options": [
+   "botimizğa",
+   "bötimizğa",
+   "o'zgarmaydi",
+   "bötimizga"
+  ],
+  "answer": 2,
+  "source": "generated passthrough pool (Q23b) — replace with the Q23a hand-written forms",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "PRE0075",
+  "category": "preserve",
+  "context": null,
+  "question": "Avtomatik tuzatishda \"desires\" so'zi qanday bo'lishi kerak?",
+  "options": [
+   "deşireş",
+   "desireş",
+   "o'zgarmaydi",
+   "deşires"
+  ],
+  "answer": 2,
+  "source": "generated passthrough pool (Q23b) — replace with the Q23a hand-written forms",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "PRE0076",
+  "category": "preserve",
+  "context": null,
+  "question": "Avtomatik tuzatishda \"yuksaling\" so'zi qanday bo'lishi kerak?",
+  "options": [
+   "yukşalinğ",
+   "yukşaling",
+   "o'zgarmaydi",
+   "yuksalinğ"
+  ],
+  "answer": 2,
+  "source": "generated passthrough pool (Q23b) — replace with the Q23a hand-written forms",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "PRE0077",
+  "category": "preserve",
+  "context": null,
+  "question": "Avtomatik tuzatishda \"qurolingdir\" so'zi qanday bo'lishi kerak?",
+  "options": [
+   "o'zgarmaydi",
+   "qurölingdir",
+   "qurölinğdir",
+   "qurolinğdir"
+  ],
+  "answer": 0,
+  "source": "generated passthrough pool (Q23b) — replace with the Q23a hand-written forms",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "PRE0078",
+  "category": "preserve",
+  "context": null,
+  "question": "Avtomatik tuzatishda \"boykott\" so'zi qanday bo'lishi kerak?",
+  "options": [
+   "o'zgarmaydi",
+   "böykött",
+   "böykott",
+   "boykött"
+  ],
+  "answer": 0,
+  "source": "generated passthrough pool (Q23b) — replace with the Q23a hand-written forms",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "PRE0079",
+  "category": "preserve",
+  "context": null,
+  "question": "Avtomatik tuzatishda \"doktorantman\" so'zi qanday bo'lishi kerak?",
+  "options": [
+   "döktörantman",
+   "doktörantman",
+   "o'zgarmaydi",
+   "döktorantman"
+  ],
+  "answer": 2,
+  "source": "generated passthrough pool (Q23b) — replace with the Q23a hand-written forms",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "PRE0080",
+  "category": "preserve",
+  "context": null,
+  "question": "Avtomatik tuzatishda \"berolmasak\" so'zi qanday bo'lishi kerak?",
+  "options": [
+   "berölmaşak",
+   "o'zgarmaydi",
+   "berölmasak",
+   "berolmaşak"
+  ],
+  "answer": 1,
+  "source": "generated passthrough pool (Q23b) — replace with the Q23a hand-written forms",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "PRE0081",
+  "category": "preserve",
+  "context": null,
+  "question": "Avtomatik tuzatishda \"samalyotlari\" so'zi qanday bo'lishi kerak?",
+  "options": [
+   "şamalyotlari",
+   "samalyötlari",
+   "o'zgarmaydi",
+   "şamalyötlari"
+  ],
+  "answer": 2,
+  "source": "generated passthrough pool (Q23b) — replace with the Q23a hand-written forms",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "PRE0082",
+  "category": "preserve",
+  "context": null,
+  "question": "Avtomatik tuzatishda \"absolutely\" so'zi qanday bo'lishi kerak?",
+  "options": [
+   "absölutely",
+   "abşölutely",
+   "o'zgarmaydi",
+   "abşolutely"
+  ],
+  "answer": 2,
+  "source": "generated passthrough pool (Q23b) — replace with the Q23a hand-written forms",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "PRE0083",
+  "category": "preserve",
+  "context": null,
+  "question": "Avtomatik tuzatishda \"afsonlar\" so'zi qanday bo'lishi kerak?",
+  "options": [
+   "afşönlar",
+   "afşonlar",
+   "afsönlar",
+   "o'zgarmaydi"
+  ],
+  "answer": 3,
+  "source": "generated passthrough pool (Q23b) — replace with the Q23a hand-written forms",
+  "note": "",
+  "split": "dev"
+ },
+ {
+  "id": "PRE0084",
+  "category": "preserve",
+  "context": null,
+  "question": "Avtomatik tuzatishda \"bolakaysan\" so'zi qanday bo'lishi kerak?",
+  "options": [
+   "bölakayşan",
+   "bölakaysan",
+   "o'zgarmaydi",
+   "bolakayşan"
+  ],
+  "answer": 2,
+  "source": "generated passthrough pool (Q23b) — replace with the Q23a hand-written forms",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "PRE0085",
+  "category": "preserve",
+  "context": null,
+  "question": "Avtomatik tuzatishda \"samarasizi\" so'zi qanday bo'lishi kerak?",
+  "options": [
+   "şamaraşizi",
+   "samaraşizi",
+   "şamarasizi",
+   "o'zgarmaydi"
+  ],
+  "answer": 3,
+  "source": "generated passthrough pool (Q23b) — replace with the Q23a hand-written forms",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "PRE0086",
+  "category": "preserve",
+  "context": null,
+  "question": "Avtomatik tuzatishda \"turaqolsin\" so'zi qanday bo'lishi kerak?",
+  "options": [
+   "turaqölşin",
+   "turaqölsin",
+   "turaqolşin",
+   "o'zgarmaydi"
+  ],
+  "answer": 3,
+  "source": "generated passthrough pool (Q23b) — replace with the Q23a hand-written forms",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "PRE0087",
+  "category": "preserve",
+  "context": null,
+  "question": "Avtomatik tuzatishda \"xurofotlari\" so'zi qanday bo'lishi kerak?",
+  "options": [
+   "xuröfotlari",
+   "xuröfötlari",
+   "o'zgarmaydi",
+   "xurofötlari"
+  ],
+  "answer": 2,
+  "source": "generated passthrough pool (Q23b) — replace with the Q23a hand-written forms",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "PRE0088",
+  "category": "preserve",
+  "context": null,
+  "question": "Avtomatik tuzatishda \"afsuslanmang\" so'zi qanday bo'lishi kerak?",
+  "options": [
+   "afşuşlanmang",
+   "o'zgarmaydi",
+   "afsuslanmanğ",
+   "afsuşlanmanğ"
+  ],
+  "answer": 1,
+  "source": "generated passthrough pool (Q23b) — replace with the Q23a hand-written forms",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "PRE0089",
+  "category": "preserve",
+  "context": null,
+  "question": "Avtomatik tuzatishda \"soddalilar\" so'zi qanday bo'lishi kerak?",
+  "options": [
+   "şöddalilar",
+   "şoddalilar",
+   "söddalilar",
+   "o'zgarmaydi"
+  ],
+  "answer": 3,
+  "source": "generated passthrough pool (Q23b) — replace with the Q23a hand-written forms",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "PRE0090",
+  "category": "preserve",
+  "context": null,
+  "question": "Avtomatik tuzatishda \"olisdasan\" so'zi qanday bo'lishi kerak?",
+  "options": [
+   "olişdasan",
+   "o'zgarmaydi",
+   "olisdaşan",
+   "ölisdasan"
+  ],
+  "answer": 1,
+  "source": "generated passthrough pool (Q23b) — replace with the Q23a hand-written forms",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "PRE0091",
+  "category": "preserve",
+  "context": null,
+  "question": "Avtomatik tuzatishda \"yengillasa\" so'zi qanday bo'lishi kerak?",
+  "options": [
+   "yengillaşa",
+   "yenğillasa",
+   "yenğillaşa",
+   "o'zgarmaydi"
+  ],
+  "answer": 3,
+  "source": "generated passthrough pool (Q23b) — replace with the Q23a hand-written forms",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "PRE0092",
+  "category": "preserve",
+  "context": null,
+  "question": "Avtomatik tuzatishda \"hospis\" so'zi qanday bo'lishi kerak?",
+  "options": [
+   "höspiş",
+   "hoşpis",
+   "o'zgarmaydi",
+   "höşpis"
+  ],
+  "answer": 2,
+  "source": "generated passthrough pool (Q23b) — replace with the Q23a hand-written forms",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "PRE0093",
+  "category": "preserve",
+  "context": null,
+  "question": "Avtomatik tuzatishda \"iddaolarning\" so'zi qanday bo'lishi kerak?",
+  "options": [
+   "iddaölarning",
+   "iddaolarninğ",
+   "o'zgarmaydi",
+   "iddaölarninğ"
+  ],
+  "answer": 2,
+  "source": "generated passthrough pool (Q23b) — replace with the Q23a hand-written forms",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "PRE0094",
+  "category": "preserve",
+  "context": null,
+  "question": "Avtomatik tuzatishda \"hissan\" so'zi qanday bo'lishi kerak?",
+  "options": [
+   "hişsan",
+   "hisşan",
+   "hişşan",
+   "o'zgarmaydi"
+  ],
+  "answer": 3,
+  "source": "generated passthrough pool (Q23b) — replace with the Q23a hand-written forms",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "PRE0095",
+  "category": "preserve",
+  "context": null,
+  "question": "Avtomatik tuzatishda \"dorbozday\" so'zi qanday bo'lishi kerak?",
+  "options": [
+   "dörbozday",
+   "o'zgarmaydi",
+   "dorbözday",
+   "dörbözday"
+  ],
+  "answer": 1,
+  "source": "generated passthrough pool (Q23b) — replace with the Q23a hand-written forms",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "PRE0096",
+  "category": "preserve",
+  "context": null,
+  "question": "Avtomatik tuzatishda \"bessmertniy\" so'zi qanday bo'lishi kerak?",
+  "options": [
+   "besşmertniy",
+   "beşşmertniy",
+   "o'zgarmaydi",
+   "beşsmertniy"
+  ],
+  "answer": 2,
+  "source": "generated passthrough pool (Q23b) — replace with the Q23a hand-written forms",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "PRE0097",
+  "category": "preserve",
+  "context": null,
+  "question": "Avtomatik tuzatishda \"turtkisiga\" so'zi qanday bo'lishi kerak?",
+  "options": [
+   "turtkisiğa",
+   "o'zgarmaydi",
+   "turtkişiga",
+   "turtkişiğa"
+  ],
+  "answer": 1,
+  "source": "generated passthrough pool (Q23b) — replace with the Q23a hand-written forms",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "PRE0098",
+  "category": "preserve",
+  "context": null,
+  "question": "Avtomatik tuzatishda \"honadonda\" so'zi qanday bo'lishi kerak?",
+  "options": [
+   "hönadönda",
+   "hönadonda",
+   "honadönda",
+   "o'zgarmaydi"
+  ],
+  "answer": 3,
+  "source": "generated passthrough pool (Q23b) — replace with the Q23a hand-written forms",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "PRE0099",
+  "category": "preserve",
+  "context": null,
+  "question": "Avtomatik tuzatishda \"nolimoqda\" so'zi qanday bo'lishi kerak?",
+  "options": [
+   "o'zgarmaydi",
+   "nolimöqda",
+   "nölimöqda",
+   "nölimoqda"
+  ],
+  "answer": 0,
+  "source": "generated passthrough pool (Q23b) — replace with the Q23a hand-written forms",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "APO0000",
+  "category": "apostrophe",
+  "context": null,
+  "question": "\"taʼlim\" so'zining yangi alifbodagi to'g'ri yozilishi qaysi?",
+  "options": [
+   "ta’lim",
+   "taʻlim",
+   "taʼlim",
+   "talim"
+  ],
+  "answer": 2,
+  "source": "lexicon (1428182 corpus occurrences)",
+  "note": "options differ only in the apostrophe code point: U+02BC ʼ, U+02BB ʻ, U+2019 ’, none",
+  "split": "test"
+ },
+ {
+  "id": "APO0001",
+  "category": "apostrophe",
+  "context": null,
+  "question": "\"maʼlum\" so'zining yangi alifbodagi to'g'ri yozilishi qaysi?",
+  "options": [
+   "maʼlum",
+   "malum",
+   "maʻlum",
+   "ma’lum"
+  ],
+  "answer": 0,
+  "source": "lexicon (1344573 corpus occurrences)",
+  "note": "options differ only in the apostrophe code point: U+02BC ʼ, U+02BB ʻ, U+2019 ’, none",
+  "split": "test"
+ },
+ {
+  "id": "APO0002",
+  "category": "apostrophe",
+  "context": null,
+  "question": "\"taʼsir\" so'zining yangi alifbodagi to'g'ri yozilishi qaysi?",
+  "options": [
+   "tasir",
+   "taʼsir",
+   "taʻsir",
+   "ta’sir"
+  ],
+  "answer": 1,
+  "source": "lexicon (1055653 corpus occurrences)",
+  "note": "options differ only in the apostrophe code point: U+02BC ʼ, U+02BB ʻ, U+2019 ’, none",
+  "split": "dev"
+ },
+ {
+  "id": "APO0003",
+  "category": "apostrophe",
+  "context": null,
+  "question": "\"taʼminlash\" so'zining yangi alifbodagi to'g'ri yozilishi qaysi?",
+  "options": [
+   "ta’minlaş",
+   "taʻminlaş",
+   "taʼminlaş",
+   "taminlaş"
+  ],
+  "answer": 2,
+  "source": "lexicon (642779 corpus occurrences)",
+  "note": "options differ only in the apostrophe code point: U+02BC ʼ, U+02BB ʻ, U+2019 ’, none",
+  "split": "test"
+ },
+ {
+  "id": "APO0004",
+  "category": "apostrophe",
+  "context": null,
+  "question": "\"maʼlumotlar\" so'zining yangi alifbodagi to'g'ri yozilishi qaysi?",
+  "options": [
+   "ma’lumotlar",
+   "maʻlumotlar",
+   "maʼlumotlar",
+   "malumotlar"
+  ],
+  "answer": 2,
+  "source": "lexicon (554408 corpus occurrences)",
+  "note": "options differ only in the apostrophe code point: U+02BC ʼ, U+02BB ʻ, U+2019 ’, none",
+  "split": "test"
+ },
+ {
+  "id": "APO0005",
+  "category": "apostrophe",
+  "context": null,
+  "question": "\"maʼnaviy\" so'zining yangi alifbodagi to'g'ri yozilishi qaysi?",
+  "options": [
+   "ma’naviy",
+   "manaviy",
+   "maʻnaviy",
+   "maʼnaviy"
+  ],
+  "answer": 3,
+  "source": "lexicon (456113 corpus occurrences)",
+  "note": "options differ only in the apostrophe code point: U+02BC ʼ, U+02BB ʻ, U+2019 ’, none",
+  "split": "test"
+ },
+ {
+  "id": "APO0006",
+  "category": "apostrophe",
+  "context": null,
+  "question": "\"maʼlumot\" so'zining yangi alifbodagi to'g'ri yozilishi qaysi?",
+  "options": [
+   "malumot",
+   "maʼlumot",
+   "maʻlumot",
+   "ma’lumot"
+  ],
+  "answer": 1,
+  "source": "lexicon (441241 corpus occurrences)",
+  "note": "options differ only in the apostrophe code point: U+02BC ʼ, U+02BB ʻ, U+2019 ’, none",
+  "split": "test"
+ },
+ {
+  "id": "APO0007",
+  "category": "apostrophe",
+  "context": null,
+  "question": "\"eʼlon\" so'zining yangi alifbodagi to'g'ri yozilishi qaysi?",
+  "options": [
+   "elon",
+   "eʼlon",
+   "eʻlon",
+   "e’lon"
+  ],
+  "answer": 1,
+  "source": "lexicon (431738 corpus occurrences)",
+  "note": "options differ only in the apostrophe code point: U+02BC ʼ, U+02BB ʻ, U+2019 ’, none",
+  "split": "test"
+ },
+ {
+  "id": "APO0008",
+  "category": "apostrophe",
+  "context": null,
+  "question": "\"taʼsiri\" so'zining yangi alifbodagi to'g'ri yozilishi qaysi?",
+  "options": [
+   "ta’siri",
+   "taʻsiri",
+   "taʼsiri",
+   "tasiri"
+  ],
+  "answer": 2,
+  "source": "lexicon (331699 corpus occurrences)",
+  "note": "options differ only in the apostrophe code point: U+02BC ʼ, U+02BB ʻ, U+2019 ’, none",
+  "split": "test"
+ },
+ {
+  "id": "APO0009",
+  "category": "apostrophe",
+  "context": null,
+  "question": "\"baʼzan\" so'zining yangi alifbodagi to'g'ri yozilishi qaysi?",
+  "options": [
+   "bazan",
+   "baʼzan",
+   "baʻzan",
+   "ba’zan"
+  ],
+  "answer": 1,
+  "source": "lexicon (310269 corpus occurrences)",
+  "note": "options differ only in the apostrophe code point: U+02BC ʼ, U+02BB ʻ, U+2019 ’, none",
+  "split": "test"
+ },
+ {
+  "id": "APO0010",
+  "category": "apostrophe",
+  "context": null,
+  "question": "\"taʼsirida\" so'zining yangi alifbodagi to'g'ri yozilishi qaysi?",
+  "options": [
+   "tasirida",
+   "ta’sirida",
+   "taʻsirida",
+   "taʼsirida"
+  ],
+  "answer": 3,
+  "source": "lexicon (259539 corpus occurrences)",
+  "note": "options differ only in the apostrophe code point: U+02BC ʼ, U+02BB ʻ, U+2019 ’, none",
+  "split": "test"
+ },
+ {
+  "id": "APO0011",
+  "category": "apostrophe",
+  "context": null,
+  "question": "\"sanʼat\" so'zining yangi alifbodagi to'g'ri yozilishi qaysi?",
+  "options": [
+   "sanat",
+   "sanʻat",
+   "sanʼat",
+   "san’at"
+  ],
+  "answer": 2,
+  "source": "lexicon (258215 corpus occurrences)",
+  "note": "options differ only in the apostrophe code point: U+02BC ʼ, U+02BB ʻ, U+2019 ’, none",
+  "split": "test"
+ },
+ {
+  "id": "APO0012",
+  "category": "apostrophe",
+  "context": null,
+  "question": "\"maʼmuriy\" so'zining yangi alifbodagi to'g'ri yozilishi qaysi?",
+  "options": [
+   "maʼmuriy",
+   "mamuriy",
+   "ma’muriy",
+   "maʻmuriy"
+  ],
+  "answer": 0,
+  "source": "lexicon (257947 corpus occurrences)",
+  "note": "options differ only in the apostrophe code point: U+02BC ʼ, U+02BB ʻ, U+2019 ’, none",
+  "split": "test"
+ },
+ {
+  "id": "APO0013",
+  "category": "apostrophe",
+  "context": null,
+  "question": "\"aʼzolari\" so'zining yangi alifbodagi to'g'ri yozilishi qaysi?",
+  "options": [
+   "aʼzolari",
+   "aʻzolari",
+   "a’zolari",
+   "azolari"
+  ],
+  "answer": 0,
+  "source": "lexicon (211904 corpus occurrences)",
+  "note": "options differ only in the apostrophe code point: U+02BC ʼ, U+02BB ʻ, U+2019 ’, none",
+  "split": "test"
+ },
+ {
+  "id": "APO0014",
+  "category": "apostrophe",
+  "context": null,
+  "question": "\"maʼlumki\" so'zining yangi alifbodagi to'g'ri yozilishi qaysi?",
+  "options": [
+   "malumki",
+   "maʼlumki",
+   "ma’lumki",
+   "maʻlumki"
+  ],
+  "answer": 1,
+  "source": "lexicon (206354 corpus occurrences)",
+  "note": "options differ only in the apostrophe code point: U+02BC ʼ, U+02BB ʻ, U+2019 ’, none",
+  "split": "dev"
+ },
+ {
+  "id": "APO0015",
+  "category": "apostrophe",
+  "context": null,
+  "question": "\"maʼlumotlari\" so'zining yangi alifbodagi to'g'ri yozilishi qaysi?",
+  "options": [
+   "maʻlumotlari",
+   "ma’lumotlari",
+   "malumotlari",
+   "maʼlumotlari"
+  ],
+  "answer": 3,
+  "source": "lexicon (176784 corpus occurrences)",
+  "note": "options differ only in the apostrophe code point: U+02BC ʼ, U+02BB ʻ, U+2019 ’, none",
+  "split": "test"
+ },
+ {
+  "id": "APO0016",
+  "category": "apostrophe",
+  "context": null,
+  "question": "\"taʼlimi\" so'zining yangi alifbodagi to'g'ri yozilishi qaysi?",
+  "options": [
+   "ta’limi",
+   "taʼlimi",
+   "talimi",
+   "taʻlimi"
+  ],
+  "answer": 1,
+  "source": "lexicon (155730 corpus occurrences)",
+  "note": "options differ only in the apostrophe code point: U+02BC ʼ, U+02BB ʻ, U+2019 ’, none",
+  "split": "test"
+ },
+ {
+  "id": "APO0017",
+  "category": "apostrophe",
+  "context": null,
+  "question": "\"taʼmirlash\" so'zining yangi alifbodagi to'g'ri yozilishi qaysi?",
+  "options": [
+   "taʻmirlaş",
+   "taʼmirlaş",
+   "ta’mirlaş",
+   "tamirlaş"
+  ],
+  "answer": 1,
+  "source": "lexicon (149995 corpus occurrences)",
+  "note": "options differ only in the apostrophe code point: U+02BC ʼ, U+02BB ʻ, U+2019 ’, none",
+  "split": "test"
+ },
+ {
+  "id": "APO0018",
+  "category": "apostrophe",
+  "context": null,
+  "question": "\"eʼtirof\" so'zining yangi alifbodagi to'g'ri yozilishi qaysi?",
+  "options": [
+   "e’tirof",
+   "etirof",
+   "eʻtirof",
+   "eʼtirof"
+  ],
+  "answer": 3,
+  "source": "lexicon (149715 corpus occurrences)",
+  "note": "options differ only in the apostrophe code point: U+02BC ʼ, U+02BB ʻ, U+2019 ’, none",
+  "split": "test"
+ },
+ {
+  "id": "APO0019",
+  "category": "apostrophe",
+  "context": null,
+  "question": "\"maʼnoda\" so'zining yangi alifbodagi to'g'ri yozilishi qaysi?",
+  "options": [
+   "manoda",
+   "ma’noda",
+   "maʼnoda",
+   "maʻnoda"
+  ],
+  "answer": 2,
+  "source": "lexicon (144879 corpus occurrences)",
+  "note": "options differ only in the apostrophe code point: U+02BC ʼ, U+02BB ʻ, U+2019 ’, none",
+  "split": "test"
+ },
+ {
+  "id": "APO0020",
+  "category": "apostrophe",
+  "context": null,
+  "question": "\"taʼsirini\" so'zining yangi alifbodagi to'g'ri yozilishi qaysi?",
+  "options": [
+   "ta’sirini",
+   "tasirini",
+   "taʼsirini",
+   "taʻsirini"
+  ],
+  "answer": 2,
+  "source": "lexicon (138696 corpus occurrences)",
+  "note": "options differ only in the apostrophe code point: U+02BC ʼ, U+02BB ʻ, U+2019 ’, none",
+  "split": "test"
+ },
+ {
+  "id": "APO0021",
+  "category": "apostrophe",
+  "context": null,
+  "question": "\"sanʼati\" so'zining yangi alifbodagi to'g'ri yozilishi qaysi?",
+  "options": [
+   "san’ati",
+   "sanati",
+   "sanʻati",
+   "sanʼati"
+  ],
+  "answer": 3,
+  "source": "lexicon (137394 corpus occurrences)",
+  "note": "options differ only in the apostrophe code point: U+02BC ʼ, U+02BB ʻ, U+2019 ’, none",
+  "split": "test"
+ },
+ {
+  "id": "APO0022",
+  "category": "apostrophe",
+  "context": null,
+  "question": "\"taʼminoti\" so'zining yangi alifbodagi to'g'ri yozilishi qaysi?",
+  "options": [
+   "taʻminoti",
+   "ta’minoti",
+   "taʼminoti",
+   "taminoti"
+  ],
+  "answer": 2,
+  "source": "lexicon (126614 corpus occurrences)",
+  "note": "options differ only in the apostrophe code point: U+02BC ʼ, U+02BB ʻ, U+2019 ’, none",
+  "split": "test"
+ },
+ {
+  "id": "APO0023",
+  "category": "apostrophe",
+  "context": null,
+  "question": "\"masʼul\" so'zining yangi alifbodagi to'g'ri yozilishi qaysi?",
+  "options": [
+   "masul",
+   "masʼul",
+   "masʻul",
+   "mas’ul"
+  ],
+  "answer": 1,
+  "source": "lexicon (119280 corpus occurrences)",
+  "note": "options differ only in the apostrophe code point: U+02BC ʼ, U+02BB ʻ, U+2019 ’, none",
+  "split": "test"
+ },
+ {
+  "id": "APO0024",
+  "category": "apostrophe",
+  "context": null,
+  "question": "\"aʼzosi\" so'zining yangi alifbodagi to'g'ri yozilishi qaysi?",
+  "options": [
+   "azosi",
+   "aʼzosi",
+   "a’zosi",
+   "aʻzosi"
+  ],
+  "answer": 1,
+  "source": "lexicon (119056 corpus occurrences)",
+  "note": "options differ only in the apostrophe code point: U+02BC ʼ, U+02BB ʻ, U+2019 ’, none",
+  "split": "test"
+ },
+ {
+  "id": "APO0025",
+  "category": "apostrophe",
+  "context": null,
+  "question": "\"maʼnaviyat\" so'zining yangi alifbodagi to'g'ri yozilishi qaysi?",
+  "options": [
+   "maʼnaviyat",
+   "maʻnaviyat",
+   "ma’naviyat",
+   "manaviyat"
+  ],
+  "answer": 0,
+  "source": "lexicon (109306 corpus occurrences)",
+  "note": "options differ only in the apostrophe code point: U+02BC ʼ, U+02BB ʻ, U+2019 ’, none",
+  "split": "test"
+ },
+ {
+  "id": "APO0026",
+  "category": "apostrophe",
+  "context": null,
+  "question": "\"maʼnosini\" so'zining yangi alifbodagi to'g'ri yozilishi qaysi?",
+  "options": [
+   "maʻnosini",
+   "ma’nosini",
+   "manosini",
+   "maʼnosini"
+  ],
+  "answer": 3,
+  "source": "lexicon (107324 corpus occurrences)",
+  "note": "options differ only in the apostrophe code point: U+02BC ʼ, U+02BB ʻ, U+2019 ’, none",
+  "split": "test"
+ },
+ {
+  "id": "APO0027",
+  "category": "apostrophe",
+  "context": null,
+  "question": "\"maʼnosi\" so'zining yangi alifbodagi to'g'ri yozilishi qaysi?",
+  "options": [
+   "manosi",
+   "maʻnosi",
+   "maʼnosi",
+   "ma’nosi"
+  ],
+  "answer": 2,
+  "source": "lexicon (106180 corpus occurrences)",
+  "note": "options differ only in the apostrophe code point: U+02BC ʼ, U+02BB ʻ, U+2019 ’, none",
+  "split": "test"
+ },
+ {
+  "id": "APO0028",
+  "category": "apostrophe",
+  "context": null,
+  "question": "\"taʼminlovchi\" so'zining yangi alifbodagi to'g'ri yozilishi qaysi?",
+  "options": [
+   "taminlovçi",
+   "ta’minlovçi",
+   "taʻminlovçi",
+   "taʼminlovçi"
+  ],
+  "answer": 3,
+  "source": "lexicon (89084 corpus occurrences)",
+  "note": "options differ only in the apostrophe code point: U+02BC ʼ, U+02BB ʻ, U+2019 ’, none",
+  "split": "test"
+ },
+ {
+  "id": "APO0029",
+  "category": "apostrophe",
+  "context": null,
+  "question": "\"maʼrifiy\" so'zining yangi alifbodagi to'g'ri yozilishi qaysi?",
+  "options": [
+   "ma’rifiy",
+   "maʻrifiy",
+   "marifiy",
+   "maʼrifiy"
+  ],
+  "answer": 3,
+  "source": "lexicon (84022 corpus occurrences)",
+  "note": "options differ only in the apostrophe code point: U+02BC ʼ, U+02BB ʻ, U+2019 ’, none",
+  "split": "dev"
+ },
+ {
+  "id": "APO0030",
+  "category": "apostrophe",
+  "context": null,
+  "question": "\"taʼminlashga\" so'zining yangi alifbodagi to'g'ri yozilishi qaysi?",
+  "options": [
+   "taʻminlaşga",
+   "ta’minlaşga",
+   "taminlaşga",
+   "taʼminlaşga"
+  ],
+  "answer": 3,
+  "source": "lexicon (83029 corpus occurrences)",
+  "note": "options differ only in the apostrophe code point: U+02BC ʼ, U+02BB ʻ, U+2019 ’, none",
+  "split": "test"
+ },
+ {
+  "id": "APO0031",
+  "category": "apostrophe",
+  "context": null,
+  "question": "\"taʼminot\" so'zining yangi alifbodagi to'g'ri yozilishi qaysi?",
+  "options": [
+   "taminot",
+   "ta’minot",
+   "taʼminot",
+   "taʻminot"
+  ],
+  "answer": 2,
+  "source": "lexicon (80704 corpus occurrences)",
+  "note": "options differ only in the apostrophe code point: U+02BC ʼ, U+02BB ʻ, U+2019 ’, none",
+  "split": "test"
+ },
+ {
+  "id": "APO0032",
+  "category": "apostrophe",
+  "context": null,
+  "question": "\"taʼkidladi\" so'zining yangi alifbodagi to'g'ri yozilishi qaysi?",
+  "options": [
+   "ta’kidladi",
+   "taʻkidladi",
+   "taʼkidladi",
+   "takidladi"
+  ],
+  "answer": 2,
+  "source": "lexicon (77186 corpus occurrences)",
+  "note": "options differ only in the apostrophe code point: U+02BC ʼ, U+02BB ʻ, U+2019 ’, none",
+  "split": "test"
+ },
+ {
+  "id": "APO0033",
+  "category": "apostrophe",
+  "context": null,
+  "question": "\"maʼrifat\" so'zining yangi alifbodagi to'g'ri yozilishi qaysi?",
+  "options": [
+   "marifat",
+   "ma’rifat",
+   "maʻrifat",
+   "maʼrifat"
+  ],
+  "answer": 3,
+  "source": "lexicon (75219 corpus occurrences)",
+  "note": "options differ only in the apostrophe code point: U+02BC ʼ, U+02BB ʻ, U+2019 ’, none",
+  "split": "test"
+ },
+ {
+  "id": "APO0034",
+  "category": "apostrophe",
+  "context": null,
+  "question": "\"sheʼriy\" so'zining yangi alifbodagi to'g'ri yozilishi qaysi?",
+  "options": [
+   "şeʻriy",
+   "şeʼriy",
+   "şeriy",
+   "şe’riy"
+  ],
+  "answer": 1,
+  "source": "lexicon (71812 corpus occurrences)",
+  "note": "options differ only in the apostrophe code point: U+02BC ʼ, U+02BB ʻ, U+2019 ’, none",
+  "split": "test"
+ },
+ {
+  "id": "APO0035",
+  "category": "apostrophe",
+  "context": null,
+  "question": "\"eʼtiqod\" so'zining yangi alifbodagi to'g'ri yozilishi qaysi?",
+  "options": [
+   "etiqod",
+   "eʻtiqod",
+   "e’tiqod",
+   "eʼtiqod"
+  ],
+  "answer": 3,
+  "source": "lexicon (70872 corpus occurrences)",
+  "note": "options differ only in the apostrophe code point: U+02BC ʼ, U+02BB ʻ, U+2019 ’, none",
+  "split": "test"
+ },
+ {
+  "id": "APO0036",
+  "category": "apostrophe",
+  "context": null,
+  "question": "\"aʼzolarining\" so'zining yangi alifbodagi to'g'ri yozilishi qaysi?",
+  "options": [
+   "a’zolarining",
+   "aʼzolarining",
+   "azolarining",
+   "aʻzolarining"
+  ],
+  "answer": 1,
+  "source": "lexicon (67278 corpus occurrences)",
+  "note": "options differ only in the apostrophe code point: U+02BC ʼ, U+02BB ʻ, U+2019 ’, none",
+  "split": "test"
+ },
+ {
+  "id": "APO0037",
+  "category": "apostrophe",
+  "context": null,
+  "question": "\"baʼzida\" so'zining yangi alifbodagi to'g'ri yozilishi qaysi?",
+  "options": [
+   "ba’zida",
+   "baʼzida",
+   "bazida",
+   "baʻzida"
+  ],
+  "answer": 1,
+  "source": "lexicon (67079 corpus occurrences)",
+  "note": "options differ only in the apostrophe code point: U+02BC ʼ, U+02BB ʻ, U+2019 ’, none",
+  "split": "test"
+ },
+ {
+  "id": "APO0038",
+  "category": "apostrophe",
+  "context": null,
+  "question": "\"taʼlimning\" so'zining yangi alifbodagi to'g'ri yozilishi qaysi?",
+  "options": [
+   "taʻlimning",
+   "ta’limning",
+   "talimning",
+   "taʼlimning"
+  ],
+  "answer": 3,
+  "source": "lexicon (66723 corpus occurrences)",
+  "note": "options differ only in the apostrophe code point: U+02BC ʼ, U+02BB ʻ, U+2019 ’, none",
+  "split": "test"
+ },
+ {
+  "id": "APO0039",
+  "category": "apostrophe",
+  "context": null,
+  "question": "\"qurʼon\" so'zining yangi alifbodagi to'g'ri yozilishi qaysi?",
+  "options": [
+   "qurʻon",
+   "qur’on",
+   "qurʼon",
+   "quron"
+  ],
+  "answer": 2,
+  "source": "lexicon (65703 corpus occurrences)",
+  "note": "options differ only in the apostrophe code point: U+02BC ʼ, U+02BB ʻ, U+2019 ’, none",
+  "split": "test"
+ },
+ {
+  "id": "EDG0000",
+  "category": "edge",
+  "context": null,
+  "question": "\"qongiroq\" so'zining yangi alifbodagi to'g'ri shakli qaysi?",
+  "options": [
+   "qönğiroq",
+   "qöñiroq",
+   "qoʻngʻiroq",
+   "qöngiroq"
+  ],
+  "answer": 0,
+  "source": "lexicon, ng",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "EDG0001",
+  "category": "edge",
+  "context": null,
+  "question": "\"qongir\" so'zining yangi alifbodagi to'g'ri shakli qaysi?",
+  "options": [
+   "qöñir",
+   "qoʻngʻir",
+   "qönğir",
+   "qöngir"
+  ],
+  "answer": 2,
+  "source": "lexicon, ng",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "EDG0002",
+  "category": "edge",
+  "context": null,
+  "question": "\"qorongi\" so'zining yangi alifbodagi to'g'ri shakli qaysi?",
+  "options": [
+   "qoroñi",
+   "qorongi",
+   "qoronği",
+   "qorongʻi"
+  ],
+  "answer": 2,
+  "source": "lexicon, ng",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "EDG0003",
+  "category": "edge",
+  "context": null,
+  "question": "\"yalangoch\" so'zining yangi alifbodagi to'g'ri shakli qaysi?",
+  "options": [
+   "yalañoç",
+   "yalangoç",
+   "yalangʻoch",
+   "yalanğoç"
+  ],
+  "answer": 3,
+  "source": "lexicon, ng",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "EDG0004",
+  "category": "edge",
+  "context": null,
+  "question": "\"yongoq\" so'zining yangi alifbodagi to'g'ri shakli qaysi?",
+  "options": [
+   "yoñoq",
+   "yongʻoq",
+   "yonğoq",
+   "yongoq"
+  ],
+  "answer": 2,
+  "source": "lexicon, ng",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "EDG0005",
+  "category": "edge",
+  "context": null,
+  "question": "\"tongich\" so'zining yangi alifbodagi to'g'ri shakli qaysi?",
+  "options": [
+   "töñiç",
+   "töngiç",
+   "toʻngʻich",
+   "tönğiç"
+  ],
+  "answer": 3,
+  "source": "lexicon, ng",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "EDG0006",
+  "category": "edge",
+  "context": null,
+  "question": "\"qorongida\" so'zining yangi alifbodagi to'g'ri shakli qaysi?",
+  "options": [
+   "qoronğida",
+   "qorongʻida",
+   "qorongida",
+   "qoroñida"
+  ],
+  "answer": 0,
+  "source": "lexicon, ng",
+  "note": "",
+  "split": "dev"
+ },
+ {
+  "id": "EDG0007",
+  "category": "edge",
+  "context": null,
+  "question": "\"yonginni\" so'zining yangi alifbodagi to'g'ri shakli qaysi?",
+  "options": [
+   "yongʻinni",
+   "yoñinni",
+   "yonğinni",
+   "yonginni"
+  ],
+  "answer": 2,
+  "source": "lexicon, ng",
+  "note": "",
+  "split": "dev"
+ },
+ {
+  "id": "EDG0008",
+  "category": "edge",
+  "context": null,
+  "question": "\"qorongilik\" so'zining yangi alifbodagi to'g'ri shakli qaysi?",
+  "options": [
+   "qorongilik",
+   "qorongʻilik",
+   "qoroñilik",
+   "qoronğilik"
+  ],
+  "answer": 3,
+  "source": "lexicon, ng",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "EDG0009",
+  "category": "edge",
+  "context": null,
+  "question": "\"yongindan\" so'zining yangi alifbodagi to'g'ri shakli qaysi?",
+  "options": [
+   "yoñindan",
+   "yonğindan",
+   "yongindan",
+   "yongʻindan"
+  ],
+  "answer": 1,
+  "source": "lexicon, ng",
+  "note": "",
+  "split": "dev"
+ },
+ {
+  "id": "EDG0010",
+  "category": "edge",
+  "context": null,
+  "question": "Kirilldagi \"елкамга\" so'zining yangi lotin alifbosidagi to'g'ri shakli qaysi?",
+  "options": [
+   "jelkamga",
+   "yelkamga",
+   "ielkamga",
+   "elkamga"
+  ],
+  "answer": 1,
+  "source": "lexicon, ye",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "EDG0011",
+  "category": "edge",
+  "context": null,
+  "question": "Kirilldagi \"ечди\" so'zining yangi lotin alifbosidagi to'g'ri shakli qaysi?",
+  "options": [
+   "eçdi",
+   "ieçdi",
+   "jeçdi",
+   "yeçdi"
+  ],
+  "answer": 3,
+  "source": "lexicon, ye",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "EDG0012",
+  "category": "edge",
+  "context": null,
+  "question": "Kirilldagi \"елкаларини\" so'zining yangi lotin alifbosidagi to'g'ri shakli qaysi?",
+  "options": [
+   "yelkalarini",
+   "jelkalarini",
+   "ielkalarini",
+   "elkalarini"
+  ],
+  "answer": 0,
+  "source": "lexicon, ye",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "EDG0013",
+  "category": "edge",
+  "context": null,
+  "question": "Kirilldagi \"елкаларига\" so'zining yangi lotin alifbosidagi to'g'ri shakli qaysi?",
+  "options": [
+   "ielkalariga",
+   "yelkalariga",
+   "jelkalariga",
+   "elkalariga"
+  ],
+  "answer": 1,
+  "source": "lexicon, ye",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "EDG0014",
+  "category": "edge",
+  "context": null,
+  "question": "Kirilldagi \"ертўлага\" so'zining yangi lotin alifbosidagi to'g'ri shakli qaysi?",
+  "options": [
+   "iertölaga",
+   "ertölaga",
+   "yertölaga",
+   "jertölaga"
+  ],
+  "answer": 2,
+  "source": "lexicon, ye",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "EDG0015",
+  "category": "edge",
+  "context": null,
+  "question": "Kirilldagi \"енгилиб\" so'zining yangi lotin alifbosidagi to'g'ri shakli qaysi?",
+  "options": [
+   "engilib",
+   "jengilib",
+   "iengilib",
+   "yengilib"
+  ],
+  "answer": 3,
+  "source": "lexicon, ye",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "EDG0016",
+  "category": "edge",
+  "context": null,
+  "question": "Kirilldagi \"етаклади\" so'zining yangi lotin alifbosidagi to'g'ri shakli qaysi?",
+  "options": [
+   "etakladi",
+   "yetakladi",
+   "jetakladi",
+   "ietakladi"
+  ],
+  "answer": 1,
+  "source": "lexicon, ye",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "EDG0017",
+  "category": "edge",
+  "context": null,
+  "question": "Kirilldagi \"едириб\" so'zining yangi lotin alifbosidagi to'g'ri shakli qaysi?",
+  "options": [
+   "yedirib",
+   "jedirib",
+   "iedirib",
+   "edirib"
+  ],
+  "answer": 0,
+  "source": "lexicon, ye",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "EDG0018",
+  "category": "edge",
+  "context": null,
+  "question": "Kirilldagi \"енгилтак\" so'zining yangi lotin alifbosidagi to'g'ri shakli qaysi?",
+  "options": [
+   "engiltak",
+   "yengiltak",
+   "jengiltak",
+   "iengiltak"
+  ],
+  "answer": 1,
+  "source": "lexicon, ye",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "EDG0019",
+  "category": "edge",
+  "context": null,
+  "question": "Kirilldagi \"елкасидаги\" so'zining yangi lotin alifbosidagi to'g'ri shakli qaysi?",
+  "options": [
+   "elkasidagi",
+   "ielkasidagi",
+   "yelkasidagi",
+   "jelkasidagi"
+  ],
+  "answer": 2,
+  "source": "lexicon, ye",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "EDG0020",
+  "category": "edge",
+  "context": null,
+  "question": "Kirilldagi \"айтсам\" so'zining yangi lotin alifbosidagi to'g'ri shakli qaysi?",
+  "options": [
+   "aysam",
+   "ayçam",
+   "aytsam",
+   "aycam"
+  ],
+  "answer": 2,
+  "source": "lexicon, ts",
+  "note": "ts: native words keep ts (§6.4); check loanwords",
+  "split": "test"
+ },
+ {
+  "id": "EDG0021",
+  "category": "edge",
+  "context": null,
+  "question": "Kirilldagi \"шафқатсиз\" so'zining yangi lotin alifbosidagi to'g'ri shakli qaysi?",
+  "options": [
+   "şafqasiz",
+   "şafqaciz",
+   "şafqatsiz",
+   "şafqaçiz"
+  ],
+  "answer": 2,
+  "source": "lexicon, ts",
+  "note": "ts: native words keep ts (§6.4); check loanwords",
+  "split": "test"
+ },
+ {
+  "id": "EDG0022",
+  "category": "edge",
+  "context": null,
+  "question": "Kirilldagi \"ҳаракатсиз\" so'zining yangi lotin alifbosidagi to'g'ri shakli qaysi?",
+  "options": [
+   "harakatsiz",
+   "harakaçiz",
+   "harakaciz",
+   "harakasiz"
+  ],
+  "answer": 0,
+  "source": "lexicon, ts",
+  "note": "ts: native words keep ts (§6.4); check loanwords",
+  "split": "test"
+ },
+ {
+  "id": "EDG0023",
+  "category": "edge",
+  "context": null,
+  "question": "Kirilldagi \"сифатсиз\" so'zining yangi lotin alifbosidagi to'g'ri shakli qaysi?",
+  "options": [
+   "sifaciz",
+   "sifaçiz",
+   "sifatsiz",
+   "sifasiz"
+  ],
+  "answer": 2,
+  "source": "lexicon, ts",
+  "note": "ts: native words keep ts (§6.4); check loanwords",
+  "split": "test"
+ },
+ {
+  "id": "EDG0024",
+  "category": "edge",
+  "context": null,
+  "question": "Kirilldagi \"киритсин\" so'zining yangi lotin alifbosidagi to'g'ri shakli qaysi?",
+  "options": [
+   "kirisin",
+   "kiricin",
+   "kiriçin",
+   "kiritsin"
+  ],
+  "answer": 3,
+  "source": "lexicon, ts",
+  "note": "ts: native words keep ts (§6.4); check loanwords",
+  "split": "test"
+ },
+ {
+  "id": "EDG0025",
+  "category": "edge",
+  "context": null,
+  "question": "Kirilldagi \"апеллатсия\" so'zining yangi lotin alifbosidagi to'g'ri shakli qaysi?",
+  "options": [
+   "apellatsiya",
+   "apellaciya",
+   "apellaçiya",
+   "apellasiya"
+  ],
+  "answer": 0,
+  "source": "lexicon, ts",
+  "note": "ts: native words keep ts (§6.4); check loanwords",
+  "split": "test"
+ },
+ {
+  "id": "EDG0026",
+  "category": "edge",
+  "context": null,
+  "question": "Kirilldagi \"лаёқатсиз\" so'zining yangi lotin alifbosidagi to'g'ri shakli qaysi?",
+  "options": [
+   "layoqatsiz",
+   "layoqasiz",
+   "layoqaçiz",
+   "layoqaciz"
+  ],
+  "answer": 0,
+  "source": "lexicon, ts",
+  "note": "ts: native words keep ts (§6.4); check loanwords",
+  "split": "test"
+ },
+ {
+  "id": "EDG0027",
+  "category": "edge",
+  "context": null,
+  "question": "Kirilldagi \"адолатсизлик\" so'zining yangi lotin alifbosidagi to'g'ri shakli qaysi?",
+  "options": [
+   "adolasizlik",
+   "adolaçizlik",
+   "adolatsizlik",
+   "adolacizlik"
+  ],
+  "answer": 2,
+  "source": "lexicon, ts",
+  "note": "ts: native words keep ts (§6.4); check loanwords",
+  "split": "test"
+ },
+ {
+  "id": "EDG0028",
+  "category": "edge",
+  "context": null,
+  "question": "Kirilldagi \"кўрсатса\" so'zining yangi lotin alifbosidagi to'g'ri shakli qaysi?",
+  "options": [
+   "körsatsa",
+   "körsaca",
+   "körsaça",
+   "körsasa"
+  ],
+  "answer": 0,
+  "source": "lexicon, ts",
+  "note": "ts: native words keep ts (§6.4); check loanwords",
+  "split": "test"
+ },
+ {
+  "id": "EDG0029",
+  "category": "edge",
+  "context": null,
+  "question": "Kirilldagi \"муваффақиятсиз\" so'zining yangi lotin alifbosidagi to'g'ri shakli qaysi?",
+  "options": [
+   "muvaffaqiyasiz",
+   "muvaffaqiyaciz",
+   "muvaffaqiyatsiz",
+   "muvaffaqiyaçiz"
+  ],
+  "answer": 2,
+  "source": "lexicon, ts",
+  "note": "ts: native words keep ts (§6.4); check loanwords",
+  "split": "test"
+ },
+ {
+  "id": "EDG0030",
+  "category": "edge",
+  "context": null,
+  "question": "\"Ozbekiston\" nomining yangi alifbodagi to'g'ri shakli qaysi?",
+  "options": [
+   "Ozbekiston",
+   "Oʻzbekiston",
+   "Özbekiston",
+   "Özbekistön"
+  ],
+  "answer": 2,
+  "source": "lexicon, name",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "EDG0031",
+  "category": "edge",
+  "context": null,
+  "question": "\"Toshkent\" nomining yangi alifbodagi to'g'ri shakli qaysi?",
+  "options": [
+   "Töşkent",
+   "Toskent",
+   "Toşkent",
+   "Toshkent"
+  ],
+  "answer": 2,
+  "source": "lexicon, name",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "EDG0032",
+  "category": "edge",
+  "context": null,
+  "question": "\"Ozbekistonda\" nomining yangi alifbodagi to'g'ri shakli qaysi?",
+  "options": [
+   "Oʻzbekistonda",
+   "Özbekistönda",
+   "Ozbekistonda",
+   "Özbekistonda"
+  ],
+  "answer": 3,
+  "source": "lexicon, name",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "EDG0033",
+  "category": "edge",
+  "context": null,
+  "question": "\"Fargona\" nomining yangi alifbodagi to'g'ri shakli qaysi?",
+  "options": [
+   "Fargona",
+   "Farğona",
+   "Fargʻona",
+   "Farğöna"
+  ],
+  "answer": 1,
+  "source": "lexicon, name",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "EDG0034",
+  "category": "edge",
+  "context": null,
+  "question": "\"Qoraqalpogiston\" nomining yangi alifbodagi to'g'ri shakli qaysi?",
+  "options": [
+   "Qoraqalpoğistön",
+   "Qoraqalpogʻiston",
+   "Qoraqalpogiston",
+   "Qoraqalpoğiston"
+  ],
+  "answer": 3,
+  "source": "lexicon, name",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "EDG0035",
+  "category": "edge",
+  "context": null,
+  "question": "\"Ozbekistonning\" nomining yangi alifbodagi to'g'ri shakli qaysi?",
+  "options": [
+   "Özbekistonning",
+   "Özbekistonninğ",
+   "Ozbekistonning",
+   "Oʻzbekistonning"
+  ],
+  "answer": 0,
+  "source": "lexicon, name",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "EDG0036",
+  "category": "edge",
+  "context": null,
+  "question": "\"Qozogiston\" nomining yangi alifbodagi to'g'ri shakli qaysi?",
+  "options": [
+   "Qozoğistön",
+   "Qozoğiston",
+   "Qozogʻiston",
+   "Qozogiston"
+  ],
+  "answer": 1,
+  "source": "lexicon, name",
+  "note": "",
+  "split": "dev"
+ },
+ {
+  "id": "EDG0037",
+  "category": "edge",
+  "context": null,
+  "question": "\"Toshkentda\" nomining yangi alifbodagi to'g'ri shakli qaysi?",
+  "options": [
+   "Toshkentda",
+   "Toşkentda",
+   "Toskentda",
+   "Töşkentda"
+  ],
+  "answer": 1,
+  "source": "lexicon, name",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "EDG0038",
+  "category": "edge",
+  "context": null,
+  "question": "\"Qashqadaryo\" nomining yangi alifbodagi to'g'ri shakli qaysi?",
+  "options": [
+   "Qasqadaryo",
+   "Qashqadaryo",
+   "Qaşqadaryo",
+   "Qaşqadaryö"
+  ],
+  "answer": 2,
+  "source": "lexicon, name",
+  "note": "",
+  "split": "test"
+ },
+ {
+  "id": "EDG0039",
+  "category": "edge",
+  "context": null,
+  "question": "\"Qoqon\" nomining yangi alifbodagi to'g'ri shakli qaysi?",
+  "options": [
+   "Qöqon",
+   "Qoqon",
+   "Qöqön",
+   "Qoʻqon"
+  ],
+  "answer": 0,
+  "source": "lexicon, name",
+  "note": "",
+  "split": "dev"
+ }
+]
