@@ -59,16 +59,16 @@ c.stats();                                       // { lexiconSize, memoryBytes, 
 | `engine/` gzipped | ≤ 30 KB | 12.0 KB |
 | `lexicon-lite.bin` gzipped (50 000 words, 200 000 bigrams) | ≤ 2 MB | 0.74 MB |
 | `lexicon-full.bin` gzipped (400 000 words, 2 000 000 bigrams) | ≤ 8 MB | 7.34 MB |
-| `load()` lite | < 400 ms | 38 ms |
-| `suggest()` p95, cold V8, 10 000 real prefixes | < 5 ms | 1.2 ms |
-| Heap growth with lite loaded | ≤ 25 MB | 19.5 MB (without forced GC; engine's own estimate 4 MB) |
+| `load()` lite | < 400 ms | 24 ms |
+| `suggest()` p95, cold V8, 10 000 real prefixes | < 5 ms | 0.8 ms |
+| Heap growth with lite loaded | ≤ 25 MB | 0.8 MB with forced GC (engine's own estimate 4 MB) |
 
 Lexicon built from 1.75 billion word tokens of
 [`tahrirchi/uz-books-v2`](https://huggingface.co/datasets/tahrirchi/uz-books-v2) (MIT) and
 [`tahrirchi/uz-crawl`](https://huggingface.co/datasets/tahrirchi/uz-crawl) (Apache-2.0);
 see [`data/SOURCES.md`](data/SOURCES.md) and [`docs/CHECKPOINT-2.md`](docs/CHECKPOINT-2.md).
 
-Quality, measured on an unfiltered sample of real text (`npm test`, golden suite):
+Quality, measured on an unfiltered sample of real text (`npm test`, golden suite; full run in [`docs/TEST-OUTPUT.txt`](docs/TEST-OUTPUT.txt)):
 
 - Latin text with apostrophes removed: 695 corrections, **1 wrong** (99.9 % precision), 290 missed.
 - Cyrillic typed on a Russian layout: 471 corrections, 14 wrong (97.1 %), 686 missed.

@@ -49,12 +49,21 @@ the human (2026-09-15 message):
   file only), `tools/build_benchmark.py --export` writes jsonl from rows marked
   keep. Nothing published anywhere.
 
+- `docs/FOR-MAQSUDJON.md` written: live check, acceptance criteria with numbers,
+  defaults D1–D19, failures, the four parked items, rulings needed.
+- `docs/TEST-OUTPUT.txt`: final `npm test` (45 tests, 40 pass, 0 fail, 5 TODO).
+
 ## Running
 
-Nothing.
+Nothing. The unattended run of steps 3–7 is complete.
 
-## Next
+## Next (waits for the human)
 
-1. `docs/FOR-MAQSUDJON.md`; final test run into `docs/TEST-OUTPUT.txt`; push.
+- Rulings: Q19, Q29, Q28, Q21, Q2b, Q30, Q31 (engine behaviour); Q20, Q22–Q25 (yes/no);
+  Q15 (Hugging Face namespace); code licence (D18).
+- Human work: mark the 24 pairs (`docs/AMBIGUITY-REVIEW.md`), write the ~200 dialect
+  forms (`tests/fixtures/dialect-handwritten.json`), review `bench/review.md`.
+- After any engine or web change: `npm test`, then
+  `python3 tools/build_site.py && tools/deploy_pages.sh`.
 
 Deploy recipe (repeatable): `python3 tools/build_site.py && tools/deploy_pages.sh`.

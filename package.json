@@ -6,7 +6,7 @@
   "private": true,
   "main": "engine/index.js",
   "scripts": {
-    "test": "node --test --test-reporter=spec tests/*.test.js"
+    "test": "node --expose-gc --test --test-reporter=spec tests/*.test.js"
   },
   "dependencies": {}
 }

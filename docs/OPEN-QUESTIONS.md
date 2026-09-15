@@ -144,13 +144,14 @@ become `o`. Proposal: a token of one letter is never corrected.
 
 **Needs:** yes/no on the two build-time dependencies.
 
-### Q26 — Served size of the lexicon · OPEN (step 6)
+### Q26 — Served size of the lexicon · CLOSED 2026-09-15 (verified at deploy)
 
 The §6 budgets are gzipped sizes. GitHub Pages likely serves `.bin` as
 `application/octet-stream` without compression, so browsers would download
 the raw size. Option for step 6: publish `lexicon-lite.bin.gz` and inflate it
-with the browser's built-in `DecompressionStream` — no dependency. To verify
-at deploy.
+with the browser's built-in `DecompressionStream` — no dependency. Done (D10).
+Live check: `data/lexicon-lite.bin.gz` is served as `application/gzip`,
+739 813 bytes, not re-compressed; the page inflates it.
 
 ### Q2b — Cyrillic `ъ` after a vowel, and `ўъ` · OPEN (reopens Q2)
 

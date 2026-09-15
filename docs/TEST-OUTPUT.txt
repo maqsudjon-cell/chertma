@@ -1,0 +1,105 @@
+# npm test — 2026-09-15 05:55 +05, commit 49e62cb, node v22.22.2
+
+> chertma@0.1.0 test
+> node --expose-gc --test --test-reporter=spec tests/*.test.js
+
+✔ 1. sosib pisib togri kelasizmi → şoşib pişib töğri kelasizmi (64.084526ms) # got "şoşib pisib töğri kelasizmi": pisib is a real word ("sneaking up") and §5.1 keeps valid words (Q19, conservative default)
+✔ 2. kelaslar, qisela, balu, kettik come through byte-identical (243.953297ms)
+✔ 5. size budgets (3902.826845ms)
+ℹ engine 12009 B gz (≤ 30 000); lite 739813 B gz (≤ 2 000 000); full 7336860 B gz (≤ 8 000 000)
+✔ 8. no network API anywhere in engine/ (1.424846ms)
+✔ 9. package.json has an empty dependencies object (2.701456ms)
+✔ 10. data/SOURCES.md names the licence of every corpus input (1.402932ms)
+✔ 3, 4, 6: covered by translit.test.js and perf.test.js (0.307857ms)
+✔ 7. site works offline after first load (0.147428ms) # verified in the browser, reported in docs/FOR-MAQSUDJON.md
+✔ 11. all benchmark items reviewed by the human (0.445356ms) # parked: bench/review.md awaits review
+✔ R1: ser / şer / şeʼr share one skeleton (46.466152ms)
+✔ R1 without context: a typed valid word is kept (§5.1, Q19 default) (37.501532ms)
+✔ R1: old-Latin spellings are read, not guessed (57.827087ms)
+✔ R1 with context: suggestions offer the marked readings (27.505526ms)
+✔ 24 proposed minimal pairs (0.652904ms) # parked until the human marks docs/AMBIGUITY-REVIEW.md
+▶ golden: strict cases
+  ✔ ascii_apostropheless (90) (253.591549ms)
+  ✔ ascii_bare (30) (36.242857ms)
+  ✔ old2new (30) (20.682727ms)
+  ✔ cyr2new (40) (27.862371ms)
+  ✔ cyr_russian_layout (30) (30.383701ms)
+  ✔ protected (40) (25.119866ms)
+  ✔ upper_case (20) (12.658033ms)
+  ✔ script_old (10) (43.399165ms)
+  ✔ script_cyrillic (10) (33.800161ms)
+  ✔ brief_correct (5) (4.951821ms)
+  ✔ brief_passthrough (7) (1.115002ms)
+✔ golden: strict cases (501.355961ms)
+✔ golden: ranked cases (several candidates survive) (105.883488ms)
+ℹ ranked sentence accuracy: 98/150 = 65.3 %
+ℹ R002: Bunga qadar 1-sinfdan 11-sinfgacha bölgan öquvçilar bir xil taʼlim dasturi asosida bilim olgan.  ≠  Bunga qadar 1-sinfdan 11-sinfgaça bölgan öquvçilar bir xil taʼlim dasturi asosida bilim olgan.
+ℹ R005: Holat Jarqayn tumani Ushkarasu qişloğida sodir bölgan.  ≠  Holat Jarqayn tumani Uşkarasu qişloğida sodir bölgan.
+ℹ R007: Haydovçi gaz ballonini yopib, ot öçiriş uskunasi bilan yonğinni bostirmoqchi bölgan, ammo avtomobil töliq yonib ketgan.  ≠  Haydovçi gaz ballonini yopib, öt öçiriş uskunasi bilan yonğinni bostirmoqçi bölgan, ammo avtomobil töliq yonib ketgan.
+ℹ R009: Vaholangki, hodisa sodir bölgan joyda piyodalar otiş yölagi borligni körsatuvçi zarur belgilar örnatilgan bölgan.  ≠  Vaholangki, hodisa sodir bölgan joyda piyodalar ötiş yölagi borligni körsatuvçi zarur belgilar örnatilgan bölgan.
+ℹ R015: Ularning köpçiligi özlari tunamoqchi bölgan tadbirkor bilan birga işlagan.  ≠  Ularning köpçiligi özlari tunamoqçi bölgan tadbirkor bilan birga işlagan.
+✔ golden: real-world sample (measurement) (898.092269ms)
+ℹ latin_apostropheless: corrected 695; wrong corrections 1 (precision 99.9 %); missed 290; already right or converted right 5086; misaligned sentences 0
+ℹ   wrong: motadil → mötadil (expected möʼtadil)
+ℹ cyr_russian_layout: corrected 471; wrong corrections 14 (precision 97.1 %); missed 686; already right or converted right 1458; misaligned sentences 0
+ℹ   wrong: тукилган → tökilgan (expected töqilgan)
+ℹ   wrong: кучади → qoçadi (expected köçadi)
+ℹ   wrong: худудига → hududiga (expected xududiga)
+ℹ   wrong: хужжатларига → hujjatlariga (expected xujjatlariga)
+ℹ   wrong: дахшатли → dahşatli (expected daxşatli)
+ℹ   wrong: соглиги → soğliği (expected soğligi)
+ℹ   wrong: окиб → öqib (expected oqib)
+ℹ   wrong: хаттоки → hattoki (expected xattoki)
+ℹ   wrong: улсалар → olsalar (expected ölsalar)
+ℹ   wrong: Сухбатнинг → Suhbatning (expected Suxbatning)
+ℹ   wrong: бермокчиман → bermoqçiman (expected bermokçiman)
+ℹ   wrong: куйибди → qöyibdi (expected quyibdi)
+✔ invariant: 10000 generated forms (Q23b) come back byte-identical (1011.912509ms)
+✔ invariant: the same forms in running text (183.547942ms)
+✔ invariant: hand-written dialect forms (Q23a) — 0/200 (18.934733ms) # INCOMPLETE: 0 of 200 hand-written forms have landed (Q23a)
+ℹ INVARIANT SUITE INCOMPLETE until tests/fixtures/dialect-handwritten.json has the human-written forms
+✔ load() of the lite lexicon under 400 ms (72.132798ms)
+ℹ load 23.7 ms
+✔ suggest() p95 under 5 ms, cold (2633.265904ms)
+ℹ 10000 calls: p50 0.128 ms, p95 0.820 ms, p99 2.222 ms, max 20.6 ms
+✔ heap with lite loaded stays under 25 MB (365.088698ms)
+ℹ heap + array buffers grew by 0.83 MB (gc forced); engine estimate 3.99 MB
+✔ skeleton keys (17.037948ms)
+✔ Cyrillic → new Latin (0.971624ms)
+✔ old Latin → new Latin (0.842345ms)
+✔ tokenization (36.841342ms)
+✔ script-blind: key(w) is in the skeleton of its Cyrillic form (1.994476ms)
+✔ new → cyrillic → new for every lite word (596.501764ms)
+ℹ 50000 words; 53 fail only because of the Q2 ъ rule (Q2b); 0 stay Latin
+✔ new → old → new for every lite word (238.827061ms)
+ℹ 0 words with o or g before a tutuq cannot be written unambiguously in old Latin
+✔ new → cyrillic → new for every full word (2275.5325ms)
+ℹ 400000 words; 373 fail only because of the Q2 ъ rule (Q2b); 0 stay Latin
+✔ new → old → new for every full word (720.576483ms)
+ℹ 6 words with o or g before a tutuq cannot be written unambiguously in old Latin
+✔ golden file converts in both directions (131.984871ms)
+✔ independent check: uz-books-v2 lat and cyr splits agree with our rules (622.962894ms)
+ℹ token agreement 99.83 % over 29853810 aligned tokens (40000 distinct pairs)
+ℹ   ×3449 меъёрий → meyoriy  |  me’yoriy → meʼyoriy
+ℹ   ×1605 фъ → fʼ  |  f → f
+ℹ   ×1604 нуқтаи → nuqtai  |  nuqtayi → nuqtayi
+ℹ   ×1297 меъёри → meyori  |  me’yori → meʼyori
+ℹ   ×1236 меъёрлари → meyorlari  |  me’yorlari → meʼyorlari
+ℹ   ×1033 меъёр → meyor  |  me’yor → meʼyor
+ℹ   ×998 меъёрлар → meyorlar  |  me’yorlar → meʼyorlar
+ℹ   ×861 объекти → obyekti  |  ob’ekti → obʼekti
+ℹ   ×849 меъёрда → meyorda  |  me’yorda → meʼyorda
+ℹ   ×839 объект → obyekt  |  ob’ekt → obʼekt
+ℹ   ×832 саин → sain  |  sayin → sayin
+ℹ   ×784 моил → moil  |  moyil → moyil
+ℹ   ×769 манбаи → manbai  |  manbayi → manbayi
+ℹ   ×761 объектив → obyektiv  |  ob’ektiv → obʼektiv
+ℹ   ×710 мўътадил → möʼtadil  |  mo‘tadil → mötadil
+ℹ tests 45
+ℹ suites 0
+ℹ pass 40
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 5
+ℹ duration_ms 5129.753178
