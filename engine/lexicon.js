@@ -64,6 +64,21 @@ export class Lexicon {
     this.bgQ = new Uint8Array(buf, sec(7)[0], b);
     this._words = new Array(n);
     this._keys = new Array(n);
+    // Section 9 (optional): the suffix-chain inventory for morphological fallback (§5.2, §9.3).
+    this.suffixes = null;
+    const [sfxOff, sfxLen] = sec(9);
+    if (sfxLen >= 4) {
+      const count = dv.getUint32(sfxOff, true);
+      const set = new Set();
+      let p = sfxOff + 4;
+      for (let j = 0; j < count; j++) {
+        const len = dv.getUint8(p++);
+        let s = '';
+        for (let e = p + len; p < e; p++) s += DECODE[dv.getUint8(p)];
+        set.add(s);
+      }
+      this.suffixes = set;
+    }
   }
 
   word(i) {

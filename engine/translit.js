@@ -35,6 +35,22 @@ export function cyrToNewLower(low) {
   return cyrOptions(low, false).map((o) => o[0]).join('');
 }
 
+// Cyrillic letters outside the Uzbek alphabet (Russian, Kazakh, Tajik, …).
+// Words containing them are never corrected, only transliterated (default M9).
+const CYR_FOREIGN = {
+  'щ': 'ş', 'ы': 'i', 'ә': 'a', 'ө': 'ö', 'ү': 'u', 'ұ': 'u', 'ң': 'ng', 'і': 'i', 'ї': 'yi',
+  'є': 'ye', 'ґ': 'g', 'җ': 'j', 'ҷ': 'j', 'ӣ': 'i', 'ѓ': 'g', 'ќ': 'k', 'ђ': 'd', 'ћ': 'ç',
+  'љ': 'l', 'њ': 'n', 'џ': 'j', 'ј': 'y', 'ѕ': 'z', 'ӂ': 'j', 'ӑ': 'a', 'ӗ': 'e', 'ҫ': 's',
+};
+export const hasForeignCyrillic = (low) => /[щыәөүұңіїєґҗҷӣѓќђћљњџјѕӂӑӗҫ]/.test(low);
+
+/** Rule transliteration of any Cyrillic in a lowercase token; Latin letters pass through. */
+export function cyrRuleLower(low) {
+  let out = '';
+  for (const o of cyrOptions(low, false)) out += o[0];
+  return out.replace(/[щыәөүұңіїєґҗҷӣѓќђћљњџјѕӂӑӗҫ]/g, (c) => CYR_FOREIGN[c]);
+}
+
 /** §6.3 old Latin → new, on a lowercase token. */
 export function oldToNewLower(low) {
   let out = '';
@@ -79,11 +95,19 @@ const NEW_TO_CYR = {
 const LAT_VOWELS = new Set('aeiouö');
 const IOT = { 'e': 'е', 'o': 'ё', 'u': 'ю', 'a': 'я' };
 
-/** §6.4 rule fallback. null for a token with c or w (foreign, stays Latin). */
+/** A Latin letter outside the Uzbek alphabet → Cyrillic (default M8); Cyrillic passes through. */
+function foreignLatinToCyr(c, next) {
+  if (c === 'c') return next === 'e' || next === 'i' || next === 'y' ? 'ц' : 'к';
+  if (c === 'w') return 'в';
+  const base = c.normalize('NFD').replace(/\p{M}/gu, '');
+  if (base !== c && base.length === 1) return base === 'c' ? 'к' : base === 'w' ? 'в' : (NEW_TO_CYR[base] ?? c);
+  return c;
+}
+
+/** §6.4 rule fallback. Every Latin letter gets a Cyrillic letter: output is never mixed-script. */
 export function newToCyrLower(w, exceptions) {
   const exc = exceptions && exceptions.get(w);
   if (exc) return exc;
-  if (w.includes('c') || w.includes('w')) return null;
   let out = '';
   for (let i = 0; i < w.length;) {
     const c = w[i];
@@ -95,7 +119,7 @@ export function newToCyrLower(w, exceptions) {
       continue;
     }
     if (c === 'e') out += prev === null || LAT_VOWELS.has(prev) ? 'э' : 'е';
-    else out += NEW_TO_CYR[c] ?? c;
+    else out += NEW_TO_CYR[c] ?? foreignLatinToCyr(c, w[i + 1]);
     i += 1;
   }
   return out;
@@ -109,7 +133,7 @@ export function applyCase(s, pattern) {
 
 /** Canonical reading of a token written in `from` ('new' | 'old' | 'cyrillic'). */
 export function canonical(low, from) {
-  if (from === 'cyrillic') return cyrToNewLower(low);
+  if (from === 'cyrillic') return cyrRuleLower(low);
   if (from === 'old') return oldToNewLower(low);
   return literalLower(low);
 }
@@ -118,27 +142,62 @@ export function canonical(low, from) {
 export function render(word, script, pattern, exceptions) {
   let s = word;
   if (script === 'old') s = newToOldLower(word);
-  else if (script === 'cyrillic') s = newToCyrLower(word, exceptions) ?? word;
+  else if (script === 'cyrillic') s = newToCyrLower(word, exceptions);
   return applyCase(s, pattern);
 }
 
-/** §6 / §7.4: pure conversion, no correction. */
+const CYR_LETTER = /[Ѐ-ԯ]/;
+const LAT_LETTER = /[A-Za-zÀ-ɏḀ-ỿ]/;
+const OTHER_LETTER = /(?![Ѐ-ԯA-Za-zÀ-ɏḀ-ỿʻʼʽʿ])\p{L}/u;
+const foldApos = (s) => Array.from(normalize(s).toLowerCase(), (c) => (isApos(c) ? "'" : c)).join('');
+
+/**
+ * §6.5 rule transliteration of one token into `to`, with no correction. A token
+ * already written in the target script family comes back as typed; a token with
+ * letters of any third script comes back as typed. `from` says how Latin is read
+ * ('new' literally, 'old' with sh ch oʻ gʻ); Cyrillic is always read as Cyrillic.
+ */
+export function ruleToken(raw, to, from = 'old', exceptions) {
+  const low = normalize(raw).toLowerCase();
+  if (OTHER_LETTER.test(low)) return raw;
+  const cyr = CYR_LETTER.test(low);
+  const lat = LAT_LETTER.test(low);
+  if (!cyr && !lat) return raw;
+  if (to === 'cyrillic' ? !lat : (!cyr && to === 'new')) return raw;
+  const pattern = casePattern(raw);
+  if (pattern === 'mixed' || (cyr && lat)) {
+    // Mixed case or mixed script (TOGGнинг, iPhone): convert each run of one script
+    // and one case on its own, so the capitals stay where they were (default M10).
+    const runs = [];
+    for (const ch of normalize(raw)) {
+      const kind = isApos(ch) || !/\p{L}/u.test(ch) ? null
+        : `${CYR_LETTER.test(ch) ? 'c' : 'l'}${ch === ch.toLowerCase() ? 'l' : 'u'}`;
+      const last = runs[runs.length - 1];
+      if (last && (kind === null || kind === last.kind)) last.text += ch;
+      else runs.push({ kind, text: ch });
+    }
+    if (runs.length > 1) return runs.map((r) => ruleToken(r.text, to, from, exceptions)).join('');
+  }
+  const canon = cyr ? cyrRuleLower(low) : from === 'new' ? literalLower(low) : oldToNewLower(low);
+  const out = render(canon, to, pattern === 'mixed' ? 'lower' : pattern, exceptions);
+  return foldApos(out) === foldApos(raw) ? raw : out;
+}
+
+/** §6 / §7.4: pure conversion, no correction. Output is never mixed-script (§6.5). */
 export function convert(text, from, to, exceptions) {
   if (from === to) return text;
   let out = '';
   for (const seg of tokenize(text)) {
     const raw = text.slice(seg.start, seg.end);
-    if (seg.kind !== 'token') { out += raw; continue; }
+    if (seg.kind === 'gap' || (seg.kind === 'protected' && !seg.glued)) { out += raw; continue; }
     const low = normalize(raw).toLowerCase();
     const pattern = casePattern(raw);
     const script = detectScript(low);
-    if (pattern === 'mixed' || script === 'mixed' || (from === 'cyrillic') !== (script === 'cyrillic')) {
-      out += raw;
-      continue;
+    if (seg.kind === 'token' && pattern !== 'mixed' && script !== 'mixed' && (from === 'cyrillic') === (script === 'cyrillic')) {
+      out += render(canonical(low, from), to, pattern, exceptions);
+    } else {
+      out += ruleToken(raw, to, from === 'cyrillic' ? 'old' : from, exceptions);
     }
-    const canon = canonical(low, from);
-    if (to === 'cyrillic' && newToCyrLower(canon, exceptions) === null) { out += raw; continue; }
-    out += render(canon, to, pattern, exceptions);
   }
   return out;
 }

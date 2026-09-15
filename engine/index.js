@@ -2,9 +2,12 @@
 
 import {
   DEFAULT_OPTIONS, ACRONYM_MAX_LETTERS, SUGGEST_SCAN_ALL, SUGGEST_UNIGRAM_POOL, SUGGEST_BIGRAM_POOL,
+  MORPH_MIN_STEM_LETTERS, MORPH_MIN_SUFFIX_LETTERS,
 } from './constants.js';
 import { normalize, tokenize, detectScript, casePattern, letterCount, isApos, BREAK_RE } from './normalize.js';
-import { cyrOptions, cyrToNewLower, oldToNewLower, literalLower, render, convert as convertText } from './translit.js';
+import {
+  cyrOptions, cyrToNewLower, oldToNewLower, literalLower, render, ruleToken, hasForeignCyrillic, convert as convertText,
+} from './translit.js';
 import { fold, key as keyOf, skeleton } from './skeleton.js';
 import { Lexicon } from './lexicon.js';
 import { latinUnits, cyrillicUnits, evidence, lnUnigram, score } from './rank.js';
@@ -12,7 +15,7 @@ import { UserModel } from './learn.js';
 
 export { normalize, tokenize, detectScript, casePattern } from './normalize.js';
 export { skeleton, key, fold } from './skeleton.js';
-export { convert, cyrToNewLower, oldToNewLower, newToOldLower, newToCyrLower } from './translit.js';
+export { convert, ruleToken, cyrToNewLower, oldToNewLower, newToOldLower, newToCyrLower } from './translit.js';
 
 const now = () => (globalThis.performance ? globalThis.performance.now() : Date.now());
 
@@ -124,6 +127,94 @@ export class Chertma {
     return score(uni, bi, this.user.bonus(c.word), c.ev.sum);
   }
 
+  /** Proper-noun positions (default D3): a capitalised token mid-sentence only takes capitalised words. */
+  _properFilter(cands, pattern, i, initial, shouting) {
+    if ((pattern === 'title' || pattern === 'upper') && !initial.has(i) && !shouting.has(i)) {
+      return cands.filter((c) => c.id < 0 || this.lex.capitalized(c.id));
+    }
+    return cands;
+  }
+
+  _top(cands, prevId) {
+    let top = cands[0];
+    let topScore = this._score(top, prevId);
+    for (let j = 1; j < cands.length; j++) {
+      const sc = this._score(cands[j], prevId);
+      if (sc > topScore) { top = cands[j]; topScore = sc; }
+    }
+    return top;
+  }
+
+  /**
+   * §5.2 morphological fallback for a token no lexicon word shares a skeleton with.
+   * Returns the canonical word to emit, or null to leave the token to rule
+   * transliteration. Stage 1: if some split reads as a real stem plus a suffix
+   * chain exactly as typed, that reading is the answer and nothing is corrected.
+   * Stage 2 (only when stage 1 finds nothing): the stem is corrected under the
+   * skeleton rule, the suffix is kept as typed, every split must agree, and the
+   * whole token passes the same guards as a whole-word correction.
+   */
+  _morph(low, script, pattern, i, initial, shouting, prevId) {
+    const sfx = this.lex.suffixes;
+    const mode = this.options.morphology;
+    if (!sfx || !mode) return null;
+    const cyr = script === 'cyrillic';
+    const opts = cyr ? cyrOptions(low, false) : null;
+    const reading = (from, to) => (cyr ? opts.slice(from, to).map((o) => o[0]).join('') : null);
+    const splits = [];
+    for (let p = 1; p < low.length; p++) {
+      const stem = low.slice(0, p);
+      const tail = low.slice(p);
+      if (isApos(tail[0])) continue;                                        // a mark belongs to its letter
+      if (!cyr && /[scg]$/.test(stem) && tail[0] === 'h') continue;         // never split a digraph
+      if (letterCount(stem) < MORPH_MIN_STEM_LETTERS || letterCount(tail) < MORPH_MIN_SUFFIX_LETTERS) continue;
+      const sufReadings = cyr ? [reading(p)] : [...new Set([literalLower(tail), oldToNewLower(tail)])];
+      const suf = sufReadings.filter((r) => sfx.has(r));
+      if (!suf.length) continue;
+      splits.push({ p, stem, suf });
+    }
+    if (!splits.length) return null;
+
+    // Stage 1: valid as typed.
+    const literal = new Set();
+    const read = new Set();
+    for (const { p, stem, suf } of splits) {
+      const stemReadings = cyr ? [reading(0, p)] : [literalLower(stem), oldToNewLower(stem)];
+      stemReadings.forEach((r, k) => {
+        if (this._knownId(r) === null) return;
+        for (const x of suf) (k === 0 && !cyr && x === literalLower(low.slice(p)) ? literal : read).add(r + x);
+      });
+    }
+    if (literal.size) return { word: literalLower(low), corrected: false };
+    if (read.size) {
+      const whole = cyr ? cyrToNewLower(low) : oldToNewLower(low);
+      if (read.has(whole)) return { word: whole, corrected: false };
+      return read.size === 1 ? { word: [...read][0], corrected: false } : null;
+    }
+    // Stage 2 guards (defaults M6, M7): only lowercase Latin tokens have their stem corrected.
+    if (mode !== true || cyr || pattern !== 'lower') return null;
+
+    // Stage 2: correct the stem, keep the suffix.
+    const outs = new Set();
+    for (const { p, stem, suf } of splits) {
+      let cands = this._candidates(stem, script).filter((c) => c.ev.min >= 0);
+      cands = this._properFilter(cands, pattern, i, initial, shouting);
+      if (!cands.length) continue;
+      const top = this._top(cands, prevId);
+      const tail = cyr ? null : literalLower(low.slice(p));
+      const x = suf.includes(tail) ? tail : suf[0];
+      outs.add(top.word + x);
+    }
+    if (outs.size !== 1) return null;                                        // splits disagree: leave it
+    const word = [...outs][0];
+    if (!skeleton(low, script, this.options).includes(keyOf(word))) return null;
+    if (!cyr) {
+      const ev = evidence(latinUnits(low), word, false);
+      if (!ev || ev.min < 0) return null;
+    }
+    return { word, corrected: true };
+  }
+
   /** §7.3 whole-text pass. */
   autocorrect(text) {
     const lex = this._lexicon();
@@ -151,6 +242,8 @@ export class Chertma {
 
     let out = '';
     let prevId = -1;
+    // §6.5: whatever is not corrected is still written in the output script.
+    const asTyped = (raw) => ruleToken(raw, outScript, 'old');
     segs.forEach((s, i) => {
       const raw = text.slice(s.start, s.end);
       if (s.kind === 'gap') {
@@ -158,32 +251,35 @@ export class Chertma {
         out += raw;
         return;
       }
-      if (s.kind === 'protected') { out += raw; prevId = -1; return; }
+      if (s.kind === 'protected') { out += s.glued ? asTyped(raw) : raw; prevId = -1; return; }
       const low = normalize(raw).toLowerCase();
       const script = detectScript(low);
       const pattern = casePattern(raw);
-      if (script === 'mixed' || pattern === 'mixed') { out += raw; prevId = -1; return; }
+      if (script === 'mixed' || pattern === 'mixed') { out += asTyped(raw); prevId = -1; return; }
+      if (script === 'cyrillic' && hasForeignCyrillic(low)) { out += asTyped(raw); prevId = -1; return; }  // default M9
       const letters = letterCount(low);
       const valid = this._valid(low, script);
-      if (letters < 2) { out += raw; prevId = valid ? valid.id : -1; return; }  // default D4
+      if (letters < 2) { out += asTyped(raw); prevId = valid ? valid.id : -1; return; }  // default D4
       let chosen = valid;
       if (!chosen) {
         if (pattern === 'upper' && !shouting.has(i) && letters <= ACRONYM_MAX_LETTERS) {  // default D3
-          out += raw; prevId = -1; return;
+          out += asTyped(raw); prevId = -1; return;
         }
-        let cands = this._candidates(low, script).filter((c) => c.ev.min >= 0);  // default D2: never drop a typed mark
-        if ((pattern === 'title' || pattern === 'upper') && !initial.has(i) && !shouting.has(i)) {
-          cands = cands.filter((c) => c.id < 0 || lex.capitalized(c.id));  // default D3: proper-noun positions
+        const all = this._candidates(low, script);
+        if (!all.length) {
+          const m = this._morph(low, script, pattern, i, initial, shouting, prevId);
+          // A reading with no correction keeps a Cyrillic token as typed in Cyrillic output.
+          if (m === null || (!m.corrected && script === 'cyrillic' && outScript === 'cyrillic')) { out += asTyped(raw); prevId = -1; return; }
+          const rendered = render(m.word, outScript, pattern);
+          out += sameLetters(rendered, raw) ? raw : rendered;
+          prevId = -1;
+          return;
         }
-        if (!cands.length) { out += raw; prevId = -1; return; }
-        let top = cands[0];
-        let topScore = this._score(top, prevId);
-        for (let j = 1; j < cands.length; j++) {
-          const sc = this._score(cands[j], prevId);
-          if (sc > topScore) { top = cands[j]; topScore = sc; }
-        }
+        const cands = this._properFilter(all.filter((c) => c.ev.min >= 0), pattern, i, initial, shouting);  // D2, D3
+        if (!cands.length) { out += asTyped(raw); prevId = -1; return; }
+        const top = this._top(cands, prevId);
         // §5 runtime invariant guard.
-        if (!skeleton(low, script, this.options).includes(keyOf(top.word))) { out += raw; prevId = -1; return; }
+        if (!skeleton(low, script, this.options).includes(keyOf(top.word))) { out += asTyped(raw); prevId = -1; return; }
         chosen = top;
       }
       const rendered = render(chosen.word, outScript, pattern);

@@ -1,5 +1,5 @@
 // Offline cache. The build (tools/build_site.py) fills in VERSION and ASSETS.
-const VERSION = "chertma-d2eea3194bc1";
+const VERSION = "chertma-234839d26cee";
 const ASSETS = ["./", "index.html", "style.css", "app.js", "manifest.json", "icon.svg", "icons/apple-touch-icon.png", "icons/icon-192.png", "icons/icon-512.png", "fonts/JetBrainsMono-Regular.ttf", "fonts/JetBrainsMono-Bold.ttf", "data/lexicon-lite.bin.gz", "engine/constants.js", "engine/index.js", "engine/learn.js", "engine/lexicon.js", "engine/normalize.js", "engine/rank.js", "engine/skeleton.js", "engine/translit.js"];
 
 self.addEventListener('install', (event) => {
