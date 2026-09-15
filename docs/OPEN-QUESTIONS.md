@@ -36,6 +36,25 @@ default, and where it lives so it can be reversed in one pass.
 | D18 | Code licence | None chosen; the brief does not name one. `package.json` has no licence field and the README says so. | `README.md`, `package.json` |
 | D19 | Suggestions while typing Cyrillic | Rendered in Cyrillic; Latin input gets the chosen output script. | `web/app.js` |
 
+## Morphology and word list — defaults taken (2026-09-15)
+
+| # | Question | Default taken | Where |
+|---|---|---|---|
+| M1 | Ship the morphological fallback on? | **Off** (`morphology: false`). On the 10 000 invariant forms it changes 809 (stage 1) + 13 (stage 2) outputs; the instruction was to stop and show if the number is not zero. Code, inventory and measurements are in place. | `engine/constants.js`, SPEC §5.2 |
+| M2 | Shortest stem | 3 letters. | `MORPH_MIN_STEM_LETTERS` |
+| M3 | Shortest suffix chain | 2 letters — one-letter endings (`-i`, `-m`) fit too many unrelated words. | `MORPH_MIN_SUFFIX_LETTERS` |
+| M4 | Splits that disagree | Stage 2 corrects only if every split with a candidate gives the same word; otherwise the token is left. A literally valid split anywhere blocks stage 2. | `engine/index.js` `_morph` |
+| M5 | Suffix inventory | A chain is kept if it follows ≥ 100 different stems that are themselves words seen ≥ 1 000 times, in words seen ≥ 10 times; 2–12 letters. 2 235 chains; noisy fragments remain (`ullo`, `ub`). | `tools/suffixes.py` |
+| M6 | Stage 2 on capitalised tokens | Never — the first measurement's wrong corrections were mostly names (`Камазлар`, `Сухов`, `Island`). | `_morph` |
+| M7 | Stage 2 on Cyrillic input | Never — Russian-layout recovery inside a stem produced `кураб → қораб`, `куюнар → қуюнар`. | `_morph` |
+| M8 | Latin letters outside the alphabet in Cyrillic output | `c` → `ц` before e/i/y, else `к`; `w` → `в`; accented letters by base letter. | `engine/translit.js` |
+| M9 | Cyrillic letters outside the alphabet | `щ → ş`, `ы → i` and a table for Kazakh/Tajik/Serbian letters; words containing them are transliterated, never corrected. | `engine/translit.js` |
+| M10 | Mixed case / mixed script tokens | Converted run by run so capitals stay (`TOGGнинг` → `TOGGning`, `iPhone` → `иПҳоне`). URLs, emails, mentions, hashtags stay as typed — the only mixed-script output left. | `ruleToken` |
+| M11 | Latin input, new-Latin output, unknown word | As typed (`o‘quvching` stays) — Latin is ambiguous between old and new, and converting unknown words is what stage 1 would do. | §6.5 |
+| M12 | Golden cases G177, G207 | Expected outputs changed to the new rule (`15ta`, `TOGGning`); the sentence round-trip test skips glued, mixed-case and non-Uzbek-alphabet tokens (counted). | `tests/` |
+| M13 | Held-out text | sha1(document) % 10 == 0 in telegram_blogs and news shard 2: 5.05 M tokens, subtracted from the counts before admission and selection. Bigram counts still include those documents (unigram coverage is unaffected). | `tools/build_heldout.py` |
+| M14 | "Coverage of the crawl slice" for lite | Rank by news + telegram token count after merging misspellings into their words; ties by total count. News is 92 % of those tokens. | `tools/build_lexicons.py` |
+
 ## Telegram bot — defaults taken unattended (2026-09-15)
 
 | # | Question | Default taken | Where |

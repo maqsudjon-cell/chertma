@@ -1,0 +1,570 @@
+{
+ "builds": {
+  "lite": {
+   "words": 50000,
+   "bigrams": 200000,
+   "bytes": 1445712,
+   "gzip": 749132,
+   "budget_gzip": 2000000,
+   "within_budget": true,
+   "selection": "top by crawl count"
+  },
+  "full": {
+   "words": 400000,
+   "bigrams": 2000000,
+   "bytes": 16907628,
+   "gzip": 7341086,
+   "budget_gzip": 8000000,
+   "within_budget": true,
+   "selection": "top by total count"
+  },
+  "mid": {
+   "words": 150000,
+   "bigrams": 1000000,
+   "bytes": 7536148,
+   "gzip": 3403143,
+   "budget_gzip": 8000000,
+   "within_budget": true,
+   "selection": "top by total count"
+  }
+ },
+ "coverage": {
+  "lite": {
+   "news": {
+    "tokens": 2502131,
+    "in_lexicon": 0.9275893228611931,
+    "in_lexicon_or_skeleton_match": 0.9282139903945876,
+    "in_lexicon_or_stem_plus_suffix": 0.9649274958025779
+   },
+   "telegram": {
+    "tokens": 2550178,
+    "in_lexicon": 0.8946136308916476,
+    "in_lexicon_or_skeleton_match": 0.8957500221553162,
+    "in_lexicon_or_stem_plus_suffix": 0.9580476343219964
+   }
+  },
+  "full": {
+   "news": {
+    "tokens": 2502131,
+    "in_lexicon": 0.9718140257244725,
+    "in_lexicon_or_skeleton_match": 0.9735085812853124,
+    "in_lexicon_or_stem_plus_suffix": 0.9858452654956915
+   },
+   "telegram": {
+    "tokens": 2550178,
+    "in_lexicon": 0.9681206566757301,
+    "in_lexicon_or_skeleton_match": 0.9693762553045316,
+    "in_lexicon_or_stem_plus_suffix": 0.9893211375833373
+   }
+  },
+  "lite_by_frequency": {
+   "news": {
+    "tokens": 2502131,
+    "in_lexicon": 0.8969038791334266,
+    "in_lexicon_or_skeleton_match": 0.8975876962477184,
+    "in_lexicon_or_stem_plus_suffix": 0.9529469080555735
+   },
+   "telegram": {
+    "tokens": 2550178,
+    "in_lexicon": 0.876336867465722,
+    "in_lexicon_or_skeleton_match": 0.8774763957653152,
+    "in_lexicon_or_stem_plus_suffix": 0.9552321445797117
+   }
+  },
+  "mid": {
+   "news": {
+    "tokens": 2502131,
+    "in_lexicon": 0.950094539414603,
+    "in_lexicon_or_skeleton_match": 0.9507479824197854,
+    "in_lexicon_or_stem_plus_suffix": 0.9771514760817879
+   },
+   "telegram": {
+    "tokens": 2550178,
+    "in_lexicon": 0.9391391502867643,
+    "in_lexicon_or_skeleton_match": 0.9400218337700349,
+    "in_lexicon_or_stem_plus_suffix": 0.9802460847831014
+   }
+  }
+ },
+ "heldout_subtraction": {
+  "news_tokens": 2502131,
+  "news_tokens_not_in_counts": 4801,
+  "telegram_tokens": 2550178,
+  "telegram_tokens_not_in_counts": 7923,
+  "forms_dropped_below_min_count": 6834
+ },
+ "admitted": 4889869,
+ "merged": 17267,
+ "suffix_chains": 2232,
+ "lite_words_not_in_frequency_lite": 14812,
+ "examples": {
+  "işlating": {
+   "total": 2170,
+   "crawl": 318,
+   "in_lite": true,
+   "in_lite_by_frequency": false,
+   "in_full": true
+  },
+  "işlatiş": {
+   "total": 141184,
+   "crawl": 10946,
+   "in_lite": true,
+   "in_lite_by_frequency": true,
+   "in_full": true
+  },
+  "işla": {
+   "total": 7270,
+   "crawl": 284,
+   "in_lite": false,
+   "in_lite_by_frequency": true,
+   "in_full": true
+  },
+  "töğri": {
+   "total": 1681646,
+   "crawl": 188623,
+   "in_lite": true,
+   "in_lite_by_frequency": true,
+   "in_full": true
+  },
+  "kelaslar": {
+   "total": null,
+   "crawl": null,
+   "in_lite": false,
+   "in_lite_by_frequency": false,
+   "in_full": false
+  },
+  "qisela": {
+   "total": null,
+   "crawl": null,
+   "in_lite": false,
+   "in_lite_by_frequency": false,
+   "in_full": false
+  },
+  "balu": {
+   "total": 145,
+   "crawl": 8,
+   "in_lite": false,
+   "in_lite_by_frequency": false,
+   "in_full": true
+  },
+  "kettik": {
+   "total": 111,
+   "crawl": 34,
+   "in_lite": false,
+   "in_lite_by_frequency": false,
+   "in_full": true
+  },
+  "qöyvor": {
+   "total": 1175,
+   "crawl": 76,
+   "in_lite": false,
+   "in_lite_by_frequency": false,
+   "in_full": true
+  }
+ },
+ "lite_gained_top": [
+  [
+   "asensio",
+   2537,
+   2543
+  ],
+  [
+   "zaporojye",
+   2500,
+   2539
+  ],
+  [
+   "konor",
+   2489,
+   2508
+  ],
+  [
+   "jiru",
+   2488,
+   2495
+  ],
+  [
+   "instagramʼdagi",
+   2466,
+   2466
+  ],
+  [
+   "bornmut",
+   2455,
+   2468
+  ],
+  [
+   "çempionlikni",
+   2436,
+   2547
+  ],
+  [
+   "selta",
+   2424,
+   2450
+  ],
+  [
+   "poçettino",
+   2412,
+   2415
+  ],
+  [
+   "netanyaxu",
+   2408,
+   2447
+  ],
+  [
+   "serdar",
+   2405,
+   2449
+  ],
+  [
+   "xiaomi",
+   2404,
+   2466
+  ],
+  [
+   "şalke",
+   2395,
+   2400
+  ],
+  [
+   "özbekgidroenergo",
+   2388,
+   2512
+  ],
+  [
+   "bernardu",
+   2372,
+   2391
+  ],
+  [
+   "bildirilişiça",
+   2363,
+   2382
+  ],
+  [
+   "sampdoriya",
+   2356,
+   2365
+  ],
+  [
+   "dello",
+   2353,
+   2421
+  ],
+  [
+   "çempionatini",
+   2343,
+   2534
+  ],
+  [
+   "sane",
+   2334,
+   2435
+  ],
+  [
+   "tayson",
+   2331,
+   2458
+  ],
+  [
+   "illustrativ",
+   2330,
+   2456
+  ],
+  [
+   "ayblovlarni",
+   2321,
+   2535
+  ],
+  [
+   "serbiyalik",
+   2318,
+   2431
+  ],
+  [
+   "mundo",
+   2315,
+   2456
+  ],
+  [
+   "töpurar",
+   2300,
+   2395
+  ],
+  [
+   "yevrolik",
+   2296,
+   2328
+  ],
+  [
+   "kuşerbayev",
+   2289,
+   2298
+  ],
+  [
+   "erdöğanning",
+   2287,
+   2299
+  ],
+  [
+   "videodan",
+   2287,
+   2403
+  ],
+  [
+   "çempionligini",
+   2277,
+   2430
+  ],
+  [
+   "örunov",
+   2271,
+   2333
+  ],
+  [
+   "teraktlar",
+   2271,
+   2398
+  ],
+  [
+   "pandemiyadan",
+   2270,
+   2398
+  ],
+  [
+   "jeenbekov",
+   2269,
+   2363
+  ],
+  [
+   "simeone",
+   2269,
+   2273
+  ],
+  [
+   "sentabrga",
+   2267,
+   2396
+  ],
+  [
+   "ektor",
+   2267,
+   2295
+  ],
+  [
+   "jastin",
+   2266,
+   2494
+  ],
+  [
+   "aviaqatnovlarni",
+   2265,
+   2307
+  ]
+ ],
+ "lite_lost_top": [
+  [
+   "buladi",
+   205,
+   186696
+  ],
+  [
+   "dx",
+   113,
+   134137
+  ],
+  [
+   "aniqlang",
+   247,
+   111757
+  ],
+  [
+   "tenglama",
+   150,
+   99185
+  ],
+  [
+   "urta",
+   64,
+   88175
+  ],
+  [
+   "kesim",
+   235,
+   82295
+  ],
+  [
+   "ax",
+   122,
+   78395
+  ],
+  [
+   "funksiyaning",
+   121,
+   75132
+  ],
+  [
+   "tenglamasi",
+   84,
+   69726
+  ],
+  [
+   "tenglamalar",
+   184,
+   65277
+  ],
+  [
+   "temperatura",
+   189,
+   62083
+  ],
+  [
+   "blan",
+   292,
+   60657
+  ],
+  [
+   "muskul",
+   159,
+   59252
+  ],
+  [
+   "tugri",
+   65,
+   57366
+  ],
+  [
+   "suz",
+   54,
+   56700
+  ],
+  [
+   "sistemaning",
+   94,
+   55715
+  ],
+  [
+   "işqalaniş",
+   187,
+   55395
+  ],
+  [
+   "uquv",
+   90,
+   55068
+  ],
+  [
+   "böylama",
+   183,
+   54975
+  ],
+  [
+   "morfologik",
+   241,
+   53247
+  ],
+  [
+   "perpendikulyar",
+   147,
+   52486
+  ],
+  [
+   "silindr",
+   254,
+   51494
+  ],
+  [
+   "yoğga",
+   233,
+   51390
+  ],
+  [
+   "koeffitsienti",
+   101,
+   50681
+  ],
+  [
+   "nuqtaning",
+   98,
+   50575
+  ],
+  [
+   "ximiyaviy",
+   65,
+   50436
+  ],
+  [
+   "tenglamani",
+   61,
+   50409
+  ],
+  [
+   "momenti",
+   65,
+   49422
+  ],
+  [
+   "temperaturasi",
+   156,
+   48955
+  ],
+  [
+   "tenglamaning",
+   41,
+   48842
+  ],
+  [
+   "sistemasining",
+   222,
+   48299
+  ],
+  [
+   "ox",
+   105,
+   47740
+  ],
+  [
+   "çiziqning",
+   146,
+   46225
+  ],
+  [
+   "xarakterlanadi",
+   185,
+   46100
+  ],
+  [
+   "hisoblang",
+   112,
+   45758
+  ],
+  [
+   "formuladan",
+   68,
+   45211
+  ],
+  [
+   "struktura",
+   262,
+   43238
+  ],
+  [
+   "teorema",
+   66,
+   42864
+  ],
+  [
+   "tenglamasini",
+   35,
+   42606
+  ],
+  [
+   "darsning",
+   146,
+   42346
+  ]
+ ],
+ "seconds": 286
+}

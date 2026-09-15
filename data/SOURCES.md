@@ -40,5 +40,10 @@ revision and verified against the sha256 the Hub publishes before it is read.
 | `data/uz-bigrams.tsv` | no (gitignored) | bigram counts ≥ 2 over the provisional vocabulary |
 | `data/build-report.json` | yes | every number in `docs/CHECKPOINT-2.md` |
 | `data/merges.tsv` | no (gitignored) | every rejected form and the word its counts were merged into (§9.6) |
-| `data/lexicon-lite.bin`, `data/lexicon-full.bin` | yes | SPEC §9 binary lexicons |
+| `data/lexicon-lite.bin` | yes | SPEC §9 lite lexicon: the checkpoint-2 word list (50 000 by total count) plus the suffix section |
+| `data/lexicon-full.bin` | yes | 400 000 words, 2 000 000 bigrams, suffix section; built by `tools/build_lexicons.py` with the held-out documents removed |
+| `data/lexicon-lite-coverage.bin` | yes | **parked**: 50 000 words chosen by crawl coverage; not used until reviewed (docs/FOR-MAQSUDJON.md) |
+| `data/lexicon-build-report.json` | yes | held-out subtraction, builds, sizes, coverage on held-out text |
+| `data/suffix-chains.txt` | yes | the 2 232 suffix chains in section 9 |
+| `data/heldout/` | no (gitignored) | held-out word counts: 10 % of telegram_blogs and of news shard 2 (sha1 rule) |
 | `data/protected-words.txt` | yes | human-reviewed protected words (§5.1) |

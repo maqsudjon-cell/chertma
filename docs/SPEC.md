@@ -1,6 +1,6 @@
 # Chertma — Engine Specification
 
-**Version:** 0.2 — checkpoint-1 rulings applied (2026-09-14)
+**Version:** 0.3 — §5.2 morphology, §6.5 no mixed script, §9 suffix section (2026-09-15)
 **Status:** normative for step 2 onward.
 
 This document is normative. Code, tests and the Python pipeline follow it; if
@@ -385,6 +385,40 @@ word (`sok`/`şok`, `oz`/`öz`), `autocorrect()` always keeps the bare word.
 Sentence context decides only in `suggest()` and for tokens with no valid
 reading.
 
+### 5.2 Morphological fallback — stem + suffix chain [2026-09-15; off by default]
+
+Uzbek is agglutinative: no fixed word list holds every inflected form. For a
+token that **no lexicon word shares a skeleton with**, `autocorrect()` may try
+splitting it into a stem and a suffix chain from the lexicon's suffix inventory
+(§9.3 section 9). Option `morphology`: `false` (default) · `'read'` (stage 1) ·
+`true` (stages 1 and 2).
+
+**Stage 1 — valid as typed.** A split is valid when the stem's reading (§5.1
+readings: literal, then old Latin; Cyrillic by §6.1) is a word and the rest,
+read the same way, is a suffix chain. If any split is valid with both halves
+read literally, the token is left as typed. Otherwise the old-Latin or Cyrillic
+reading is emitted (`ishla|ting` → `işla|ting` → `işlating`): script
+conversion, no letter corrected.
+
+**Stage 2 — stem corrected.** Only when stage 1 finds nothing. For each split
+whose rest is a suffix chain *as typed*, the stem gets whole-word candidates
+(§7.3: skeleton lookup, D2, proper-noun filter, ranking). The suffix is never
+changed. The token is corrected only if every such split that yields a
+candidate yields the same word, and the whole result passes the §5 guard
+(`key(result) ∈ skeleton(token)`) and has no contradicting evidence (§8.2).
+
+Never split: inside a digraph (`s|h`, `c|h`, `g|h`), before an apostrophe-like,
+a stem under `MORPH_MIN_STEM_LETTERS` (3) or a suffix under
+`MORPH_MIN_SUFFIX_LETTERS` (2). Stage 2 runs only for lowercase Latin tokens.
+Segmentation never runs for a token with any whole-word skeleton match, so it
+cannot make a correction the whole-word rule refused.
+
+**Why off.** On the 10 000 invariant forms with the checkpoint-2 lite lexicon
+and 2 235 chains, stage 1 changes 809 forms in new-Latin output (old-Latin
+spellings converted through a real stem) and stage 2 corrects 13, most of them
+wrongly (`maqtasin → maqtaşin`, `island → işland`). Switched on only after the
+human has seen the list — `docs/FOR-MAQSUDJON.md`.
+
 ---
 
 ## 6. Script conversion — `convert(text, from, to)`
@@ -451,6 +485,29 @@ Inside a token, left to right:
 
 `w` and `c` are **not** converted — `w` for `sh` is a typing habit, not old
 orthography. Only `autocorrect()` handles it (through the skeleton).
+
+### 6.5 Output is never mixed-script [2026-09-15]
+
+A token that is not corrected — unknown, too short, an acronym, a guard failure —
+is still written in the output script by rule, `ruleToken(raw, to)`:
+
+| Input token | Output `new` | Output `old` | Output `cyrillic` |
+|---|---|---|---|
+| Latin | as typed | old reading → old (`şoşima` → `shoshima`) | old reading → §6.4 rules (`ishlating` → `ишлатинг`) |
+| Cyrillic | §6.1 (`ишлатинг` → `işlating`) | §6.1 → old | as typed |
+| mixed script or mixed case (`TOGGнинг`, `iPhone`) | each run of one script and one case converted on its own (`TOGGning`) | same | same (`ТОГГнинг`) |
+| glued to a digit (`15та`) | converted (`15ta`) | converted | converted |
+
+- Latin letters outside the Uzbek alphabet: `c` → `ц` before `e i y`, otherwise
+  `к`; `w` → `в`; accented letters by their base letter.
+- Cyrillic letters outside the Uzbek alphabet: `щ → ş`, `ы → i`, `ә → a`,
+  `ө → ö`, `ү ұ → u`, `ң → ng`, `і → i` and others (`engine/translit.js`). A word
+  containing one is never corrected, only transliterated.
+- The one exception: URLs, domains, emails, `@mentions` and `#hashtags` stay as
+  typed — transliterating them breaks them.
+- Letters of a third script (Greek, Arabic, …) stay as typed.
+
+`convert()` follows the same table for tokens whose script is not `from`.
 
 ### 6.4 new → Cyrillic (lexicon-first, rule fallback) [BRIEF]
 
@@ -738,7 +795,8 @@ Absolute offsets. Unused entries are `(0, 0)`. Sections follow at 0xA0.
 | 6 | `BG_ID` | `u16` or `u32` × B — second-word ids, ascending within each group |
 | 7 | `BG_Q` | `u8 × B` — quantized bigram counts |
 | 8 | `CYR_EXC` | E records sorted by id: `u32 wordId`, `u16 len`, `u16 × len` UTF-16 code units of the lowercase Cyrillic form, padded to 4 bytes |
-| 9–11 | — | reserved |
+| 9 | `SUFFIXES` | optional (flag bit4 `HAS_SUFFIXES`): `u32 count`, then per chain `u8 len` + CP-UZ bytes, sorted. The suffix-chain inventory for §5.2 |
+| 10–11 | — | reserved |
 
 ### 9.4 Lookups this layout gives for free
 
@@ -756,10 +814,16 @@ only if those are not enough.
 
 ### 9.5 Lite vs full
 
-- **lite** [BRIEF]: top 50 000 unigrams by `c_all`, top 200 000 bigrams whose
-  both words are in the lite vocabulary. N < 65 536, so `WIDE_IDS` is off.
-- **full**: the largest vocabulary and bigram set that fits 8 MB gzipped. The
-  concrete N and B are measured and reported at checkpoint 2, not assumed.
+- **lite** — the mobile build, ≤ 2 MB gzipped: 50 000 words chosen by
+  **coverage of the crawl** (news + telegram token counts, merged misspellings
+  included) since 2026-09-15 — raw frequency is dominated by books and drops
+  inflected forms people type (`işlating`). Top 200 000 bigrams whose words are
+  both in the build. N < 65 536, so `WIDE_IDS` is off.
+- **full** — the bot: 400 000 words by total count, 2 000 000 bigrams.
+- **mid** — 150 000 words by total count, 1 000 000 bigrams; built by
+  `tools/build_lexicons.py --mid` as the fallback tier for the bot.
+- All builds exclude the held-out crawl documents (`tools/build_heldout.py`) and
+  carry the suffix section.
 
 ### 9.6 Lexicon admission [Q17]
 
