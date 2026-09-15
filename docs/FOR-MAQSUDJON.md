@@ -142,3 +142,141 @@ Yes/no: Q20, Q22, Q23, Q24, Q25. Later: Q15 (Hugging Face namespace), the code l
 - Rebuilding fixtures or the lexicon needs the corpus again: `tools/fetch_corpus.py` +
   `tools/build_ngrams.py` (~3 hours, see `docs/STATUS.md`).
 - `docs/STATUS.md` is current; a fresh session can resume from it.
+
+---
+
+## Telegram bot (2026-09-15)
+
+Code: `bot/` (commit `1da4628` and later). `npm test` in `bot/`: **42 tests, 42 pass**, all with
+mocked Telegram payloads and a mocked `fetch` — the real API is never called. `engine/`
+is untouched; the bot runs a byte-identical copy and a test enforces it.
+
+### Deployed URL — not deployed yet
+
+**Stopped at deploy step 1, as instructed:** the Vercel CLI is not installed on this Mac
+and there are no Vercel credentials (no auth file, no `VERCEL_TOKEN`). I did not install
+it and did not try to log in. Steps 2–4 (setWebhook, getWebhookInfo, a real test
+message) need the deployed URL, so they are not done either. Everything is committed.
+
+What I could check against the real Telegram API with the token (read-only):
+
+- `getMe`: the token works. The bot's username is **@Chertmabot** — not `@chertma_bot`
+  as written in the task. All texts use the real username.
+- `supports_inline_queries: false` — **inline mode is off** until you enable it in BotFather.
+- `can_read_all_group_messages: false` — group privacy mode is on, as it should be.
+- `getWebhookInfo`: no webhook set, `pending_update_count` 0, no `last_error`.
+
+### Commands to finish the deploy
+
+Run from the repo root. None of them prints the token; it is read from the gitignored `.env`.
+
+```bash
+npm install -g vercel
+```
+
+```bash
+vercel login
+```
+
+```bash
+cd ~/Downloads/chertma/bot && node scripts/vendor.mjs && vercel link --yes --project chertma-bot
+```
+
+```bash
+cd ~/Downloads/chertma/bot && set -a && . ../.env && set +a && printf %s "$CHERTMA_BOT_TOKEN" | vercel env add CHERTMA_BOT_TOKEN production && printf %s "$CHERTMA_WEBHOOK_SECRET" | vercel env add CHERTMA_WEBHOOK_SECRET production && printf %s "Chertmabot" | vercel env add CHERTMA_BOT_USERNAME production
+```
+
+```bash
+cd ~/Downloads/chertma/bot && vercel deploy --prod --yes
+```
+
+Use the **production domain** the deploy prints (normally `https://chertma-bot.vercel.app`),
+not the per-deployment URL — on the Hobby plan, per-deployment URLs sit behind Vercel's
+login wall and Telegram would get 401. Then, with that domain:
+
+```bash
+cd ~/Downloads/chertma/bot && node scripts/webhook.mjs set https://chertma-bot.vercel.app/api/telegram
+```
+
+```bash
+cd ~/Downloads/chertma/bot && node scripts/webhook.mjs info
+```
+
+```bash
+cd ~/Downloads/chertma/bot && node scripts/webhook.mjs smoke https://chertma-bot.vercel.app/api/telegram
+```
+
+`info` prints `pending_update_count` and `last_error_message`. `smoke` measures the cold
+GET, posts a text and an inline query in Telegram's format (with the secret header) and
+prints the replies the function returns, then ten warm posts and a no-secret request that
+must get 401. The last check is yours: send `sosib pisib togri` to @Chertmabot from your
+phone, and try `@Chertmabot togri gap` in any chat after enabling inline mode.
+
+If the function answers 500 after deploy, the `_vendor/` copy did not upload: run
+`node scripts/vendor.mjs` in `bot/` again and redeploy.
+
+### Timings — measured locally, not on Vercel
+
+Five fresh Node 22 processes on this Mac, handler called directly:
+
+| | Measured |
+|---|---|
+| Module init: engine import + read + parse of `lexicon-lite.bin` | 56–77 ms |
+| Node process start → handler ready | 311–389 ms |
+| First update handled (cold) | 15–21 ms |
+| Warm update (200 mixed messages and inline queries) | p50 0.5 ms, p95 1.3 ms, max 13 ms |
+
+On Vercel, cold start adds the platform's own container start on top of the ~0.35 s
+process-to-ready figure; the webhook round trip adds Telegram ↔ Frankfurt network time.
+`node scripts/webhook.mjs smoke …` measures both on the real deployment. The function also
+returns `Server-Timing: handler;dur=…` on every reply and reports `engineInitMs` and
+`cold` on `GET /api/telegram`.
+
+### BotFather settings you still need to set
+
+1. `/setinline` → @Chertmabot → placeholder, e.g. `matn yozing…` — **required**, inline mode is off.
+2. `/setcommands` → @Chertmabot →
+   ```
+   start - Chertma nima qiladi
+   help - Qisqa yordam
+   nima - Nimani toʻgʻrilaydi, nimaga tegmaydi
+   ```
+3. `/setdescription` (shown before someone presses Start), suggestion:
+   `Oddiy klaviaturada yozilgan oʻzbekcha matnni yangi alifbo (Ş Ç Ö Ğ), eski lotin va kirillga oʻgiradi. Shevaga tegmaydi.`
+4. `/setabouttext`, suggestion: `Matnni uch yozuvda qaytaradi. chertma.maqsudjon.com`
+5. `/setuserpic` — optional; `web/icons/icon-512.png` is the dot-matrix Ş.
+6. Leave `/setprivacy` **enabled** (it is) and `/setinlinefeedback` **disabled** — the bot
+   keeps no data, so inline feedback would only send Telegram's copy of chosen results.
+
+### Defaults I took without you
+
+All sixteen are in `docs/OPEN-QUESTIONS.md` → "Telegram bot — defaults taken unattended".
+The ones you will notice:
+
+- **B1** Replies travel in the webhook response body; the Bot API is called only when a reply
+  has to be split. Faster, and the token is used for almost nothing at run time.
+- **B2** A random webhook secret (in `.env` and the Vercel env) — requests without it get 401.
+- **B3** The bot's own messages are in old Latin with ʻ; conversions are shown in all three scripts.
+- **B4** Your inline example will not come out as written: the engine gives `şoşib pisib töğri`
+  (Q19) and writes old Latin with ʻ (`toʻgʻri`), not `to'g'ri`. The engine is frozen.
+- **B5** Inline queries get their own 60/min per user; the 20/min applies to messages.
+- **B6** Forwarded messages get the friendly reply even when they contain text.
+- **B7** In groups a bare `@Chertmabot` replying to someone converts that message; bare `/start`
+  without the username is ignored.
+- **B8** "matn allaqachon toʻgʻri ✓" only when the text is unchanged *and* already in that
+  script; otherwise "oʻzgarmadi — tanilmagan soʻzlar yozilganidek qoldi".
+- **B12** Region `fra1`.
+
+### What failed and why
+
+- **Deploy, webhook, getWebhookInfo on the deployment, real test message — not done.** Vercel CLI
+  not installed and not authenticated; stopped as instructed. Commands above.
+- **No real test message.** Besides the missing deployment: a bot cannot message itself, and
+  sending one needs a Telegram user account, which I do not have. `smoke` checks the live
+  function's replies; the message from your phone is the final check.
+- **Cold start on Vercel not measured** — local numbers above instead.
+- **Token hygiene held:** `.env` was gitignored and verified before it was written; every commit
+  ran `git diff --cached | grep -c <first 8 chars>` → `0`; a `pre-commit` hook (in `.git/hooks`,
+  not tracked) aborts any commit whose diff contains the prefix — tested with a fake token.
+  Since the token was pasted into this chat, consider rotating it in BotFather (`/revoke`) after
+  deploy if the transcript is ever shared, then update `.env` and the Vercel env.

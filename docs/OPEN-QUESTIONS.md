@@ -36,6 +36,29 @@ default, and where it lives so it can be reversed in one pass.
 | D18 | Code licence | None chosen; the brief does not name one. `package.json` has no licence field and the README says so. | `README.md`, `package.json` |
 | D19 | Suggestions while typing Cyrillic | Rendered in Cyrillic; Latin input gets the chosen output script. | `web/app.js` |
 
+## Telegram bot — defaults taken unattended (2026-09-15)
+
+| # | Question | Default taken | Where |
+|---|---|---|---|
+| B1 | How replies reach Telegram | In the webhook response body (Telegram executes the method), so a normal update makes no outbound call. The Bot API is called only when a reply must be split into several messages. | `bot/api/telegram.js` |
+| B2 | Is a POST really from Telegram? | A random webhook secret (`CHERTMA_WEBHOOK_SECRET`, gitignored `.env` and Vercel env) is registered with `setWebhook`; requests without it get 401. | `bot/api/telegram.js`, `bot/scripts/webhook.mjs` |
+| B3 | Script of the bot's own messages | Old Latin with ʻ — readable by everyone today. Engine output is shown in all three scripts. | `bot/src/texts.js` |
+| B4 | The brief's inline example | The engine's output is shown as it is: `sosib pisib togri` gives `şoşib pisib töğri` (Q19), and old Latin uses ʻ, not ASCII '. The engine is frozen. | — |
+| B5 | Inline rate limit | The brief's 20/min is for messages. Inline queries fire as you type, so they get their own 60/min per user; both drop silently. | `bot/src/core.js` |
+| B6 | Forwarded messages with text | Friendly reply, not converted — the brief lists "forwarded" with non-text. | `bot/src/core.js` |
+| B7 | Groups | Answered only on `@Chertmabot` mentions, `/cmd@Chertmabot`, or replies to the bot's messages. A bare mention that replies to someone's message converts that message. Bare `/start` without the username, messages from other bots, messages sent via the bot, edits and channel posts are ignored. Non-text only gets a reply when it replies to the bot. The rate limit counts only messages addressed to the bot. | `bot/src/core.js` |
+| B8 | "Already correct" | Claimed only when the output equals the input and the input is written in that script; unknown words in another script get "oʻzgarmadi — tanilmagan soʻzlar yozilganidek qoldi". | `bot/src/core.js` `status()` |
+| B9 | Text with no letters | A short reply instead of three copies of the input. | `bot/src/core.js` |
+| B10 | Replies over 4096 characters | Split into one message per script, each cut to fit with "… (qolgani kesildi)". Input over 4096 is cut to 4000 first, as specified. | `bot/src/core.js` |
+| B11 | Inline caching | `cache_time` 300 s, `is_personal` false — results depend only on the query. | `bot/src/core.js` |
+| B12 | Region and limits | `fra1` (next to Telegram's European data centre), `maxDuration` 10 s. | `bot/vercel.json` |
+| B13 | Getting the engine into a Vercel project rooted at `bot/` | `scripts/vendor.mjs` copies `engine/*.js` and the lite lexicon into `bot/_vendor/` (gitignored) before deploy; a test requires the copy to be byte-identical and `engine/` to have no changes. | `bot/scripts/vendor.mjs`, `bot/test/vendor.test.js` |
+| B14 | Bot profile (commands, description) | Not changed through the API; listed as BotFather steps for the human. | `docs/FOR-MAQSUDJON.md` |
+| B15 | Health endpoint | `GET /api/telegram` returns cold/warm, engine init time, lexicon size and update counts by kind — no content, no token. | `bot/api/telegram.js` |
+| B16 | Webhook registration | `allowed_updates` = message, inline_query; `drop_pending_updates` true; `max_connections` 40. | `bot/scripts/webhook.mjs` |
+
+Engine issues found while building the bot: none. The bot switches `engine.options.script` between calls, as the web demo does.
+
 ## Open
 
 ### Q19 — "Valid tokens are never rewritten" vs. context-resolved ambiguity · OPEN
