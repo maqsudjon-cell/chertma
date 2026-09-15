@@ -296,7 +296,7 @@ suffix section.
 | lite, right after a deploy | 934 ms | 42.3 ms | 383 ms | 0.9 ms |
 | mid, right after a deploy | 960 ms | 128.6 ms | 429 ms | 0.8 ms |
 | full, right after a deploy (2 runs) | 1085 / 1052 ms | 249.6 ms | 389 / 410 ms | 0.8 ms |
-| full, after 25 min idle | IDLE_MS | IDLE_INIT | IDLE_WARM | IDLE_HANDLER |
+| full, after 25 min idle | 1 788 ms | 251 ms | 323 ms | 0.9 ms |
 
 Round trips are from Tashkent to Frankfurt. The full lexicon adds about 200 ms of engine init; cold
 start stays far under 3 s, so the bot runs **full** and no mid tier is used. Locally (5 runs each):
