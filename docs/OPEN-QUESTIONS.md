@@ -31,6 +31,10 @@ default, and where it lives so it can be reversed in one pass.
 | D13 | `suggest()` and a typed valid word | A buffer that is itself a word is always among the suggestions (it replaces the last slot if it was not in the top N). | `engine/index.js` |
 | D14 | Q23a placeholder | `tests/fixtures/dialect-handwritten.json` is empty; the invariant suite reports INCOMPLETE until the 200 forms land. | `tests/invariant.test.js` |
 | D15 | Foreign-collision list definition | "Foreign tokens whose skeleton collides with a real Uzbek word": crawl forms with ≥ 30 occurrences, ≥ 80 % title case, no tutuq, not a lite word, whose key matches a lite word that is not itself capitalised. 77 rows. Parked; nothing uses it. | `tools/build_fixtures.py`; `data/foreign-collisions.tsv` |
+| D16 | Benchmark link on the site | The page does not link to a Hugging Face dataset (nothing is published and the namespace, Q15, is not decided). It links to the draft in the GitHub repo instead. | `web/index.html` |
+| D17 | Site language | Uzbek (new Latin) by default for every visitor; English one tap away. | `web/app.js` |
+| D18 | Code licence | None chosen; the brief does not name one. `package.json` has no licence field and the README says so. | `README.md`, `package.json` |
+| D19 | Suggestions while typing Cyrillic | Rendered in Cyrillic; Latin input gets the chosen output script. | `web/app.js` |
 
 ## Open
 
@@ -208,8 +212,8 @@ needs 5 % or more.
 The uz-books-v2 lat/cyr check (99.83 % agreement) shows a pattern besides
 Q2b: Cyrillic `нуқтаи`, `манбаи`, `саин`, `моил` against Latin `nuqtayi`,
 `manbayi`, `sayin`, `moyil` — the Latin inserts `y` between a vowel and `и`.
-Our rule gives `nuqtai`. Nothing changed; `docs/CHECKPOINT-2.md` style numbers are
-in the test output (`tests/translit.test.js`).
+Our rule gives `nuqtai`. Nothing changed; counts are printed by
+`tests/translit.test.js`.
 **Needs:** ruling.
 
 ### Q13b — The 24 proposed minimal pairs · OPEN

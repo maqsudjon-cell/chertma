@@ -4,7 +4,6 @@
   "description": "Type plain ASCII, get correct Uzbek in the new Latin alphabet, old Latin or Cyrillic.",
   "type": "module",
   "private": true,
-  "license": "MIT",
   "main": "engine/index.js",
   "scripts": {
     "test": "node --test --test-reporter=spec tests/*.test.js"
