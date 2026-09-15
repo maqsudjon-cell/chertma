@@ -199,7 +199,7 @@ Books are the authority on what is a word (Q17), but some of them were typed
 on a Russian layout: `tugri` 57 301 times (3.9 % of `töğri`), `bulgan` 10 734,
 `uzbekiston` 5 665, `kanday`, `xalkaro`. These are valid tokens in the lite
 build, so §5.1 keeps them and Cyrillic keyboard recovery (Q6) never fires for
-the commonest words — including the brief's own `тугри → töğri`. Rule 3 only
+the commonest words — including SPEC §4.8's own example `тугри → töğri`. Rule 3 only
 looks at marks, not `u/ö`, `k/q`, `x/h`.
 
 **Option:** extend rule 3 to those substitutions. `docs/CHECKPOINT-2.md` shows

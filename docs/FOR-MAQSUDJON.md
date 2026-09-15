@@ -86,7 +86,7 @@ with file locations: `docs/OPEN-QUESTIONS.md` → "Defaults taken unattended".
 ## 4. What failed or did not work
 
 - **Criterion 1** — see §2. It needs your Q19 ruling, not a code fix.
-- **`тугри` stays `tugri`.** The brief's own Russian-layout example. `tugri` is in the
+- **`тугри` stays `tugri`.** This is the headline example of Cyrillic keyboard recovery in SPEC §4.8 (the brief's own `тўғри` works). `tugri` is in the
   books 57 301 times (3.9 % of `töğri`), so it is a valid word. Q29 has the numbers for
   fixing it at 1 %, 5 % and 10 %, and the real words each threshold would wrongly drop.
 - **Unknown words stay as typed in every output script** — Cyrillic output can contain
