@@ -1,0 +1,6 @@
+# Uploaded to Vercel: api/, src/, _vendor/, package.json, vercel.json. Nothing else.
+test/
+scripts/
+README.md
+.env
+.env.*

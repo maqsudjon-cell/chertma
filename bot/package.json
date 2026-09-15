@@ -1,0 +1,15 @@
+{
+  "name": "chertma-bot",
+  "version": "0.1.0",
+  "description": "Telegram front-end for the Chertma engine: a Vercel webhook function.",
+  "type": "module",
+  "private": true,
+  "engines": {
+    "node": "22.x"
+  },
+  "scripts": {
+    "vendor": "node scripts/vendor.mjs",
+    "test": "node scripts/vendor.mjs && node --test --test-reporter=spec test/*.test.js"
+  },
+  "dependencies": {}
+}
