@@ -1,6 +1,6 @@
 # Chertma — Engine Specification
 
-**Version:** 0.3 — §5.2 morphology, §6.5 no mixed script, §9 suffix section (2026-09-15)
+**Version:** 0.4 — §5.2 stage 1 on, stage 2 rejected (2026-09-16)
 **Status:** normative for step 2 onward.
 
 This document is normative. Code, tests and the Python pipeline follow it; if
@@ -385,13 +385,13 @@ word (`sok`/`şok`, `oz`/`öz`), `autocorrect()` always keeps the bare word.
 Sentence context decides only in `suggest()` and for tokens with no valid
 reading.
 
-### 5.2 Morphological fallback — stem + suffix chain [2026-09-15; off by default]
+### 5.2 Morphological fallback — stem + suffix chain [2026-09-16; stage 1 ships]
 
 Uzbek is agglutinative: no fixed word list holds every inflected form. For a
 token that **no lexicon word shares a skeleton with**, `autocorrect()` may try
 splitting it into a stem and a suffix chain from the lexicon's suffix inventory
-(§9.3 section 9). Option `morphology`: `false` (default) · `'read'` (stage 1) ·
-`true` (stages 1 and 2).
+(§9.3 section 9). Option `morphology`: `false` · `'read'` (stage 1, **the default**) ·
+`true` (stages 1 and 2, **rejected — see below**).
 
 **Stage 1 — valid as typed.** A split is valid when the stem's reading (§5.1
 readings: literal, then old Latin; Cyrillic by §6.1) is a word and the rest,
@@ -413,11 +413,22 @@ a stem under `MORPH_MIN_STEM_LETTERS` (3) or a suffix under
 Segmentation never runs for a token with any whole-word skeleton match, so it
 cannot make a correction the whole-word rule refused.
 
-**Why off.** On the 10 000 invariant forms with the checkpoint-2 lite lexicon
-and 2 235 chains, stage 1 changes 809 forms in new-Latin output (old-Latin
-spellings converted through a real stem) and stage 2 corrects 13, most of them
-wrongly (`maqtasin → maqtaşin`, `island → işland`). Switched on only after the
-human has seen the list — `docs/FOR-MAQSUDJON.md`.
+**What ships, and why.** Measured on the 10 000 invariant forms with the lite
+lexicon and 2 232 chains:
+
+- **Stage 1 is on.** It changes 809 forms, all in new-Latin output, and every
+  one of them is the old-Latin spelling of the same letters read through a real
+  stem (`mashinangiz → maşinangiz`). No letter is corrected; the invariant suite
+  asserts that by transliterating input and output to Cyrillic and comparing.
+  In old-Latin output every form is still byte-identical.
+- **Stage 2 is off and stays off.** It corrects 13 of those forms and 12 are
+  wrong (`maqtasin → maqtaşin`, `island → işland`, `ogʻritib → öğritib`), and it
+  rewrites `qoyvor`, which CLAUDE.md §1 forbids. Ruled out 2026-09-16; do not
+  re-enable without much stronger evidence than a coverage number.
+
+One form on CLAUDE.md §1's passthrough list changes: `shoshima → şoşima` in
+new-Latin output, because `shosh-` is a stem and `-ima` a chain. The word is
+unchanged — only the spelling convention the user asked for.
 
 ---
 

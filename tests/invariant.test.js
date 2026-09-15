@@ -12,32 +12,53 @@ const handwritten = json('tests/fixtures/dialect-handwritten.json').forms;
 const HANDWRITTEN_TARGET = 200;
 const isCyr = (s) => /[\u0400-\u052f]/.test(s);
 
+// Forms the shipped morphology setting reads as a known stem + a suffix chain (§5.2
+// stage 1) come back converted, not corrected. "Not corrected" is checked, not assumed:
+// the output and the input must transliterate to the same Cyrillic, so the only thing
+// that changed is the old → new spelling of the same letters. Anything else is a
+// correction and fails. The count is pinned so a change that reaches further has to be
+// looked at: docs/MORPHOLOGY-REVIEW.md.
+const STAGE_1_CONVERTED = 809;
+const sameLetters = (got, s) => ruleToken(got, 'cyrillic', 'new') === ruleToken(s, 'cyrillic', 'old');
+
 function check(c, forms, label) {
   const changed = [];
+  const converted = [];
   for (const script of ['new', 'old', 'cyrillic']) {
     c.options.script = script;
     for (const s of forms) {
       const got = c.autocorrect(s);
       const own = (script === 'cyrillic') === isCyr(s) && script !== 'old';
       const want = own ? s : ruleToken(s, script, 'old');
-      if (got !== want) changed.push(`${script}: ${s} → ${got} (want ${want})`);
+      if (got === want) continue;
+      if (own && script === 'new' && sameLetters(got, s)) { converted.push(`${script}: ${s} → ${got}`); continue; }
+      changed.push(`${script}: ${s} → ${got} (want ${want})`);
     }
   }
   c.options.script = 'new';
   assert.equal(changed.length, 0, `${label}: ${changed.length} changed: ${changed.slice(0, 20).join(', ')}`);
+  return converted;
 }
 
 test(`invariant: ${generated.length} generated forms (Q23b), all three output scripts`, async () => {
-  check(await engine(), generated, 'generated');
+  const converted = check(await engine(), generated, 'generated');
+  assert.equal(converted.length, STAGE_1_CONVERTED,
+    `${converted.length} forms read through a stem + suffix, expected ${STAGE_1_CONVERTED}: ${converted.slice(0, 20).join(', ')}`);
+});
+
+test('invariant: with morphology off, nothing at all is touched', async () => {
+  assert.deepEqual(check(await engine({ morphology: false }), generated, 'generated'), []);
 });
 
 test('invariant: the same forms in running text', async () => {
   const c = await engine();
-  const lat = generated.filter((s) => !isCyr(s)).slice(0, 1500).join(' ');
-  const cyr = generated.filter(isCyr).slice(0, 1500).join(' ');
-  assert.equal(c.autocorrect(lat), lat);
+  const lat = generated.filter((s) => !isCyr(s)).slice(0, 1500);
+  const cyr = generated.filter(isCyr).slice(0, 1500);
+  // Running text must give exactly what the tokens give on their own: no neighbour,
+  // and no bigram, may push a form the invariant protects into a correction.
+  assert.equal(c.autocorrect(lat.join(' ')), lat.map((s) => c.autocorrect(s)).join(' '));
   c.options.script = 'cyrillic';
-  assert.equal(c.autocorrect(cyr), cyr);
+  assert.equal(c.autocorrect(cyr.join(' ')), cyr.join(' '));
 });
 
 const incomplete = handwritten.length < HANDWRITTEN_TARGET;

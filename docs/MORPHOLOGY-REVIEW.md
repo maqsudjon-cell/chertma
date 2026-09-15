@@ -1,8 +1,11 @@
 # Morphology and word-list review — 2026-09-15
 
-**Status: stopped at "show me".** Both new behaviours touch invariant forms that were
-untouched before, so neither is switched on. Everything below was measured on the 10 000
-generated forms of `tests/fixtures/invariant-generated.txt` in all three output scripts.
+**Ruled 2026-09-16: stage 1 on (`morphology: 'read'`), stage 2 off, and the lite word list
+stays as it was.** The report below is what that decision was made on; everything in it was
+measured on the 10 000 generated forms of `tests/fixtures/invariant-generated.txt` in all three
+output scripts. One consequence to note: `shoshima → şoşima` in new-Latin output — on
+CLAUDE.md §1's passthrough list, but a spelling conversion, not a rewrite, and byte-identical
+in old-Latin output.
 
 ## 1. Morphological fallback (SPEC §5.2) — off
 

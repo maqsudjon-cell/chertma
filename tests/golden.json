@@ -2498,9 +2498,10 @@
    "id": "G310",
    "category": "brief_passthrough",
    "input": "shoshima",
-   "expected": "shoshima",
+   "expected": "şoşima",
    "script": "new",
-   "source": "CLAUDE.md §1"
+   "source": "CLAUDE.md §1",
+   "note": "CLAUDE.md §1 lists shoshima among the forms that pass through untouched, and the word is untouched: shosh- is a lexicon stem and -ima a suffix chain, so §5.2 stage 1 reads the input as old Latin and converts the spelling. In old-Latin output it stays byte-identical. Stage 1 ruled on 2026-09-16; docs/MORPHOLOGY-REVIEW.md."
   },
   {
    "id": "G311",

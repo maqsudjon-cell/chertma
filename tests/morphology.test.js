@@ -8,11 +8,25 @@ import { normalize, detectScript, skeleton, key, tokenize } from '../engine/inde
 
 const PRESERVE = ['kelaslar', 'qisela', 'balu', 'kettik', 'bormimiz'];
 
-test('morphology is off by default', async () => {
+// Stage 2 (stem correction) is ruled out, not merely off: it got 12 of these 13 wrong.
+const STAGE_2_REJECTED = ['aldasang', 'baxslashganda', 'island', 'josusi', 'kobraga', 'maqtasangiz',
+  'maqtasin', "o'xshasin", 'ogʻritib', 'og‘ritmoq', 'qotirilishi', 'toqnashtirib', 'yasardim'];
+
+test("the shipped setting is stage 1 only ('read')", async () => {
   const c = await engine();
-  assert.equal(c.options.morphology, false);
-  assert.equal(c.autocorrect('ishlating'), 'ishlating');
+  assert.equal(c.options.morphology, 'read');
+  assert.equal(c.autocorrect('ishlating'), 'işlating');
   assert.ok(c.lex.suffixes && c.lex.suffixes.size > 1000, 'lite carries the suffix section');
+});
+
+test('the default never corrects a letter through segmentation', async () => {
+  const c = await engine();
+  for (const w of STAGE_2_REJECTED.concat('qoyvor', 'islating')) assert.equal(c.autocorrect(w), w, w);
+});
+
+test('morphology: false still passes every token through', async () => {
+  const c = await engine({ morphology: false });
+  assert.equal(c.autocorrect('ishlating'), 'ishlating');
 });
 
 test("'read': a real stem + suffix read as old Latin is converted, nothing corrected", async () => {
@@ -25,10 +39,15 @@ test("'read': a real stem + suffix read as old Latin is converted, nothing corre
   assert.equal(c.autocorrect('ишлатинг'), 'işlating');
 });
 
-test('true: the stem is corrected and the suffix kept (lowercase Latin only)', async () => {
+// Kept so the rejected behaviour stays visible, and so nobody re-enables it thinking
+// it is harmless. Ruled out 2026-09-16: 12 of the 13 stem corrections it makes on the
+// invariant forms are wrong, and it rewrites qoyvor, which must never be touched.
+test('true: stage 2 corrects the stem — and gets it wrong, which is why it is off', async () => {
   const c = await engine({ morphology: true });
-  assert.equal(c.autocorrect('islating'), 'işlating');
+  assert.equal(c.autocorrect('islating'), 'işlating');           // the one it gets right
   assert.equal(c.autocorrect('Islating'), 'Islating');           // M6: capitalised tokens are never stem-corrected
+  assert.equal(c.autocorrect('maqtasin'), 'maqtaşin');           // wrong: maqtasin is correct as typed
+  assert.equal(c.autocorrect('qoyvor'), 'qöyvor');               // wrong: on the untouchable list
 });
 
 for (const mode of [false, 'read', true]) {
@@ -38,8 +57,8 @@ for (const mode of [false, 'read', true]) {
   });
 }
 
-test('qoyvor stays as typed', { todo: 'fails with morphology: true — qoyvor → qöyvor (stage 2), see docs/FOR-MAQSUDJON.md' }, async () => {
-  for (const mode of [false, 'read', true]) {
+test('qoyvor stays as typed in every setting that ships', async () => {
+  for (const mode of [false, 'read']) {
     const c = await engine({ morphology: mode });
     assert.equal(c.autocorrect('qoyvor'), 'qoyvor', `morphology: ${mode}`);
   }

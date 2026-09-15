@@ -40,7 +40,8 @@ default, and where it lives so it can be reversed in one pass.
 
 | # | Question | Default taken | Where |
 |---|---|---|---|
-| M1 | Ship the morphological fallback on? | **Off** (`morphology: false`). On the 10 000 invariant forms it changes 809 (stage 1) + 13 (stage 2) outputs; the instruction was to stop and show if the number is not zero. Code, inventory and measurements are in place. | `engine/constants.js`, SPEC §5.2 |
+| M1 | Ship the morphological fallback on? | **RULED 2026-09-16: stage 1 on, stage 2 off** (`morphology: 'read'`). Stage 1 changes 809 invariant forms, all pure old → new spelling conversions through a known stem, no letter corrected. Stage 2 corrects 13 and gets 12 wrong, including `qoyvor` — rejected, not to be revisited without much stronger evidence. Consequence: `shoshima → şoşima` in new-Latin output (G310). | `engine/constants.js`, SPEC §5.2 |
+| M15 | Which lite ships? | **RULED 2026-09-16: the frequency-selected list stays.** The coverage-selected build is +3 points of held-out coverage but breaks 6 golden cases and admits `xozir`, `kuyidan` as words; kept as `data/lexicon-lite-coverage.bin`, unused. | `data/`, docs/MORPHOLOGY-REVIEW.md |
 | M2 | Shortest stem | 3 letters. | `MORPH_MIN_STEM_LETTERS` |
 | M3 | Shortest suffix chain | 2 letters — one-letter endings (`-i`, `-m`) fit too many unrelated words. | `MORPH_MIN_SUFFIX_LETTERS` |
 | M4 | Splits that disagree | Stage 2 corrects only if every split with a candidate gives the same word; otherwise the token is left. A literally valid split anywhere blocks stage 2. | `engine/index.js` `_morph` |

@@ -26,7 +26,11 @@ export const DEFAULT_OPTIONS = Object.freeze({
   fuzzyQK: false,
   fuzzyXH: false,
   cyrillicKeyboardRecovery: true,
-  morphology: false,       // §5.2 stem + suffix fallback: false | 'read' (stage 1) | true (stages 1+2). Off until reviewed (M1)
+  morphology: 'read',      // §5.2 stem + suffix fallback: false | 'read' (stage 1) | true (stages 1+2).
+                           // 'read' is the shipped setting (M1, ruled 2026-09-16): a known stem plus a
+                           // suffix chain is read as old Latin and converted, no letter is ever corrected.
+                           // true (stage 2, stem correction) is rejected — it got 12 of 13 wrong and
+                           // touched qoyvor; do not turn it on without much stronger evidence.
   maxSuggestions: 3,
 });
 
