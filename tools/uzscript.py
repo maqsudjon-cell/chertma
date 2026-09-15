@@ -342,3 +342,100 @@ def iter_sentences(text):
                     items.append(m.group(m.lastindex))
         if items:
             yield items
+
+
+# --- §6.2 / §6.4 output conversions ----------------------------------------------
+
+_NEW_TO_OLD = {"ş": "sh", "ç": "ch", "ö": "o" + OKINA, "ğ": "g" + OKINA}
+
+
+def new_to_old_lower(w):
+    """§6.2. A literal s+h gets the separator so old-Latin readers don't see sh."""
+    out = []
+    for i, ch in enumerate(w):
+        if ch == "s" and i + 1 < len(w) and w[i + 1] == "h":
+            out.append("s" + TUTUQ)
+        else:
+            out.append(_NEW_TO_OLD.get(ch, ch))
+    return "".join(out)
+
+
+_NEW_TO_CYR = {
+    "a": "а", "b": "б", "d": "д", "f": "ф", "g": "г", "i": "и", "j": "ж", "k": "к", "l": "л",
+    "m": "м", "n": "н", "o": "о", "p": "п", "r": "р", "s": "с", "t": "т", "u": "у", "v": "в",
+    "x": "х", "y": "й", "z": "з", "h": "ҳ", "q": "қ", "ş": "ш", "ç": "ч",
+    "ö": "ў", "ğ": "ғ", TUTUQ: "ъ",
+}
+_LAT_VOWELS = frozenset("aeiouö")
+_IOT = {"e": "е", "o": "ё", "u": "ю", "a": "я"}
+
+
+def new_to_cyr_lower(w):
+    """§6.4 rule fallback (the lexicon exception list is empty). Returns None
+    for a token with c or w: foreign, stays Latin."""
+    if "c" in w or "w" in w:
+        return None
+    out = []
+    i, n = 0, len(w)
+    while i < n:
+        ch = w[i]
+        prev = w[i - 1] if i else None
+        if ch == "y" and i + 1 < n and w[i + 1] in _IOT:
+            nxt = w[i + 1]
+            if nxt == "e" and prev is not None and prev not in _LAT_VOWELS and prev != TUTUQ:
+                out.append("ъе")
+            else:
+                out.append(_IOT[nxt])
+            i += 2
+            continue
+        if ch == "e":
+            out.append("э" if prev is None or prev in _LAT_VOWELS else "е")
+        else:
+            out.append(_NEW_TO_CYR.get(ch, ch))
+        i += 1
+    return "".join(out)
+
+
+def apply_case(s, pattern):
+    if pattern == "upper":
+        return s.upper()
+    if pattern == "title":
+        return s[:1].upper() + s[1:]
+    return s
+
+
+# --- spans for whole-text processing (mirrors engine/normalize.js tokenize) ---------
+
+def spans(text):
+    """[(start, end, kind)] covering text; kind in token | gap | protected.
+    Tokens are found in the original text (not NFC-normalized) so offsets
+    stay valid; callers normalize each token."""
+    prot = []
+    for m in PROTECTED_ANCHOR_RE.finditer(text):
+        s, e = m.span()
+        while s > 0 and not text[s - 1].isspace():
+            s -= 1
+        while e < len(text) and not text[e].isspace():
+            e += 1
+        if prot and s <= prot[-1][1]:
+            prot[-1] = (prot[-1][0], max(e, prot[-1][1]))
+        else:
+            prot.append((s, e))
+    out = []
+    pos = 0
+    pi = 0
+    for m in TOKEN_RE.finditer(text):
+        s, e = m.span()
+        while pi < len(prot) and prot[pi][1] <= s:
+            pi += 1
+        inside = pi < len(prot) and prot[pi][0] < e and s < prot[pi][1]
+        before = text[s - 1] if s else ""
+        after = text[e] if e < len(text) else ""
+        glued = before.isdigit() or after.isdigit() or before == "_" or after == "_"
+        if s > pos:
+            out.append((pos, s, "gap"))
+        out.append((s, e, "protected" if inside or glued else "token"))
+        pos = e
+    if pos < len(text):
+        out.append((pos, len(text), "gap"))
+    return out

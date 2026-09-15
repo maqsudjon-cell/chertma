@@ -7,3 +7,4 @@ node_modules/
 __pycache__/
 tools/.venv/
 data/protected-words.candidates.tsv
+data/bench-pool.json
