@@ -8,3 +8,4 @@ __pycache__/
 tools/.venv/
 data/protected-words.candidates.tsv
 data/bench-pool.json
+_site/
