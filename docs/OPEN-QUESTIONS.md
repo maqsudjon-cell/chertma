@@ -59,6 +59,35 @@ default, and where it lives so it can be reversed in one pass.
 
 Engine issues found while building the bot: none. The bot switches `engine.options.script` between calls, as the web demo does.
 
+## Hugging Face packages — defaults taken unattended (2026-09-15)
+
+| # | Question | Default taken | Where |
+|---|---|---|---|
+| H1 | Bigram cutoff | Count ≥ 3 would be 990,561,851 bytes (≥ 4: 721,519,271; ≥ 5: 563,061,817). The smallest cutoff under ~500 MB is **≥ 6** (463,187,708 bytes, 23,160,605 rows); stated in the card. | `tools/build_hf_lexicon.py` |
+| H2 | Which words go in the lexicon | Exactly the engine's admission set (4,892,125 words, SPEC §9.6) with merged counts — not the raw counted forms, which include misspellings such as `togri`. Columns exactly `word, count, skeleton`; the per-source split is not included. | same |
+| H3 | The card's worked example | The requested row "`sosib` → şoşib, sosib" is not what the data holds: `sosib` was merged into `şoşib` (16 book occurrences, under 1 %). The card shows the real row `SOSib → şoşib, söşib, sösib, şöşib` and says why `sosib` is absent. | `hf/uz-lexicon-skeleton/README.md` |
+| H4 | `tugri` count | 57,301 was the books-only figure; the dataset count is 57,367 (all sources). The card gives both. | same |
+| H5 | skeleton-index layout | Rows sorted by skeleton (code-point order, as in the engine); header `skeleton	candidates`; ragged rows, so not declared as a Hub viewer config — the card shows how to read it. | same |
+| H6 | Generated data in git | The TSVs (≈ 700 MB) and the Space copy are gitignored — too large or duplicated; `tools/build_hf_lexicon.py` and `tools/build_hf_space.py` rebuild them. Cards and scripts are tracked. | `.gitignore` |
+| H7 | "NOT READY" line on the benchmark card | Placed as the literal first line, above the YAML block: the Hub will not read the card's metadata until it is deleted — a deliberate guard. | `hf/uz-alphabet-bench/README.md` |
+| H8 | Benchmark authors and contact | PLACEHOLDER, because of the possible co-publication with Tahrirchi. | same |
+| H9 | Space links | Footer links in the Space copy open in a new tab (the Space runs inside an iframe on huggingface.co); `web/` is unchanged. | `tools/build_hf_space.py` |
+| H10 | Space colours | `yellow` → `gray` — the Hub palette has no orange. | `hf/space/README.md` |
+| H11 | Hub namespace | Undecided (Q15), so links use `HF_USERNAME`; `hf/UPLOAD-STEPS.md` has the one command that replaces it. | all cards |
+| H12 | Uzbek in cards | Old Latin with ʻ (U+02BB), per the instruction. Data itself is new Latin. | all cards |
+| H13 | Evaluator testing | `--self-test` runs 6 synthetic items (not benchmark items) through the engine backend and a local fake OpenAI-style endpoint, and checks the leaderboard writer. The `hf` backend is not exercised (needs torch and a model). | `hf/uz-alphabet-bench/run_eval.py` |
+
+### Q32 — Stray apostrophes admitted as words · OPEN (found preparing the dataset)
+
+A misplaced apostrophe turns a common word into a "marked" form (`vʼa`, `bilaʼn`,
+`töʼğri`), and SPEC §9.6 rule 1 admits marked forms from any source with count ≥ 2.
+84,547 lexicon words contain `ʼ`; 62,982 of them occur fewer than 10 times. They crowd the
+skeleton index (161,414 skeletons with 2+ words, 42,204 with 2+ words of count ≥ 10) and,
+in the full build, make `v'a` a valid token that is never corrected to `va`.
+**Option:** treat a form whose only difference from a far more frequent word is added
+or moved `ʼ` like a stripped variant (ratio test, merge).
+**Needs:** ruling. Documented as a limitation in the dataset card.
+
 ## Open
 
 ### Q19 — "Valid tokens are never rewritten" vs. context-resolved ambiguity · OPEN

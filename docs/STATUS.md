@@ -60,11 +60,20 @@ the human (2026-09-15 message):
   `docs/FOR-MAQSUDJON.md` → "Telegram bot". Bot username is @Chertmabot; inline mode is
   off until enabled in BotFather.
 
+- Hugging Face packages prepared (2026-09-15), nothing uploaded: `hf/uz-lexicon-skeleton/`
+  (card tracked; TSVs gitignored, rebuild `tools/.venv/bin/python tools/build_hf_lexicon.py`),
+  `hf/uz-alphabet-bench/` (card with PLACEHOLDERs + NOT READY line, `run_eval.py --self-test`
+  passes; no jsonl), `hf/space/` (README tracked; files gitignored, rebuild
+  `python3 tools/build_site.py && python3 tools/build_hf_space.py`), `hf/UPLOAD-STEPS.md`.
+  Defaults H1–H13 and Q32 in `docs/OPEN-QUESTIONS.md`.
+
 ## Running
 
 Nothing.
 
 ## Next (waits for the human)
+
+- Hugging Face: follow `hf/UPLOAD-STEPS.md` (lexicon, then Space; benchmark after review).
 
 - Bot: install/login Vercel CLI, then the commands in `docs/FOR-MAQSUDJON.md`
   ("Telegram bot"); BotFather `/setinline`, `/setcommands`. After login, a session can

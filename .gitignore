@@ -16,3 +16,10 @@ _site/
 .env.*
 bot/_vendor/
 bot/.vercel/
+
+# Hugging Face packages: generated data is too large for git
+hf/uz-lexicon-skeleton/*.tsv
+hf/space/*
+!hf/space/README.md
+data/hf-lexicon-stats.json
+data/hf-build.log
