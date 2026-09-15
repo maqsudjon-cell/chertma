@@ -28,3 +28,11 @@ export const DEFAULT_OPTIONS = Object.freeze({
   cyrillicKeyboardRecovery: true,
   maxSuggestions: 3,
 });
+
+// Conservative defaults taken unattended (docs/OPEN-QUESTIONS.md, D3).
+export const ACRONYM_MAX_LETTERS = 4;   // an isolated all-caps token this short is never corrected
+
+// suggest() candidate pools — speed, not ranking.
+export const SUGGEST_SCAN_ALL = 256;     // prefix ranges up to this size are scored in full
+export const SUGGEST_UNIGRAM_POOL = 64;  // otherwise: the most frequent words in the range…
+export const SUGGEST_BIGRAM_POOL = 128;  // …plus the strongest bigram successors of prevWord
