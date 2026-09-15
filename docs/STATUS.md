@@ -56,9 +56,9 @@ the human (2026-09-15 message):
 - Telegram bot (2026-09-15): `bot/` — Vercel webhook function, 42 tests pass,
   engine vendored byte-for-byte. Token only in gitignored `.env` (verified) and, after
   deploy, in the Vercel env. `.git/hooks/pre-commit` blocks commits containing the token
-  prefix. Deploy NOT done: Vercel CLI not installed/authenticated — commands in
-  `docs/FOR-MAQSUDJON.md` → "Telegram bot". Bot username is @Chertmabot; inline mode is
-  off until enabled in BotFather.
+  prefix. DEPLOYED 2026-09-15: https://chertma-bot.vercel.app/api/telegram, webhook set,
+  getWebhookInfo clean, real message delivered, inline enabled and answering. Redeploy:
+  `cd bot && node scripts/vendor.mjs && vercel deploy --prod --yes`.
 
 - Hugging Face packages prepared (2026-09-15), nothing uploaded: `hf/uz-lexicon-skeleton/`
   (card tracked; TSVs gitignored, rebuild `tools/.venv/bin/python tools/build_hf_lexicon.py`),
@@ -75,9 +75,7 @@ Nothing.
 
 - Hugging Face: follow `hf/UPLOAD-STEPS.md` (lexicon, then Space; benchmark after review).
 
-- Bot: install/login Vercel CLI, then the commands in `docs/FOR-MAQSUDJON.md`
-  ("Telegram bot"); BotFather `/setinline`, `/setcommands`. After login, a session can
-  run the remaining deploy commands (never print the token; read it from `.env`).
+- Bot: BotFather `/setcommands`, `/setdescription` (suggested texts in `docs/FOR-MAQSUDJON.md`).
 - Engine rulings: Q19, Q29, Q28, Q21, Q2b, Q30, Q31; yes/no Q20, Q22–Q25; Q15 (Hugging
   Face namespace); code licence (D18).
 - Human work: mark the 24 pairs (`docs/AMBIGUITY-REVIEW.md`), write the ~200 dialect forms

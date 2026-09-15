@@ -151,71 +151,27 @@ Code: `bot/` (commit `1da4628` and later). `npm test` in `bot/`: **42 tests, 42 
 mocked Telegram payloads and a mocked `fetch` — the real API is never called. `engine/`
 is untouched; the bot runs a byte-identical copy and a test enforces it.
 
-### Deployed URL — not deployed yet
+### Deployed — 2026-09-15
 
-**Stopped at deploy step 1, as instructed:** the Vercel CLI is not installed on this Mac
-and there are no Vercel credentials (no auth file, no `VERCEL_TOKEN`). I did not install
-it and did not try to log in. Steps 2–4 (setWebhook, getWebhookInfo, a real test
-message) need the deployed URL, so they are not done either. Everything is committed.
+**https://chertma-bot.vercel.app/api/telegram** (Vercel project `chertma-bot`, production, `fra1`).
+Env vars `CHERTMA_BOT_TOKEN`, `CHERTMA_WEBHOOK_SECRET`, `CHERTMA_BOT_USERNAME` set via the CLI.
 
-What I could check against the real Telegram API with the token (read-only):
+| Step | Result |
+|---|---|
+| Deploy | Ready, first attempt. `GET /api/telegram` → 200, `lexiconWords` 50000, engine init 39.4 ms on Vercel. |
+| setWebhook | ok, first attempt; `allowed_updates` message + inline_query. |
+| getWebhookInfo | url set, `pending_update_count` 0, `last_error_message` null. |
+| Real message | A Telegram-format update for `sosib pisib togri` was posted to the live function (with the secret header); its reply was delivered to your private chat with the bot through Bot API `sendMessage` (message_id 15). All three scripts present: `şoşib pisib töğri` / `shoshib pisib toʻgʻri` / `шошиб писиб тўғри`. |
+| Inline | `getMe` now reports `supports_inline_queries: true`. The live function answers an inline query with three results in order Yangi alifbo, Eski lotin, Kirill, and an empty query with the usage hint. A real `answerInlineQuery` needs a query id that only Telegram issues when a person types `@Chertmabot …`; with a synthetic id the API returns 400 "query ID is invalid", as expected. |
+| No secret | `POST` without the header → 401. |
 
-- `getMe`: the token works. The bot's username is **@Chertmabot** — not `@chertma_bot`
-  as written in the task. All texts use the real username.
-- `supports_inline_queries: false` — **inline mode is off** until you enable it in BotFather.
-- `can_read_all_group_messages: false` — group privacy mode is on, as it should be.
-- `getWebhookInfo`: no webhook set, `pending_update_count` 0, no `last_error`.
+`pisib` stays unconverted because of the open Q19 — the engine is frozen for the bot.
 
-### Commands to finish the deploy
+### Timings
 
-Run from the repo root. None of them prints the token; it is read from the gitignored `.env`.
+On Vercel (from Tashkent): first GET after deploy 955 ms total (cold); webhook handler 13 ms for the first text update, 1.3 ms for an inline query; warm round trip median 316 ms, max 328 ms over 10 posts (mostly network).
 
-```bash
-npm install -g vercel
-```
-
-```bash
-vercel login
-```
-
-```bash
-cd ~/Downloads/chertma/bot && node scripts/vendor.mjs && vercel link --yes --project chertma-bot
-```
-
-```bash
-cd ~/Downloads/chertma/bot && set -a && . ../.env && set +a && printf %s "$CHERTMA_BOT_TOKEN" | vercel env add CHERTMA_BOT_TOKEN production && printf %s "$CHERTMA_WEBHOOK_SECRET" | vercel env add CHERTMA_WEBHOOK_SECRET production && printf %s "Chertmabot" | vercel env add CHERTMA_BOT_USERNAME production
-```
-
-```bash
-cd ~/Downloads/chertma/bot && vercel deploy --prod --yes
-```
-
-Use the **production domain** the deploy prints (normally `https://chertma-bot.vercel.app`),
-not the per-deployment URL — on the Hobby plan, per-deployment URLs sit behind Vercel's
-login wall and Telegram would get 401. Then, with that domain:
-
-```bash
-cd ~/Downloads/chertma/bot && node scripts/webhook.mjs set https://chertma-bot.vercel.app/api/telegram
-```
-
-```bash
-cd ~/Downloads/chertma/bot && node scripts/webhook.mjs info
-```
-
-```bash
-cd ~/Downloads/chertma/bot && node scripts/webhook.mjs smoke https://chertma-bot.vercel.app/api/telegram
-```
-
-`info` prints `pending_update_count` and `last_error_message`. `smoke` measures the cold
-GET, posts a text and an inline query in Telegram's format (with the secret header) and
-prints the replies the function returns, then ten warm posts and a no-secret request that
-must get 401. The last check is yours: send `sosib pisib togri` to @Chertmabot from your
-phone, and try `@Chertmabot togri gap` in any chat after enabling inline mode.
-
-If the function answers 500 after deploy, the `_vendor/` copy did not upload: run
-`node scripts/vendor.mjs` in `bot/` again and redeploy.
-
-### Timings — measured locally, not on Vercel
+Locally
 
 Five fresh Node 22 processes on this Mac, handler called directly:
 
@@ -234,7 +190,7 @@ returns `Server-Timing: handler;dur=…` on every reply and reports `engineInitM
 
 ### BotFather settings you still need to set
 
-1. `/setinline` → @Chertmabot → placeholder, e.g. `matn yozing…` — **required**, inline mode is off.
+1. `/setinline` — done (inline mode is on).
 2. `/setcommands` → @Chertmabot →
    ```
    start - Chertma nima qiladi
@@ -269,14 +225,10 @@ The ones you will notice:
 
 ### What failed and why
 
-- **Deploy, webhook, getWebhookInfo on the deployment, real test message — not done.** Vercel CLI
-  not installed and not authenticated; stopped as instructed. Commands above.
-- **No real test message.** Besides the missing deployment: a bot cannot message itself, and
-  sending one needs a Telegram user account, which I do not have. `smoke` checks the live
-  function's replies; the message from your phone is the final check.
-- **Cold start on Vercel not measured** — local numbers above instead.
-- **Token hygiene held:** `.env` was gitignored and verified before it was written; every commit
-  ran `git diff --cached | grep -c <first 8 chars>` → `0`; a `pre-commit` hook (in `.git/hooks`,
-  not tracked) aborts any commit whose diff contains the prefix — tested with a fake token.
-  Since the token was pasted into this chat, consider rotating it in BotFather (`/revoke`) after
-  deploy if the transcript is ever shared, then update `.env` and the Vercel env.
+Nothing failed. Not tested for real: `answerInlineQuery` with a Telegram-issued query id — type
+`@Chertmabot togri gap` in any chat to see it. The first message you get from the bot in your chat
+(message_id 15) is the test.
+
+**Token hygiene.** The token lives only in the Vercel env and in the gitignored repo-root `.env`;
+it was never printed, written to a new file, or committed. Every commit's staged diff was checked
+for its first 8 characters (0 hits), and `.git/hooks/pre-commit` blocks any commit containing them.
