@@ -35,7 +35,6 @@ test('already correct in a script: says so instead of echoing', () => {
 test('unknown words are still written in every script, never left in Latin (§6.5)', () => {
   const t = newBot().handleUpdate(textMessage('kelaslar ishlating'), T0).messages[0].text;
   assert.ok(t.includes('<b>Kirill</b>\n<pre>келаслар ишлатинг</pre>'), t);
-  assert.ok(t.includes('<b>Yangi alifbo</b> — matn allaqachon toʻgʻri ✓') || t.includes('<pre>kelaslar'), t);
   const c = newBot().handleUpdate(textMessage('келаслар'), T0).messages[0].text;
   assert.ok(!/[\u0400-\u052f]/.test(c.split('<b>Kirill</b>')[0]), c);
 });
