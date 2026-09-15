@@ -232,3 +232,90 @@ Nothing failed. Not tested for real: `answerInlineQuery` with a Telegram-issued 
 **Token hygiene.** The token lives only in the Vercel env and in the gitignored repo-root `.env`;
 it was never printed, written to a new file, or committed. Every commit's staged diff was checked
 for its first 8 characters (0 hits), and `.git/hooks/pre-commit` blocks any commit containing them.
+
+---
+
+## Morphology, mixed script and a bigger word list (2026-09-15 evening)
+
+Details and full lists: **`docs/MORPHOLOGY-REVIEW.md`**.
+
+### The number you asked for — not zero, so stopped
+
+Invariant forms (10 000 generated, all three output scripts) that the morphological fallback
+touches and did not before:
+
+- **`'read'` mode** (stem + suffix valid exactly as typed, old-Latin spelling converted): **809**,
+  all in new-Latin output — `ishlating → işlating`, `mashinangiz → maşinangiz`. No letter is corrected.
+- **`true` mode** (stem corrected, suffix kept): **13 more**, and by my reading 12 of them are wrong
+  (`maqtasin → maqtaşin`, `island → işland`, `ogʻritib → öğritib`). It also turns **`qoyvor` into `qöyvor`**.
+- Dialect forms `kelaslar`, `qisela`, `balu`, `kettik`, `bormimiz` stay byte-identical in every mode (tested).
+
+So the engine ships with **`morphology: false`**. The code (`engine/index.js` `_morph`), the suffix
+inventory (2 232 chains, lexicon section 9) and tests pinning each mode are in place; switching it on
+is one option.
+
+### Mixed-script output — fixed and deployed to the bot
+
+Anything not corrected is now transliterated by rule into the output script (SPEC §6.5): `ishlating`
+in Kirill output is `ишлатинг`, `ишлатинг` in Latin output is `işlating`, `15та` → `15ta`, `TOGGнинг`
+→ `TOGGning`, `Windows` → `Виндовс`, `щётка` → `şyotka`. URLs, emails, `@mentions` and `#hashtags`
+stay as typed — the only exception. A new test checks every golden input in every script. Two golden
+expectations that encoded the old behaviour were updated (G177, G207).
+
+### Word list
+
+Rebuilt from the checkpoint-2 counts with a **held-out 10 % of two crawl shards removed first**
+(5.05 M tokens; subtraction exact — no count went negative).
+
+Coverage on that held-out text (share of tokens whose word is in the lexicon):
+
+| Build | Words | Gzipped | News | Telegram |
+|---|---|---|---|---|
+| lite, picked by frequency (the shipped word list) | 50 000 | 0.75 MB | 89.7 % | 87.6 % |
+| lite, picked by crawl coverage (**parked**) | 50 000 | 0.75 MB | 92.8 % | 89.5 % |
+| mid (built, measured, not used) | 150 000 | 3.40 MB | 95.0 % | 93.9 % |
+| full (**bot**) | 400 000 | 7.34 MB | 97.2 % | 96.8 % |
+
+The shipped lite was selected from counts that still contained the held-out text, so its row is
+measured on the same selection rule rebuilt without that text.
+
+Adding "or a stem in the lexicon + a suffix chain" raises lite-by-frequency to 95.3 % / 95.5 %
+and full to 98.6 % / 98.9 % — the hole segmentation could close.
+
+**Lite by coverage is parked**, same stop rule: it changes 181 invariant forms (25 with letters
+substituted, some wrong) and breaks 6 strict golden cases (`Shirinning` no longer fixed; crawl-frequent
+Russian-layout misspellings `xozir`, `kuyidan` became words). It also lifts ranked-sentence accuracy from
+65.3 % to 72.7 %. The mobile lite keeps its word list and 2 MB budget (0.75 MB gz); it only gained the
+suffix section.
+
+### Bot on lexicon-full
+
+| | Cold (first request) | Engine init | Warm round trip, median | Handler, median |
+|---|---|---|---|---|
+| before: lite, after hours idle | 5 367 ms | 43 ms | 598 ms | 0.9 ms |
+| lite, right after a deploy | 934 ms | 42.3 ms | 383 ms | 0.9 ms |
+| mid, right after a deploy | 960 ms | 128.6 ms | 429 ms | 0.8 ms |
+| full, right after a deploy (2 runs) | 1085 / 1052 ms | 249.6 ms | 389 / 410 ms | 0.8 ms |
+| full, after 25 min idle | IDLE_MS | IDLE_INIT | IDLE_WARM | IDLE_HANDLER |
+
+Round trips are from Tashkent to Frankfurt. The full lexicon adds about 200 ms of engine init; cold
+start stays far under 3 s, so the bot runs **full** and no mid tier is used. Locally (5 runs each):
+process start → ready 139–151 ms lite, 173–178 ms mid, 224–233 ms full; warm p95 under 1 ms for all.
+Deployed: `https://chertma-bot.vercel.app/api/telegram`, webhook unchanged, `getWebhookInfo` clean.
+
+### Not deployed
+
+The **website** still runs the old engine, so it still leaves unknown words in the wrong script. The
+new engine passes every test with the shipped lite; redeploy when you want it live:
+`python3 tools/build_site.py && tools/deploy_pages.sh`.
+
+### Needs you
+
+1. Morphology: look at the 13 stage-2 forms and the 809 stage-1 list; say `false`, `'read'` or `true`.
+2. Lite by coverage: accept the 25 substitutions and 6 golden regressions for +3 points coverage, or
+   keep the frequency lite. The regressions come from Q29 (Russian-layout spellings admitted as words) —
+   ruling Q29 would fix most of them in either build.
+3. Defaults M1–M14 in `docs/OPEN-QUESTIONS.md`.
+
+Tests: engine 54 tests — 48 pass, 0 fail, 6 TODO (the new one: `qoyvor` under `morphology: true`);
+bot 42/42.

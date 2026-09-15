@@ -67,30 +67,25 @@ the human (2026-09-15 message):
   `python3 tools/build_site.py && python3 tools/build_hf_space.py`), `hf/UPLOAD-STEPS.md`.
   Defaults H1–H13 and Q32 in `docs/OPEN-QUESTIONS.md`.
 
-## Running (2026-09-15, evening) — morphology + word-list task
+## Done (2026-09-15 evening) — morphology, mixed script, word list
 
-Request: morphological fallback, never mixed-script output, bot → lexicon-full
-(cold/warm before/after; mid tier ~150k if cold > ~3 s), lite 50k chosen by crawl
-coverage (2 MB budget unchanged), coverage on held-out crawl text. If morphology
-touches any invariant form: stop and show.
+Report: `docs/FOR-MAQSUDJON.md` (last section) and `docs/MORPHOLOGY-REVIEW.md`.
 
-- DONE `fb728fc`: engine never emits mixed script (§6.5); morphology code in
-  `engine/index.js` `_morph`, lexicon section 9 = suffix chains (`tools/suffixes.py`),
-  **`morphology: false` by default** — measured on the 10 000 invariant forms with
-  the unchanged lite + 2 235 chains: stage 1 (reading) changes 809 forms in new-Latin
-  output, stage 2 (stem correction, with guards) 13, ~10 of them wrong. STOPPED as
-  instructed; lists in the report. Scratch copies: before-engine outputs and lists
-  under the session scratchpad `morph/` (not needed to resume).
-- DONE: `tools/build_heldout.py` → `data/heldout/` (gitignored): 10 % of
-  telegram_blogs (2 550 178 tokens) and news shard 2 (2 502 131 tokens).
-- Bot before (Vercel, lite): cold GET 5 367 ms (engine init 43 ms), warm POST
-  round trip median 598 ms, handler median 0.9 ms.
-- NEXT: `tools/build_lexicons.py` (subtract held-out, lite by crawl coverage, full
-  400k, suffix section, held-out coverage report) → npm test → invariant touched
-  count with new lite → bot vendor full → deploy → measure cold/warm → decide mid
-  tier → docs (SPEC §5.2 §6.5 §9, OPEN-QUESTIONS M-defaults, FOR-MAQSUDJON).
+- Engine: output never mixed-script (§6.5), deployed to the bot. Morphological fallback
+  implemented, **`morphology: false`** — STOPPED at "show me": 809 (read) + 13 (stem
+  correction) invariant forms touched; `qoyvor → qöyvor` under `true`.
+- Lexicons: `tools/build_lexicons.py --mid` (held-out 10 % removed; `data/heldout/`,
+  gitignored). Shipped lite = old word list + suffix section; `data/lexicon-lite-coverage.bin`
+  PARKED (181 invariant forms, 6 golden). Full rebuilt (400k). Mid built and measured,
+  not committed (rebuild with `--mid`).
+- Bot: `BOT_LEXICON` (default full), deployed on full. Timings in the report.
+- Tests: engine 54 (48 pass, 0 fail, 6 TODO); bot 42/42.
+- Website NOT redeployed (still the old engine).
 
 ## Next (waits for the human)
+
+- Morphology mode and lite-by-coverage decisions: `docs/MORPHOLOGY-REVIEW.md`.
+- Website redeploy for the mixed-script fix: `python3 tools/build_site.py && tools/deploy_pages.sh`.
 
 - Hugging Face: follow `hf/UPLOAD-STEPS.md` (lexicon, then Space; benchmark after review).
 
