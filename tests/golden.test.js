@@ -3,7 +3,7 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { engine, json } from './helpers.js';
-import { tokenize, normalize } from '../engine/index.js';
+import { tokenize, normalize, convert } from '../engine/index.js';
 import { RANKED_FLOOR } from './thresholds.js';
 
 const G = json('tests/golden.json');
@@ -42,18 +42,22 @@ test('golden: ranked cases (several candidates survive)', async (t) => {
 
 const fold = (s) => Array.from(normalize(s), (ch) => ("'`´‘’ʻʼʽʿ′".includes(ch) ? "'" : ch)).join('');
 
+// A token counts as *corrected* when the output is the expected word, *wrong*
+// when the engine substituted some other word, and *missed* when it left the
+// token as typed or only converted its script (the same letters, e.g. булган →
+// bulgan). Wrong corrections are the failure this product exists to avoid.
 export function tokenOutcomes(input, output, expected) {
   const toks = (s) => tokenize(s).filter((x) => x.kind === 'token').map((x) => s.slice(x.start, x.end));
   const [a, b, e] = [toks(input), toks(output), toks(expected)];
   const res = { correct: 0, wrong: 0, missed: 0, kept: 0, misaligned: 0, wrongExamples: [] };
   if (a.length !== b.length || a.length !== e.length) { res.misaligned = 1; return res; }
   for (let i = 0; i < a.length; i++) {
-    const changed = fold(a[i]) !== fold(b[i]);
-    const right = fold(b[i]) === fold(e[i]);
-    if (changed && right) res.correct++;
-    else if (changed) { res.wrong++; res.wrongExamples.push(`${a[i]} → ${b[i]} (expected ${e[i]})`); }
-    else if (right) res.kept++;
-    else res.missed++;
+    const asTyped = fold(convert(a[i], /[\u0400-\u052f]/.test(a[i]) ? 'cyrillic' : 'old', 'new'));
+    const out = fold(b[i]);
+    const inputNeedsChange = fold(a[i]) !== fold(e[i]) && asTyped !== fold(e[i]);
+    if (out === fold(e[i])) { if (inputNeedsChange) res.correct++; else res.kept++; }
+    else if (out === fold(a[i]) || out === asTyped) res.missed++;
+    else { res.wrong++; res.wrongExamples.push(`${a[i]} → ${b[i]} (expected ${e[i]})`); }
   }
   return res;
 }
@@ -68,10 +72,9 @@ test('golden: real-world sample (measurement)', async (t) => {
       tot.wrongExamples.push(...o.wrongExamples);
     }
     const changed = tot.correct + tot.wrong;
-    const needed = tot.correct + tot.missed + tot.wrong;
-    t.diagnostic(`${kind}: tokens needing a change ${needed}; corrected ${tot.correct}; wrong changes ${tot.wrong} ` +
+    t.diagnostic(`${kind}: corrected ${tot.correct}; wrong corrections ${tot.wrong} ` +
       `(precision ${(100 * tot.correct / Math.max(1, changed)).toFixed(1)} %); missed ${tot.missed}; ` +
-      `left correctly ${tot.kept}; misaligned sentences ${tot.misaligned}`);
+      `already right or converted right ${tot.kept}; misaligned sentences ${tot.misaligned}`);
     for (const w of tot.wrongExamples.slice(0, 12)) t.diagnostic(`  wrong: ${w}`);
   }
 });
