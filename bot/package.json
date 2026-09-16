@@ -9,7 +9,9 @@
   },
   "scripts": {
     "vendor": "node scripts/vendor.mjs",
-    "test": "node scripts/vendor.mjs && node --test --test-reporter=spec test/*.test.js"
+    "test": "node scripts/vendor.mjs && node --test --test-reporter=spec test/*.test.js",
+    "deploy": "node scripts/deploy.mjs",
+    "check-live": "node scripts/check-live.mjs"
   },
   "dependencies": {}
 }

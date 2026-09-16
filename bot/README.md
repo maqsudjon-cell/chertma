@@ -11,7 +11,9 @@ src/texts.js        everything the bot says (Uzbek)
 src/engine.js       loads the engine and lite lexicon once per instance
 src/ratelimit.js    20 messages/min per user, in memory
 src/telegram.js     Bot API calls, errors returned as values
-scripts/vendor.mjs  copies engine/ and the lite lexicon into _vendor/ (gitignored)
+scripts/vendor.mjs  copies engine/ and one lexicon build into _vendor/ (gitignored)
+scripts/deploy.mjs  vendor → test → deploy from bot/ → verify live. THE way to deploy.
+scripts/check-live.mjs  asserts the live bot answers and Telegram has no fresh error
 scripts/webhook.mjs set / info / smoke — reads the token from ../.env, never prints it
 test/               node:test, mocked payloads, no real API calls
 ```
@@ -24,4 +26,13 @@ test/               node:test, mocked payloads, no real API calls
 npm test
 ```
 
-Deploying: see `docs/FOR-MAQSUDJON.md`, section "Telegram bot".
+Deploying: `npm run deploy` (from `bot/`). Nothing else.
+
+**Never run `vercel --prod` from the repo root.** The Vercel project has no root
+directory set, so a deployment built from the repo root contains no `api/`, every
+Telegram update gets 404, and the bot goes silent while `getWebhookInfo` still shows
+the right url. That is how it died on 2026-09-16: a `git push` to `main` triggered a
+production build from the repo root through the GitHub integration. The integration is
+now disconnected — this project deploys from the CLI only — and `npm run deploy` ends
+with `scripts/check-live.mjs`, which fails loudly if the function is missing or the
+webhook is erroring.

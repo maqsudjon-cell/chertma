@@ -58,7 +58,7 @@ the human (2026-09-15 message):
   deploy, in the Vercel env. `.git/hooks/pre-commit` blocks commits containing the token
   prefix. DEPLOYED 2026-09-15: https://chertma-bot.vercel.app/api/telegram, webhook set,
   getWebhookInfo clean, real message delivered, inline enabled and answering. Redeploy:
-  `cd bot && node scripts/vendor.mjs && vercel deploy --prod --yes`.
+  `cd bot && npm run deploy` (vendor → test → deploy from bot/ → verify live).
 
 - Hugging Face packages prepared (2026-09-15), nothing uploaded: `hf/uz-lexicon-skeleton/`
   (card tracked; TSVs gitignored, rebuild `tools/.venv/bin/python tools/build_hf_lexicon.py`),
