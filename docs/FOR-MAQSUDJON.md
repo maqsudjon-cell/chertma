@@ -331,3 +331,39 @@ new engine passes every test with the shipped lite; redeploy when you want it li
 
 Tests: engine 54 tests — 48 pass, 0 fail, 6 TODO (the new one: `qoyvor` under `morphology: true`);
 bot 42/42.
+
+---
+
+## The bot went down for ~6 hours on 2026-09-16 — what happened
+
+**Cause: the `git push`, not the website.** The Vercel project `chertma-bot` had a GitHub
+integration pointed at `maqsudjon-cell/chertma` with **no root directory set**. Pushing `main`
+made Vercel build a production deployment from the **repo root**, which has no `api/` directory.
+Telegram kept sending updates to the right url and got `404 Not Found` on every one, so the bot
+went silent while `getWebhookInfo` still looked correct — only `last_error_message` gave it away.
+The website redeploy was in the same minutes but is unrelated: the site is on GitHub Pages and
+has never shared a Vercel project with the bot (`chertma-bot` is the only one, and there is no
+web project).
+
+| | |
+|---|---|
+| Last good | `chertma-ct8qcbwk7`, CLI deploy from `bot/`, 04:04 |
+| Broke it | two pushes to `main` → `chertma-6iorfkclt`, `chertma-3okt5itby` from the repo root, 04:18 |
+| Symptom | `GET https://chertma-bot.vercel.app/api/telegram` → 404, `last_error_message: "Wrong response from the webhook: 404 Not Found"`, 7 updates queued |
+| Fixed | 15:50 — redeployed from `bot/`; the 7 queued updates were delivered and answered |
+
+The webhook url itself was never wrong — it has always been the stable
+`https://chertma-bot.vercel.app/api/telegram`, never a deployment url. It did not need
+re-pointing, and `check-live.mjs` now refuses a deployment url anyway.
+
+**So it cannot happen again:**
+
+1. The GitHub integration is **disconnected** — `chertma-bot` deploys from the CLI only, so a
+   push can no longer produce a deployment. Verified: the next push created no deployment.
+2. `bot/scripts/deploy.mjs` is the only deploy path (`cd bot && npm run deploy`): vendor → test →
+   deploy from `bot/` → `check-live.mjs`.
+3. `bot/scripts/check-live.mjs` exits 1 if the health endpoint is not 200, if a signed `/start`
+   is not answered, if the webhook url is empty, not the production domain, or a deployment url,
+   or if Telegram reports an error newer than the deploy. Run it any time: `npm run check-live`.
+
+If the bot ever goes quiet again, that one command tells you which of those it is.
